@@ -325,6 +325,20 @@ html, body { height:100%; width:100%; background:var(--bg); color:var(--text); f
 .nightly-date { font-family:var(–font-mono); font-size:10px; color:var(–accent); margin-bottom:4px; }
 .nightly-text { font-size:12px; color:var(–text2); line-height:1.4; }
 
+/* IMPORT */
+.import-modal { position:fixed; inset:0; background:rgba(0,0,0,0.85); display:flex; align-items:flex-end; z-index:190; opacity:0; pointer-events:none; transition:opacity 0.2s; }
+.import-modal.open { opacity:1; pointer-events:all; }
+.import-sheet { width:100%; max-width:430px; margin:0 auto; background:var(–bg3); border-top:1px solid var(–border2); border-radius:16px 16px 0 0; padding:20px 20px 44px; transform:translateY(100%); transition:transform 0.25s ease; max-height:85vh; overflow-y:auto; }
+.import-modal.open .import-sheet { transform:translateY(0); }
+.import-preview { background:var(–surface); border:1px solid var(–border); border-radius:8px; padding:12px 14px; margin-bottom:12px; }
+.import-preview-row { display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid var(–border); font-size:12px; }
+.import-preview-row:last-child { border-bottom:none; }
+.import-preview-key { font-family:var(–font-mono); font-size:10px; color:var(–text3); text-transform:uppercase; letter-spacing:0.06em; }
+.import-preview-val { color:var(–text2); max-width:60%; text-align:right; }
+.import-type-row { display:flex; gap:8px; margin-bottom:12px; }
+.import-type-btn { flex:1; padding:8px; border-radius:6px; font-family:var(–font-mono); font-size:10px; cursor:pointer; border:1px solid var(–border2); background:var(–surface); color:var(–text3); transition:all 0.15s; text-align:center; text-transform:uppercase; letter-spacing:0.06em; }
+.import-type-btn.active { background:rgba(74,143,168,0.1); color:var(–accent); border-color:rgba(74,143,168,0.3); }
+
 .toast { position:fixed; top:60px; left:50%; transform:translateX(-50%); background:var(–surface2); border:1px solid var(–border2); border-radius:8px; padding:10px 18px; font-family:var(–font-mono); font-size:11px; color:var(–green); z-index:300; opacity:0; transition:opacity 0.2s; white-space:nowrap; }
 .toast.show { opacity:1; }
 
@@ -814,7 +828,10 @@ html, body { height:100%; width:100%; background:var(--bg); color:var(--text); f
   <div class="screen" id="screen-archive">
     <div class="topbar">
       <span class="topbar-title">Archive</span>
-      <button class="topbar-action" onclick="showScreen('screen-home')">Home</button>
+      <div style="display:flex;gap:8px;">
+        <button class="topbar-action" onclick="openImport()">Import</button>
+        <button class="topbar-action" onclick="showScreen('screen-home')">Home</button>
+      </div>
     </div>
     <div class="scroll-body" style="padding:16px 20px;">
       <div class="section-label" style="margin-bottom:12px;">Nightly Reports</div>
@@ -827,6 +844,29 @@ html, body { height:100%; width:100%; background:var(--bg); color:var(--text); f
       <div class="nav-item" onclick="gotoStabilize()"><div class="nav-icon">◎</div><div class="nav-label">Stabilize</div></div>
       <div class="nav-item active" onclick="showScreen('screen-archive')"><div class="nav-icon">↗</div><div class="nav-label">Archive</div></div>
     </nav>
+  </div>
+
+  <!-- ══ IMPORT MODAL ══ -->
+
+  <div class="import-modal" id="import-modal">
+    <div class="import-sheet">
+      <div class="sheet-handle"></div>
+      <div class="day-modal-title">Import Report</div>
+      <div class="day-modal-sub">Paste a Nightly Report or Deca Form. The app will parse and archive it.</div>
+      <div class="import-type-row">
+        <button class="import-type-btn active" id="import-type-nightly" onclick="setImportType('nightly',this)">Nightly</button>
+        <button class="import-type-btn" id="import-type-deca" onclick="setImportType('deca',this)">Deca</button>
+      </div>
+      <textarea class="nightly-textarea" id="import-input" placeholder="Paste your Nightly Report or Deca Form here..." style="height:160px;" oninput="previewImport()"></textarea>
+      <div id="import-preview-block" style="display:none">
+        <div style="font-family:var(--font-mono);font-size:9px;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;">Parsed Preview</div>
+        <div class="import-preview" id="import-preview"></div>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:12px;">
+        <button class="sheet-btn cancel" onclick="closeImport()">Cancel</button>
+        <button class="sheet-btn confirm" id="import-confirm-btn" onclick="confirmImport()" disabled style="opacity:0.4;">Import</button>
+      </div>
+    </div>
   </div>
 
   <!-- ══ VOICE BUTTON ══ -->
@@ -1152,6 +1192,7 @@ function confirmLog() {
   state.logEntries.unshift({ type:currentLogType, name:val, status:statusFor(currentLogType), time:nowTime() });
   closeLog(); buildLogFeed(); buildTimeline();
   showToast(`${currentLogType}: ${val}`);
+  saveState(); updateForecast();
 }
 function openERLog() {
   document.getElementById('er-input').value='';
@@ -1167,6 +1208,7 @@ function confirmER() {
   if (!isNaN(numVal)) state.erLog.push({ time:nowTime(), val:numVal, label:val, note:'' });
   closeERLog(); updateERDisplay();
   showToast(`ER updated: ${val}`);
+  saveState(); updateForecast();
 }
 
 function labelFor(t) { return {'Marker':'What happened?','Milestone':'Milestone name','Moment Open':'Moment name','Moment Close':'Which Moment?','Sub-Loop Open':'Sub-Loop name','Sub-Loop Close':'Which Sub-Loop?','Carryover':'What carries over?','Note':'Note'}[t]||t; }
@@ -1221,6 +1263,7 @@ function buildOutcome() {
 function logStabilizeSession() {
   state.logEntries.unshift({ type:'Marker', name:`Stabilize — ${state.selectedMode||'unknown mode'}`, status:'', time:nowTime() });
   buildLogFeed(); showToast('Logged to timeline');
+  saveState();
   setTimeout(()=>showScreen('screen-home'),600);
 }
 function copyOutcome() {
@@ -1276,11 +1319,6 @@ function showToast(msg) { const t=document.getElementById('toast'); t.textConten
 // INIT
 loadState();
 updateERDisplay(); buildLogFeed(); buildTimeline(); buildArchive(); updateForecast();
-// Auto-save on any log
-const _origConfirmLog = confirmLog;
-confirmLog = function() { _origConfirmLog(); saveState(); updateForecast(); };
-const _origConfirmER = confirmER;
-confirmER = function() { _origConfirmER(); saveState(); updateForecast(); };
 
 
 // ── VOICE ──
@@ -1500,49 +1538,87 @@ function buildArchive() {
 `).join(’’);
 }
 
-// ── FORECAST ENGINE ──
+// ── FORECAST ENGINE v1.1 ──
 function computeForecast() {
 const log = state.erLog;
-if (!log || log.length < 2) return { state:‘Stable Band’, cls:‘fc-stable’, conf:‘Low’, basis:‘Insufficient ER data’ };
+if (!log || log.length < 1) return { state:‘Stable Band’, cls:‘fc-stable’, conf:‘Low’, basis:‘No ER data yet’ };
+if (log.length < 2) return { state:‘Stable Band’, cls:‘fc-stable’, conf:‘Low’, basis:‘Log more ER entries for trend’ };
 
 const recent = log.slice(-5);
 const vals = recent.map(e=>e.val);
 const current = vals[vals.length-1];
 const prev = vals[vals.length-2];
 const trend = current - prev;
-const sustained = vals.length >= 3 ? current - vals[0] : trend;
 
-// Time of day
+// Rate of change (speed)
+const rateRapid = Math.abs(trend) > 0.25;
+const rateModerate = Math.abs(trend) > 0.1;
+
+// Time context
 const hour = new Date().getHours();
-const isEarlyMorning = hour >= 2 && hour <= 7;
+const isEarlyMorning = hour >= 2 && hour <= 8;
+const isMorning = hour >= 6 && hour <= 12;
 const isEvening = hour >= 18;
+const isNight = hour >= 21 || hour < 3;
 
-// Event pattern
-const recentEvents = state.logEntries.slice(0, 10);
-const designTypes = [‘Milestone’,‘Moment Open’,‘Sub-Loop Open’];
-const buildSignals = recentEvents.filter(e => designTypes.includes(e.type)).length;
-const frictionSignals = recentEvents.filter(e => e.name && (e.name.toLowerCase().includes(‘frustrat’) || e.name.toLowerCase().includes(‘conflict’) || e.name.toLowerCase().includes(‘tired’))).length;
+// Open loops as drift signal
+const openLoops = state.logEntries.filter(e => e.status && e.status.includes(‘Open’)).length;
+const manyLoops = openLoops >= 4;
 
-// Determine forecast
+// Recent event pattern (last 60 min worth = last 15 entries approx)
+const recentEvents = state.logEntries.slice(0, 15);
+const buildTypes = [‘Milestone’,‘Moment Open’,‘Sub-Loop Open’,‘Marker’];
+const buildSignals = recentEvents.filter(e => buildTypes.includes(e.type)).length;
+
+// Grounding signals (meals, meds, coffee, chores, horses)
+const groundingKeywords = [‘coffee’,‘meds’,‘breakfast’,‘lunch’,‘dinner’,‘food’,‘eat’,‘horse’,‘chore’,‘walk’,‘rest’,‘nap’,‘water’];
+const groundingMarkers = recentEvents.filter(e => e.name && groundingKeywords.some(k => e.name.toLowerCase().includes(k))).length;
+
+// Friction signals
+const frictionKeywords = [‘frustrat’,‘conflict’,‘stuck’,‘block’,‘tired’,‘exhaust’,‘overwhelm’,‘angry’,‘hurt’,‘anxious’,‘worry’];
+const frictionMarkers = recentEvents.filter(e => e.name && frictionKeywords.some(k => e.name.toLowerCase().includes(k))).length;
+
+// Event pace (task switching proxy)
+const veryActiveLogging = recentEvents.length >= 10;
+
 let fc, cls, conf, basis;
 
-if (current > 2.4 || (current > 2.0 && trend > 0.2)) {
-fc = ‘Drift Risk’; cls = ‘fc-drift’; conf = ‘Moderate’;
-basis = ‘ER elevated + rising trend’;
-} else if (isEvening && current < 1.6) {
+// ── GROUNDING RECOMMENDED ──
+if (frictionMarkers >= 2 || (manyLoops && frictionMarkers >= 1) || (current > 2.0 && frictionMarkers >= 1)) {
+fc = ‘Grounding Recommended’; cls = ‘fc-drift’; conf = ‘Moderate’;
+basis = ‘Friction markers + loop accumulation’;
+}
+// ── DRIFT RISK ──
+else if (current > 2.3 || (current > 2.0 && trend > 0.15) || (manyLoops && trend > 0.1 && current > 1.9)) {
+fc = ‘Drift Risk’; cls = ‘fc-drift’; conf = current > 2.5 ? ‘High’ : ‘Moderate’;
+basis = manyLoops ? ‘ER elevated + open loop accumulation’ : ‘ER elevated + rising trend’;
+}
+// ── DESCENT LIKELY ──
+else if ((isEvening || isNight) && current < 1.5 && trend <= 0) {
 fc = ‘Descent Likely’; cls = ‘fc-descent’; conf = ‘High’;
 basis = ‘Evening pattern + falling ER’;
-} else if (current >= 1.6 && current <= 2.0 && trend >= 0 && trend < 0.25 && (isEarlyMorning || buildSignals >= 2)) {
-fc = ‘Build Mode Likely’; cls = ‘fc-build’; conf = buildSignals >= 2 ? ‘High’ : ‘Moderate’;
-basis = isEarlyMorning ? ‘Early-morning pattern + stable ER’ : ‘Active logging + constructive ER band’;
-} else if (trend > 0.15 && current < 2.4) {
-fc = ‘Activation Rising’; cls = ‘fc-rising’; conf = ‘Moderate’;
-basis = ‘ER rising over recent entries’;
-} else if (trend < -0.15 && current < 1.6) {
+}
+else if (trend < -0.2 && current < 1.6 && groundingMarkers === 0) {
 fc = ‘Descent Likely’; cls = ‘fc-descent’; conf = ‘Moderate’;
-basis = ‘ER declining trend’;
-} else {
-fc = ‘Stable Band’; cls = ‘fc-stable’; conf = ‘Moderate’;
+basis = ‘ER declining, no grounding signals’;
+}
+// ── ACTIVATION RISING ──
+else if (rateRapid && trend > 0 && current < 2.3) {
+fc = ‘Activation Rising’; cls = ‘fc-rising’; conf = ‘Moderate’;
+basis = ‘Rapid ER rise — stay selective’;
+}
+// ── BUILD MODE LIKELY ──
+else if (current >= 1.55 && current <= 2.1 && trend >= -0.05 && buildSignals >= 3 && (isEarlyMorning || isMorning)) {
+fc = ‘Build Mode Likely’; cls = ‘fc-build’; conf = buildSignals >= 6 ? ‘High’ : ‘Moderate’;
+basis = (isEarlyMorning ? ‘Early-morning window’ : ‘Morning build pattern’) + ’ + active structured logging’;
+}
+else if (current >= 1.6 && current <= 2.0 && trend >= 0 && groundingMarkers >= 1) {
+fc = ‘Build Mode Likely’; cls = ‘fc-build’; conf = ‘Moderate’;
+basis = ‘Stable ER + grounding signals active’;
+}
+// ── STABLE BAND ──
+else {
+fc = ‘Stable Band’; cls = ‘fc-stable’; conf = rateModerate ? ‘Moderate’ : ‘High’;
 basis = ‘Steady ER in usable range’;
 }
 
@@ -1560,6 +1636,149 @@ stateEl.className = ’forecast-state ’ + f.cls;
 confEl.textContent = f.conf;
 confEl.className = ’forecast-confidence ’ + f.cls;
 basisEl.textContent = ’Based on: ’ + f.basis;
+}
+
+// ── IMPORT ──
+let importType = ‘nightly’;
+let importParsed = null;
+
+function setImportType(type, el) {
+importType = type;
+document.querySelectorAll(’.import-type-btn’).forEach(b => b.classList.remove(‘active’));
+el.classList.add(‘active’);
+previewImport();
+}
+
+function openImport() {
+importParsed = null;
+document.getElementById(‘import-input’).value = ‘’;
+document.getElementById(‘import-preview-block’).style.display = ‘none’;
+document.getElementById(‘import-confirm-btn’).disabled = true;
+document.getElementById(‘import-confirm-btn’).style.opacity = ‘0.4’;
+document.getElementById(‘import-modal’).classList.add(‘open’);
+}
+
+function closeImport() {
+document.getElementById(‘import-modal’).classList.remove(‘open’);
+}
+
+function parseNightly(text) {
+const result = { type:‘nightly’, raw:text };
+
+// Date — look for day patterns
+const dateMatch = text.match(/(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)[,\s]+([A-Z][a-z]+.?\s+\d{1,2},?\s*\d{4})/i)
+|| text.match(/(March|April|May|June|July|August|September|October|November|December|January|February)\s+\d{1,2},?\s*\d{4}/i)
+|| text.match(/(\d{1,2}/\d{1,2}/\d{2,4})/);
+result.date = dateMatch ? dateMatch[0].trim() : ‘Unknown Date’;
+
+// ER — look for ER values
+const erMatches = text.match(/\d+.\d+[ABC]/g) || text.match(/ER[:\s]+([\d.]+[ABC]?)/gi);
+if (erMatches) {
+result.erClose = erMatches[erMatches.length-1];
+result.erArc = erMatches.slice(0,5).join(’ → ’);
+}
+
+// Carryover
+const carryMatch = text.match(/Carryover[:\s]+([^\n]+)/gi);
+result.carryover = carryMatch ? carryMatch.map(m => m.replace(/^Carryover[:\s]+/i,’’)).join(’, ’) : ‘’;
+
+// Markers — extract bullet/dash lines with Marker keyword
+const markerLines = text.match(/Marker[:\s]+([^\n]+)/gi) || [];
+result.markers = markerLines.map(m => m.replace(/^Marker[:\s]+/i,’’).trim()).slice(0,20).join(’\n  ’);
+
+// Key phrase / summary (last paragraph or final line)
+const lines = text.split(’\n’).filter(l => l.trim().length > 20);
+result.note = lines[lines.length-1] || ‘’;
+
+// Build events log from markers
+result.events = markerLines.map(m => ’  —  Marker: ’ + m.replace(/^Marker[:\s]+/i,’’).trim()).join(’\n’);
+
+return result;
+}
+
+function parseDeca(text) {
+const result = { type:‘deca’, raw:text };
+
+// Date range
+const rangeMatch = text.match(/(?:March|April|May|June|July|August|September|October|November|December|January|February)\s+\d{1,2}[–-—]+\d{1,2},?\s*\d{4}/i)
+|| text.match(/Deca\s+(?:Form|Report)?\s*(?:0?[12])?[:\s]+([^\n]+)/i);
+result.date = rangeMatch ? rangeMatch[0].trim() : ‘Deca Period’;
+
+// Classification
+const classMatch = text.match(/(?:classification|type|arc)[:\s]+([^\n]+)/i);
+result.note = classMatch ? classMatch[1].trim() : ‘’;
+
+// Pattern signals
+const patternLines = text.match(/Pattern\s+\d+[^\n]*/gi) || [];
+result.markers = patternLines.slice(0,5).join(’\n  ’);
+
+result.erArc = ‘’;
+result.erClose = ‘’;
+result.carryover = ‘’;
+
+const lines = text.split(’\n’).filter(l => l.trim().length > 30);
+if (!result.note) result.note = lines[lines.length-1] || ‘’;
+
+result.events = patternLines.map(p => ’  —  ’ + p.trim()).join(’\n’);
+
+return result;
+}
+
+function previewImport() {
+const text = document.getElementById(‘import-input’).value.trim();
+const preview = document.getElementById(‘import-preview’);
+const block = document.getElementById(‘import-preview-block’);
+const btn = document.getElementById(‘import-confirm-btn’);
+
+if (text.length < 50) {
+block.style.display = ‘none’;
+btn.disabled = true;
+btn.style.opacity = ‘0.4’;
+importParsed = null;
+return;
+}
+
+importParsed = importType === ‘nightly’ ? parseNightly(text) : parseDeca(text);
+
+const rows = [
+{ k:‘Type’, v: importType === ‘nightly’ ? ‘Nightly Report’ : ‘Deca Form’ },
+{ k:‘Date’, v: importParsed.date },
+{ k:‘ER Close’, v: importParsed.erClose || ‘—’ },
+{ k:‘ER Arc’, v: importParsed.erArc || ‘—’ },
+{ k:‘Carryover’, v: importParsed.carryover || ‘—’ },
+{ k:‘Note’, v: importParsed.note ? importParsed.note.substring(0,80) + (importParsed.note.length > 80 ? ‘…’:’’) : ‘—’ },
+];
+
+preview.innerHTML = rows.map(r => ` <div class="import-preview-row"> <span class="import-preview-key">${r.k}</span> <span class="import-preview-val">${r.v}</span> </div>`).join(’’);
+
+block.style.display = ‘block’;
+btn.disabled = false;
+btn.style.opacity = ‘1’;
+}
+
+function confirmImport() {
+if (!importParsed) return;
+
+const nightly = {
+date: importParsed.date,
+dateKey: importParsed.date,
+er: importParsed.erClose || ‘—’,
+note: importParsed.note || ‘(imported)’,
+events: importParsed.events || importParsed.raw.substring(0, 800),
+erArc: importParsed.erArc || ‘’,
+timestamp: new Date().toISOString(),
+imported: true,
+importType: importParsed.type
+};
+
+state.nightlies.push(nightly);
+// Sort by timestamp descending
+state.nightlies.sort((a,b) => new Date(b.timestamp) - new Date(a.timestamp));
+
+closeImport();
+buildArchive();
+saveState();
+showToast(`${importParsed.type === 'deca' ? 'Deca' : 'Nightly'} imported: ${importParsed.date}`);
 }
 
 </script>
