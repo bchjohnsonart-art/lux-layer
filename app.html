@@ -9,9 +9,9 @@
 <meta name="theme-color" content="#0a0d0f">
 <title>LUX Layer</title>
 
-<!-- PWA Icons looking for logo.png in your GitHub repo -->
-<link rel="apple-touch-icon" href="logo.png">
-<link rel="icon" type="image/png" href="logo.png">
+<!-- New filename to bust iOS Safari Cache -->
+<link rel="apple-touch-icon" href="lux-gold.png">
+<link rel="icon" type="image/png" href="lux-gold.png">
 
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -266,8 +266,8 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
           <span class="pill p-close" id="cpill">Close Day</span>
         </div>
       </div>
-      <!-- Logo pulling from GitHub Pages root -->
-      <img class="hdr-logo" src="logo.png" onerror="this.style.display='none'" alt="LUX Logo">
+      <!-- Logo pulling from GitHub Pages root and embedded Base64 fallback -->
+      <img class="hdr-logo" src="data:image/jpeg;base64,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iIiIiIiIiIiIiIiIpL3d74LLtTtjXkNjrWyUZJ8Xj2f6mt9VGi76Gsmt1ZBVU7+znhkbJG8fVc0gg+oUXVZFtTkI8k7/ADGub4XFr/LdSNOnDT5yDNt+44HyN7fNWx3ndMvvOz6OviZxy2uoEz8c8ROHA78eAqo55FXz0zfLftO0PT1jo2y0lypzFUwZ91xHDIw+BBzj5FUz2jaFq9nuqaq01QL42ntKefumiJ9l36HwIKx3sxqhhQo1Am+7FguJAPK/eH+117+K1HtBpwiRIValu9DitAJHO3dPzb9FNO6D/dap7+dNy/zFy2xDO8JoUD/len/cOXHdCz2OqseNNzz5SLs2vsLt4fQob7RP0XH+e5Qczpjmf/cu/ktUvL/4Qkv3jf5rlNOu9VxaH0xW3yWnkq4aYMLoonBrnZeG8ifjlRHWb2toZTEUVgrpqk+62okYxmfMjJ9Apsv1godTWma23OmFVQTENlgcS3iwQ4cxgjmFg7Ns30rpiYVFusFFRzs5io7Lic34OfnCyijTmHZaVd70lXxo2a4s7K0tsLAkG+99m8Vo9Ula5MTA93zDYcK2t25nXubkXHK25Uc7N9Jah13q2LXmsY/o4gb/AAy3OaWhng7hPMNGSRnm48z0C7953XkNk0kzT1PKDcLnjtWtPOOnBySfDiIwPIFZPaZvA2HR1JJT2uaK9XoggRwv4oYneMjxyP8AhaSfHCqXqDUFfqi8VNzuVQ6prah3E+R34ADuAHIAdAtdwxh+fxBU4VaqcEQZeDb2UO1hpq0Ab5Qe8XH4jtptmeIK1J0WQiUqQi+1jRL+0fe510cSdrkaAD4R13xx5lXL3c4HxbJ7RxjAkmne0n7JkOPyKp9a7bUXi5U1DSRmaqqZGxRRt6uc44AV5KdtLsy0CxrnD6NZqDm77ZY3JP3nfmpjtWmg+SlqbD1iRHggcbAEepcAPmo3s3ly2bmJ9+jGMsT4kH0DTf5Kmm0iaOfaBqSSLnG64zkEf9QrXF3VlTJWVU08pzLK90jz4uJyfxK6VtUrB+zy8ODe+UAeQsslmYvt474v4iT5m6IiLqXOiIiIiIiIiIiIiIiIiIiIiIiIiIiLOaV1te9FVT6iy3GahkfgSBhBZIB0DmnIPzCl3T29leKRgjvFopbi3oZKd5gf8cc259FAyKtVTDdIrJzT0u17uezv+QsfVT1Pr1TpQyycctby3Hkbj0VqqXex01I1vb2q6U7gPqiOQevEF31O9TpAe3FRXaR3h2MbfxL1U5FTHdmOHS64Y4DlnP9dfVWsdoNcAsXtPXKFZC9b2sLWFto089zu6SuqAAPusH6qJtZbZNU64Y+GuuBhon9aOkHZREeBA5u+8StIRWal4PodIcIkrLDOPvG7iPAuJt8rKAqGKaxU2lkxHOU8BZo+YFr/O62LRN6pbPcpXVuBDNH2ZeWF4bh7X4c0cy13Dwuxzw48j0Pp1peKCsgpaSgqZK5kcs05mkZwhnacP7tvstyBw5J4RkuOB3nVEVgMhCM0Ju5zDhw2tfa+x526KEE7EEuZawsePHe9uW/RERFJLgREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREX//2Q==" onerror="this.style.display='none'" alt="LUX Logo">
     </div>
     
     <div class="blk">
@@ -505,10 +505,16 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 </div>
 
 <script>
+// Visual error logger directly on screen
 window.onerror = function(msg, src, line, col, err) {
   console.error('GLOBAL ERROR:', msg, src, line, col, err);
+  var d = document.createElement('div');
+  d.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:#7a2e2e;color:white;padding:12px;font-family:monospace;font-size:11px;z-index:99999;border-top:1px solid #d46b6b;';
+  d.innerHTML = '<b>CRASH:</b> ' + msg + '<br>Line: ' + line;
+  document.body.appendChild(d);
 };
 
+// Safe event binding helper
 function on(id, evt, fn) {
   var el = document.getElementById(id);
   if (!el) { console.warn('Missing element:', id); return; }
@@ -567,11 +573,11 @@ function tick() {
       h = n.getHours() % 12 || 12,
       m = ('0' + n.getMinutes()).slice(-2),
       ap = n.getHours() >= 12 ? 'PM' : 'AM';
-  var ht = document.getElementById('ht');
+  var ht = g('ht');
   if (ht) ht.innerHTML = h + ':' + m + '<span>' + ap + '</span>';
   var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
   var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  var hd = document.getElementById('hd');
+  var hd = g('hd');
   if (hd) hd.textContent = days[n.getDay()] + '  ' + months[n.getMonth()] + ' ' + n.getDate() + ', ' + n.getFullYear();
 }
 
