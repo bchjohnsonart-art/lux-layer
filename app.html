@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -12,14 +11,14 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
---bg:#0a0d0f;--bg3:#141a1e;--surface:#1a2128;--surface2:#1f2830;
---border:#252f38;--border2:#2e3a45;
---text:#d8e4ec;--text2:#8fa8b8;--text3:#566878;
---gold:#c8a96e;--blue:#5b9fd4;--blue-dim:#2e5a7e;--blue-light:#a8cfe8;
---green:#6dbf8a;--amber:#d4945b;--violet:#9b7fd4;--red:#d46b6b;
---accent:#4a8fa8;
---mono:ui-monospace,"SF Mono","Courier New",monospace;
---sans:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
+  --bg:#0a0d0f;--bg3:#141a1e;--surface:#1a2128;--surface2:#1f2830;
+  --border:#252f38;--border2:#2e3a45;
+  --text:#d8e4ec;--text2:#8fa8b8;--text3:#566878;
+  --gold:#c8a96e;--blue:#5b9fd4;--blue-dim:#2e5a7e;--blue-light:#a8cfe8;
+  --green:#6dbf8a;--amber:#d4945b;--violet:#9b7fd4;--red:#d46b6b;
+  --accent:#4a8fa8;
+  --mono:ui-monospace,"SF Mono","Courier New",monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
 }
 html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.5;overflow:hidden;-webkit-text-size-adjust:100%}
 #app{height:100vh;width:100%;max-width:430px;margin:0 auto;position:relative;overflow:hidden}
@@ -27,10 +26,16 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 .screen.active{opacity:1;pointer-events:all}
 .sb{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;padding-bottom:80px}
 .sb::-webkit-scrollbar{display:none}
+
 .topbar{display:flex;align-items:center;justify-content:space-between;padding:52px 20px 12px;border-bottom:1px solid var(--border);background:var(--bg);flex-shrink:0}
 .topbar-title{font-family:var(--mono);font-size:11px;letter-spacing:0.12em;color:var(--text3);text-transform:uppercase}
 .tbtn{font-family:var(--mono);font-size:11px;color:var(--accent);padding:4px 8px;border:1px solid var(--border2);border-radius:4px;background:transparent;cursor:pointer}
-.hdr{padding:24px 20px 16px;border-bottom:1px solid var(--border)}
+
+/* Header and Logo Update */
+.hdr{padding:24px 20px 16px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:flex-start;}
+.hdr-left{flex:1;}
+.hdr-logo{width:60px;height:60px;border-radius:14px;border:1px solid var(--border2);object-fit:cover;flex-shrink:0;box-shadow:0 4px 12px rgba(0,0,0,0.5);}
+
 .hdate{font-family:var(--mono);font-size:11px;color:var(--text3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px}
 .htime{font-family:var(--mono);font-size:34px;font-weight:300;color:var(--text);letter-spacing:-0.02em;line-height:1}
 .htime span{font-size:14px;color:var(--text3);margin-left:6px}
@@ -40,6 +45,7 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 .p-closed{background:rgba(91,159,212,0.1);color:var(--blue);border-color:rgba(91,159,212,0.2)}
 .p-er{color:var(--amber);background:rgba(212,148,91,0.08);border-color:rgba(212,148,91,0.2)}
 .p-close{background:rgba(155,127,212,0.1);color:var(--violet);border-color:rgba(155,127,212,0.2)}
+
 .blk{margin:14px 20px 0;background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden}
 .bh{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid var(--border)}
 .bl{font-family:var(--mono);font-size:9px;letter-spacing:0.15em;color:var(--text3);text-transform:uppercase}
@@ -52,6 +58,7 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 .fw-b{font-family:var(--mono);font-size:9px;padding:2px 8px;border-radius:3px;letter-spacing:0.06em;border:1px solid}
 .fw-on{background:rgba(107,191,138,0.1);color:var(--green);border-color:rgba(107,191,138,0.2)}
 .fw-off{background:rgba(212,91,91,0.1);color:var(--red);border-color:rgba(212,91,91,0.2)}
+
 .mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:10px 12px}
 .mbtn{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 6px;cursor:pointer;text-align:center;transition:background 0.15s}
 .mbtn.on{background:rgba(74,143,168,0.1);border-color:rgba(74,143,168,0.4)}
@@ -61,6 +68,7 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 .macts{display:flex;gap:6px;padding:0 12px 10px}
 .mact{flex:1;padding:8px;border-radius:6px;font-family:var(--mono);font-size:10px;cursor:pointer;border:1px solid var(--border2);background:var(--bg3);color:var(--text3);text-transform:uppercase;text-align:center}
 .mact-p{background:rgba(74,143,168,0.08);color:var(--accent);border-color:rgba(74,143,168,0.25)}
+
 .fc-s{color:var(--green)}.fc-b{color:var(--blue-light)}.fc-r{color:var(--amber)}.fc-d{color:var(--red)}.fc-dn{color:var(--text3)}
 .qstrip{display:flex;gap:8px;padding:14px 20px 0;overflow-x:auto}
 .qstrip::-webkit-scrollbar{display:none}
@@ -81,21 +89,25 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 .lt{font-size:12px;color:var(--text2);flex:1}
 .ltag{font-family:var(--mono);font-size:9px;padding:2px 6px;border-radius:3px;text-transform:uppercase}
 .lc{font-family:var(--mono);font-size:9px;color:var(--text3);padding:2px 6px;border:1px solid var(--border2);border-radius:3px;background:transparent;cursor:pointer}
+
 .er-sec{margin:14px 20px 0}
 .slbl{font-family:var(--mono);font-size:9px;letter-spacing:0.15em;color:var(--text3);text-transform:uppercase;margin-bottom:8px}
 .er-w{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 16px}
 .er-svg{width:100%;height:70px;display:block}
 .er-m{display:flex;justify-content:space-between;margin-top:4px}
 .er-m span{font-family:var(--mono);font-size:9px;color:var(--text3)}
+
 .fc-blk{margin:14px 20px 0;background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden}
 .fc-body{padding:12px 14px}
 .fc-st{font-family:var(--mono);font-size:13px;font-weight:500;margin-bottom:4px}
 .fc-bs{font-size:11px;color:var(--text3);font-style:italic}
+
 .navbar{position:absolute;bottom:0;left:0;right:0;height:70px;background:var(--bg);border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-around;padding-bottom:6px;z-index:10}
 .ni{display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;padding:6px 14px;border-radius:8px}
 .ni.on .nl{color:var(--accent)}
 .nic{font-size:17px;line-height:1}
 .nl{font-family:var(--mono);font-size:9px;letter-spacing:0.08em;color:var(--text3);text-transform:uppercase}
+
 .qlg{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;padding:16px 20px}
 .qlb{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 12px;cursor:pointer;display:flex;align-items:center;gap:10px}
 .qld{width:8px;height:8px;border-radius:50%;flex-shrink:0}
@@ -103,6 +115,7 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 .ql-e{grid-column:span 2;background:rgba(212,148,91,0.06);border-color:rgba(212,148,91,0.15)}
 .ql-e .qll{color:var(--amber)}
 .ql-n{grid-column:span 2}
+
 .tlf{padding:16px 20px}
 .tli{display:flex;gap:14px;padding:0 0 20px;position:relative}
 .tli::after{content:"";position:absolute;left:7px;top:18px;bottom:0;width:1px;background:var(--border)}
@@ -126,6 +139,7 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 .sy{background:rgba(155,127,212,0.1);color:var(--violet)}
 .tled{font-family:var(--mono);font-size:9px;color:var(--text3);padding:2px 6px;border:1px solid var(--border);border-radius:3px;background:transparent;cursor:pointer;margin-left:6px}
 .tldl{font-family:var(--mono);font-size:9px;color:var(--red);padding:2px 5px;border:1px solid rgba(212,91,91,0.2);border-radius:3px;background:transparent;cursor:pointer;margin-left:4px}
+
 .ss{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:40px 28px;text-align:center}
 .sstep{font-family:var(--mono);font-size:9px;letter-spacing:0.2em;color:var(--text3);text-transform:uppercase;margin-bottom:32px}
 .sbdy{flex:1;display:flex;flex-direction:column;justify-content:center;width:100%}
@@ -142,6 +156,7 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 .cn{font-size:15px;font-weight:500;margin-bottom:3px}
 .cd{font-size:12px;color:var(--text3);line-height:1.4}
 .c-cl{color:var(--blue-light)}.c-tu{color:var(--amber)}.c-co{color:var(--red)}
+
 .pb{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 16px;cursor:pointer;text-align:left;display:flex;align-items:center;gap:12px;margin-bottom:8px}
 .pb.on{background:rgba(74,143,168,0.08);border-color:rgba(74,143,168,0.3)}
 .pc{width:18px;height:18px;border:1px solid var(--border2);border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
@@ -150,10 +165,12 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 .pb.on .pcm{opacity:1}
 .pn{font-size:14px;font-weight:500;color:var(--text)}
 .pd{font-size:11px;color:var(--text3);margin-top:1px}
+
 .ta{width:100%;background:var(--surface);border:1px solid var(--border2);border-radius:10px;padding:14px 16px;color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.5;outline:none;resize:none;min-height:90px;-webkit-appearance:none}
 .ta:focus{border-color:var(--accent)}
 .ta::placeholder{color:var(--text3)}
 .cc{font-family:var(--mono);font-size:10px;color:var(--text3);text-align:right;margin-top:4px}
+
 .spl{font-family:var(--mono);font-size:9px;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:6px;margin-top:16px}
 .sp-c{color:var(--accent)}.sp-f{color:var(--text3)}
 .of{margin-bottom:14px}
@@ -164,10 +181,13 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 .ok{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:0.06em;text-transform:uppercase;min-width:90px}
 .ov{font-size:12px;color:var(--text2);text-align:right;flex:1;line-height:1.4}
 .ov-g{color:var(--green)}.ov-w{color:var(--amber)}
+
 .si{width:100%;background:var(--surface);border:1px solid var(--border2);border-radius:8px;padding:12px 14px;color:var(--text);font-family:var(--sans);font-size:15px;outline:none;-webkit-appearance:none}
 .si:focus{border-color:var(--accent)}
 .si::placeholder{color:var(--text3)}
+
 .cb2{width:100%;padding:15px;border-radius:10px;font-family:var(--mono);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;border:1px solid rgba(74,143,168,0.3);background:rgba(74,143,168,0.1);color:var(--accent);margin-top:20px}
+
 .ov2{position:fixed;inset:0;background:rgba(0,0,0,0.75);display:flex;align-items:flex-end;z-index:100;opacity:0;pointer-events:none;transition:opacity 0.2s}
 .ov2.open{opacity:1;pointer-events:all}
 .sh{width:100%;max-width:430px;margin:0 auto;background:var(--bg3);border-top:1px solid var(--border2);border-radius:16px 16px 0 0;padding:20px 20px 44px;transform:translateY(100%);transition:transform 0.25s ease;max-height:85vh;overflow-y:auto}
@@ -179,7 +199,9 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 .shb{flex:1;padding:13px;border-radius:8px;font-family:var(--mono);font-size:12px;letter-spacing:0.06em;cursor:pointer;border:1px solid var(--border2)}
 .shb-ok{background:rgba(74,143,168,0.12);color:var(--accent);border-color:rgba(74,143,168,0.3)}
 .shb-cl{background:var(--surface);color:var(--text3)}
+
 .rh-pv{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px;font-family:var(--mono);font-size:10px;color:var(--text3);line-height:1.8;margin-bottom:16px;white-space:pre-wrap;max-height:160px;overflow-y:auto}
+
 .nii{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-bottom:8px}
 .nid{font-family:var(--mono);font-size:10px;color:var(--accent);margin-bottom:4px}
 .nin{font-size:12px;color:var(--text2);line-height:1.4}
@@ -194,6 +216,7 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 .ir:last-child{border-bottom:none}
 .ik{font-family:var(--mono);font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em}
 .iv{color:var(--text2);max-width:60%;text-align:right}
+
 .vfab{position:fixed;bottom:82px;right:18px;width:52px;height:52px;border-radius:50%;background:rgba(74,143,168,0.15);border:1px solid rgba(74,143,168,0.35);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:50;font-family:var(--mono);font-size:12px;color:var(--accent)}
 .vfab.on{background:rgba(212,91,91,0.18);border-color:rgba(212,91,91,0.5)}
 .vov{position:fixed;inset:0;background:rgba(0,0,0,0.85);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:150;opacity:0;pointer-events:none;transition:opacity 0.2s;padding:28px}
@@ -211,210 +234,233 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 .va{display:flex;gap:10px;margin-top:8px}
 .vac{padding:12px 20px;border-radius:8px;font-family:var(--mono);font-size:11px;cursor:pointer;border:1px solid var(--border2);background:var(--surface);color:var(--text2);text-transform:uppercase}
 .vac-ok{background:rgba(74,143,168,0.1);color:var(--accent);border-color:rgba(74,143,168,0.3)}
+
 .pov{position:fixed;inset:0;background:var(--bg);z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s}
 .pov.on{opacity:1;pointer-events:all}
 .per{font-family:var(--mono);font-size:52px;font-weight:300;color:var(--amber);text-align:center;margin-bottom:4px}
 .plbl{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:0.1em;text-transform:uppercase;text-align:center;margin-bottom:28px}
 .pa{display:flex;gap:10px;width:100%;max-width:280px}
 .pac{flex:1;padding:14px;border-radius:8px;font-family:var(--mono);font-size:11px;cursor:pointer;border:1px solid var(--border2);background:var(--surface);color:var(--text2);text-align:center;text-transform:uppercase}
+
 .toast{position:fixed;top:60px;left:50%;transform:translateX(-50%);background:var(--surface2);border:1px solid var(--border2);border-radius:8px;padding:10px 18px;font-family:var(--mono);font-size:11px;color:var(--green);z-index:300;opacity:0;transition:opacity 0.2s;white-space:nowrap;pointer-events:none}
 .toast.show{opacity:1}
 </style>
 </head>
 <body>
 <div id="app">
+
 <div class="screen active" id="s-home">
-<div class="sb">
-<div class="hdr"><div class="hdate" id="hd"></div><div class="htime" id="ht"></div>
-<div class="srow"><span class="pill p-open" id="dpill">Day Open</span><span class="pill p-er" id="erpill">ER --</span><span class="pill p-close" id="cpill">Close Day</span></div></div>
-<div class="blk">
-<div class="brow"><span class="rk">TODAY</span><span class="rv" id="p-today">Early morning</span><button class="ebtn" data-pf="today">edit</button></div>
-<div class="brow"><span class="rk">PRIORITY</span><span class="rv rv-w" id="p-priority">Framework</span><button class="ebtn" data-pf="priority">edit</button></div>
-<div class="brow"><span class="rk">OPEN LOOP</span><span class="rv rv-c" id="p-loop">--</span><button class="ebtn" data-pf="loop">edit</button></div>
-<div class="brow"><span class="rk">RISK</span><span class="rv" id="p-risk">None flagged</span><button class="ebtn" data-pf="risk">edit</button></div>
-</div>
-<div class="blk">
-<div class="bh"><span class="bl">Model Layer</span><span class="fw-b fw-on" id="fwb">Framework Loaded</span></div>
-<div class="mgrid">
-<div class="mbtn on" data-m="LUX"><div class="mn">LUX</div><div class="mr">Primary</div></div>
-<div class="mbtn" data-m="Claude"><div class="mn">Claude</div><div class="mr">Logic</div></div>
-<div class="mbtn" data-m="Gemini"><div class="mn">Gemini</div><div class="mr">Research</div></div>
-<div class="mbtn" data-m="Grok"><div class="mn">Grok</div><div class="mr">Alt read</div></div>
-<div class="mbtn" data-m="Perplx"><div class="mn">Perplx</div><div class="mr">Search</div></div>
-<div class="mbtn" data-m="Kimi"><div class="mn">Kimi</div><div class="mr">Support</div></div>
-</div>
-<div class="macts"><div class="mact mact-p" id="rhb">Rehydrate to <span id="rhm">LUX</span></div><div class="mact" id="fwb2">FW: <span id="fwt">On</span></div></div>
-</div>
-<div class="blk">
-<div class="bh"><span class="bl">Current Position</span></div>
-<div class="brow"><span class="rk">Moment</span><span class="rv rv-hl" id="pos-m">--</span></div>
-<div class="brow"><span class="rk">Sub-Loops</span><span class="rv rv-w" id="pos-s">0</span></div>
-<div class="brow"><span class="rk">Carryover</span><span class="rv rv-c" id="pos-c">none</span></div>
-</div>
-<div class="qstrip">
-<div class="qb qb-m" data-lg="Marker">+ Marker</div>
-<div class="qb qb-e" id="qa-er">ER Update</div>
-<div class="qb qb-l" id="qa-cl">Close Loop</div>
-<div class="qb" data-lg="Sub-Loop Open">Sub-Loop</div>
-<div class="qb" data-lg="Milestone">Milestone</div>
-</div>
-<div class="mgrd">
-<div class="ab ab-s" id="stab-btn"><div class="ai">O</div><div class="al">Stabilize</div><div class="as">Ground / pressure / optionality</div></div>
-<div class="ab" data-nav="s-log"><div class="ai">+</div><div class="al">Log</div><div class="as">Marker, Milestone, ER</div></div>
-<div class="ab" data-nav="s-tl"><div class="ai">[]</div><div class="al">Day View</div><div class="as">Timeline</div></div>
-<div class="ab" data-nav="s-arc"><div class="ai">^</div><div class="al">Archive</div><div class="as">Nightlies / Decas</div></div>
-<div class="ab ab-p" id="pb"><div class="ai">P</div><div class="al">Focus Mode</div><div class="as">Minimal / ER + Marker only</div></div>
-</div>
-<div class="blk" style="margin-bottom:0">
-<div class="bh" id="lhdr" style="cursor:pointer"><span class="bl">Open Loops</span><span class="fw-b" id="lcnt" style="background:rgba(155,127,212,0.1);color:var(--violet);border-color:rgba(155,127,212,0.2)">0</span></div>
-<div id="llist"></div>
-</div>
-<div class="er-sec"><div class="slbl">ER Arc</div><div class="er-w"><svg class="er-svg" id="ersv" viewBox="0 0 320 70" preserveAspectRatio="none"></svg><div class="er-m"><span>Wake</span><span id="ern" style="color:var(--amber)"></span><span>Now</span></div></div></div>
-<div class="fc-blk"><div class="bh"><span class="bl">State Forecast</span><span class="fw-b fc-s" id="fcc">--</span></div><div class="fc-body"><div class="fc-st fc-s" id="fcs">--</div><div class="fc-bs" id="fcb">Log ER entries to activate</div></div></div>
-<div style="height:16px"></div>
-</div>
-<nav class="navbar">
-<div class="ni on" data-nav="s-home"><div class="nic">H</div><div class="nl">Home</div></div>
-<div class="ni" data-nav="s-log"><div class="nic">+</div><div class="nl">Log</div></div>
-<div class="ni" id="nav-s1"><div class="nic">O</div><div class="nl">Stabilize</div></div>
-<div class="ni" data-nav="s-tl"><div class="nic">[]</div><div class="nl">Day</div></div>
-</nav>
+  <div class="sb">
+    <div class="hdr">
+      <div class="hdr-left">
+        <div class="hdate" id="hd"></div>
+        <div class="htime" id="ht"></div>
+        <div class="srow">
+          <span class="pill p-open" id="dpill">Day Open</span>
+          <span class="pill p-er" id="erpill">ER --</span>
+          <span class="pill p-close" id="cpill">Close Day</span>
+        </div>
+      </div>
+      <!-- Injecting the gold foil logo using the base64 artifact you provided previously -->
+      <img class="hdr-logo" src="data:image/jpeg;base64,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iIiIiIiIiIiIiIiIpL3d74LLtTtjXkNjrWyUZJ8Xj2f6mt9VGi76Gsmt1ZBVU7+znhkbJG8fVc0gg+oUXVZFtTkI8k7/ADGub4XFr/LdSNOnDT5yDNt+44HyN7fNWx3ndMvvOz6OviZxy2uoEz8c8ROHA78eAqo55FXz0zfLftO0PT1jo2y0lypzFUwZ91xHDIw+BBzj5FUz2jaFq9nuqaq01QL42ntKefumiJ9l36HwIKx3sxqhhQo1Am+7FguJAPK/eH+117+K1HtBpwiRIValu9DitAJHO3dPzb9FNO6D/dap7+dNy/zFy2xDO8JoUD/len/cOXHdCz2OqseNNzz5SLs2vsLt4fQob7RP0XH+e5Qczpjmf/cu/ktUvL/4Qkv3jf5rlNOu9VxaH0xW3yWnkq4aYMLoonBrnZeG8ifjlRHWb2toZTEUVgrpqk+62okYxmfMjJ9Apsv1godTWma23OmFVQTENlgcS3iwQ4cxgjmFg7Ns30rpiYVFusFFRzs5io7Lic34OfnCyijTmHZaVd70lXxo2a4s7K0tsLAkG+99m8Vo9Ula5MTA93zDYcK2t25nXubkXHK25Uc7N9Jah13q2LXmsY/o4gb/AAy3OaWhng7hPMNGSRnm48z0C7953XkNk0kzT1PKDcLnjtWtPOOnBySfDiIwPIFZPaZvA2HR1JJT2uaK9XoggRwv4oYneMjxyP8AhaSfHCqXqDUFfqi8VNzuVQ6prah3E+R34ADuAHIAdAtdwxh+fxBU4VaqcEQZeDb2UO1hpq0Ab5Qe8XH4jtptmeIK1J0WQiUqQi+1jRL+0fe510cSdrkaAD4R13xx5lXL3c4HxbJ7RxjAkmne0n7JkOPyKp9a7bUXi5U1DSRmaqqZGxRRt6uc44AV5KdtLsy0CxrnD6NZqDm77ZY3JP3nfmpjtWmg+SlqbD1iRHggcbAEepcAPmo3s3ly2bmJ9+jGMsT4kH0DTf5Kmm0iaOfaBqSSLnG64zkEf9QrXF3VlTJWVU08pzLK90jz4uJyfxK6VtUrB+zy8ODe+UAeQsslmYvt474v4iT5m6IiLqXOiIiIiIiIiIiIiIiIiIiIiIiIiIiLOaV1te9FVT6iy3GahkfgSBhBZIB0DmnIPzCl3T29leKRgjvFopbi3oZKd5gf8cc259FAyKtVTDdIrJzT0u17uezv+QsfVT1Pr1TpQyycctby3Hkbj0VqqXex01I1vb2q6U7gPqiOQevEF31O9TpAe3FRXaR3h2MbfxL1U5FTHdmOHS64Y4DlnP9dfVWsdoNcAsXtPXKFZC9b2sLWFto089zu6SuqAAPusH6qJtZbZNU64Y+GuuBhon9aOkHZREeBA5u+8StIRWal4PodIcIkrLDOPvG7iPAuJt8rKAqGKaxU2lkxHOU8BZo+YFr/O62LRN6pbPcpXVuBDNH2ZeWF4bh7X4c0cy13Dwuxzw48j0Pp1peKCsgpaSgqZK5kcs05mkZwhnacP7tvstyBw5J4RkuOB3nVEVgMhCM0Ju5zDhw2tfa+x526KEE7EEuZawsePHe9uW/RERFJLgREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREX//2Q==">
+    </div>
+    
+    <div class="blk">
+      <div class="brow"><span class="rk">TODAY</span><span class="rv" id="p-today">Early morning</span><button class="ebtn" data-pf="today">edit</button></div>
+      <div class="brow"><span class="rk">PRIORITY</span><span class="rv rv-w" id="p-priority">Framework</span><button class="ebtn" data-pf="priority">edit</button></div>
+      <div class="brow"><span class="rk">OPEN LOOP</span><span class="rv rv-c" id="p-loop">--</span><button class="ebtn" data-pf="loop">edit</button></div>
+      <div class="brow"><span class="rk">RISK</span><span class="rv" id="p-risk">None flagged</span><button class="ebtn" data-pf="risk">edit</button></div>
+    </div>
+    <div class="blk">
+      <div class="bh"><span class="bl">Model Layer</span><span class="fw-b fw-on" id="fwb">Framework Loaded</span></div>
+      <div class="mgrid">
+        <div class="mbtn on" data-m="LUX"><div class="mn">LUX</div><div class="mr">Primary</div></div>
+        <div class="mbtn" data-m="Claude"><div class="mn">Claude</div><div class="mr">Logic</div></div>
+        <div class="mbtn" data-m="Gemini"><div class="mn">Gemini</div><div class="mr">Research</div></div>
+        <div class="mbtn" data-m="Grok"><div class="mn">Grok</div><div class="mr">Alt read</div></div>
+        <div class="mbtn" data-m="Perplx"><div class="mn">Perplx</div><div class="mr">Search</div></div>
+        <div class="mbtn" data-m="Kimi"><div class="mn">Kimi</div><div class="mr">Support</div></div>
+      </div>
+      <div class="macts"><div class="mact mact-p" id="rhb">Rehydrate to <span id="rhm">LUX</span></div><div class="mact" id="fwb2">FW: <span id="fwt">On</span></div></div>
+    </div>
+    <div class="blk">
+      <div class="bh"><span class="bl">Current Position</span></div>
+      <div class="brow"><span class="rk">Moment</span><span class="rv rv-hl" id="pos-m">--</span></div>
+      <div class="brow"><span class="rk">Sub-Loops</span><span class="rv rv-w" id="pos-s">0</span></div>
+      <div class="brow"><span class="rk">Carryover</span><span class="rv rv-c" id="pos-c">none</span></div>
+    </div>
+    <div class="qstrip">
+      <div class="qb qb-m" data-lg="Marker">+ Marker</div>
+      <div class="qb qb-e" id="qa-er">ER Update</div>
+      <div class="qb qb-l" id="qa-cl">Close Loop</div>
+      <div class="qb" data-lg="Sub-Loop Open">Sub-Loop</div>
+      <div class="qb" data-lg="Milestone">Milestone</div>
+    </div>
+    <div class="mgrd">
+      <div class="ab ab-s" id="stab-btn"><div class="ai">O</div><div class="al">Stabilize</div><div class="as">Ground / pressure / optionality</div></div>
+      <div class="ab" data-nav="s-log"><div class="ai">+</div><div class="al">Log</div><div class="as">Marker, Milestone, ER</div></div>
+      <div class="ab" data-nav="s-tl"><div class="ai">[]</div><div class="al">Day View</div><div class="as">Timeline</div></div>
+      <div class="ab" data-nav="s-arc"><div class="ai">^</div><div class="al">Archive</div><div class="as">Nightlies / Decas</div></div>
+      <div class="ab ab-p" id="pb"><div class="ai">P</div><div class="al">Focus Mode</div><div class="as">Minimal / ER + Marker only</div></div>
+    </div>
+    <div class="blk" style="margin-bottom:0">
+      <div class="bh" id="lhdr" style="cursor:pointer"><span class="bl">Open Loops</span><span class="fw-b" id="lcnt" style="background:rgba(155,127,212,0.1);color:var(--violet);border-color:rgba(155,127,212,0.2)">0</span></div>
+      <div id="llist"></div>
+    </div>
+    <div class="er-sec">
+      <div class="slbl">ER Arc</div>
+      <div class="er-w">
+        <svg class="er-svg" id="ersv" viewBox="0 0 320 70" preserveAspectRatio="none"></svg>
+        <div class="er-m"><span>Wake</span><span id="ern" style="color:var(--amber)"></span><span>Now</span></div>
+      </div>
+    </div>
+    <div class="fc-blk">
+      <div class="bh"><span class="bl">State Forecast</span><span class="fw-b fc-s" id="fcc">--</span></div>
+      <div class="fc-body"><div class="fc-st fc-s" id="fcs">--</div><div class="fc-bs" id="fcb">Log ER entries to activate</div></div>
+    </div>
+    <div style="height:16px"></div>
+  </div>
+  <nav class="navbar">
+    <div class="ni on" data-nav="s-home"><div class="nic">H</div><div class="nl">Home</div></div>
+    <div class="ni" data-nav="s-log"><div class="nic">+</div><div class="nl">Log</div></div>
+    <div class="ni" id="nav-s1"><div class="nic">O</div><div class="nl">Stabilize</div></div>
+    <div class="ni" data-nav="s-tl"><div class="nic">[]</div><div class="nl">Day</div></div>
+  </nav>
 </div>
 
 <div class="screen" id="s-log">
-<div class="topbar"><span class="topbar-title">Quick Log</span><button class="tbtn" data-nav="s-home">Home</button></div>
-<div class="sb">
-<div class="qlg">
-<div class="qlb" data-lg="Marker"><div class="qld" style="background:var(--green)"></div><span class="qll">Marker</span></div>
-<div class="qlb" data-lg="Milestone"><div class="qld" style="background:var(--gold)"></div><span class="qll">Milestone</span></div>
-<div class="qlb" data-lg="Moment Open"><div class="qld" style="background:var(--blue)"></div><span class="qll">Moment Open</span></div>
-<div class="qlb" data-lg="Moment Close"><div class="qld" style="background:var(--blue-dim)"></div><span class="qll">Moment Close</span></div>
-<div class="qlb" data-lg="Sub-Loop Open"><div class="qld" style="background:var(--blue-dim)"></div><span class="qll">Sub-Loop Open</span></div>
-<div class="qlb" data-lg="Sub-Loop Close"><div class="qld" style="background:var(--border2)"></div><span class="qll">Sub-Loop Close</span></div>
-<div class="qlb" data-lg="Carryover"><div class="qld" style="background:var(--violet)"></div><span class="qll">Carryover</span></div>
-<div class="qlb ql-e" id="ql-er"><div class="qld" style="background:var(--amber)"></div><span class="qll">ER Update</span></div>
-<div class="qlb ql-n" data-lg="Note"><div class="qld" style="background:var(--text3)"></div><span class="qll">Note</span></div>
-</div>
-<div style="padding:0 20px"><div class="slbl">Logged Today</div><div id="lf"></div></div>
-</div>
-<nav class="navbar">
-<div class="ni" data-nav="s-home"><div class="nic">H</div><div class="nl">Home</div></div>
-<div class="ni on" data-nav="s-log"><div class="nic">+</div><div class="nl">Log</div></div>
-<div class="ni" id="nav-s2"><div class="nic">O</div><div class="nl">Stabilize</div></div>
-<div class="ni" data-nav="s-tl"><div class="nic">[]</div><div class="nl">Day</div></div>
-</nav>
+  <div class="topbar"><span class="topbar-title">Quick Log</span><button class="tbtn" data-nav="s-home">Home</button></div>
+  <div class="sb">
+    <div class="qlg">
+      <div class="qlb" data-lg="Marker"><div class="qld" style="background:var(--green)"></div><span class="qll">Marker</span></div>
+      <div class="qlb" data-lg="Milestone"><div class="qld" style="background:var(--gold)"></div><span class="qll">Milestone</span></div>
+      <div class="qlb" data-lg="Moment Open"><div class="qld" style="background:var(--blue)"></div><span class="qll">Moment Open</span></div>
+      <div class="qlb" data-lg="Moment Close"><div class="qld" style="background:var(--blue-dim)"></div><span class="qll">Moment Close</span></div>
+      <div class="qlb" data-lg="Sub-Loop Open"><div class="qld" style="background:var(--blue-dim)"></div><span class="qll">Sub-Loop Open</span></div>
+      <div class="qlb" data-lg="Sub-Loop Close"><div class="qld" style="background:var(--border2)"></div><span class="qll">Sub-Loop Close</span></div>
+      <div class="qlb" data-lg="Carryover"><div class="qld" style="background:var(--violet)"></div><span class="qll">Carryover</span></div>
+      <div class="qlb ql-e" id="ql-er"><div class="qld" style="background:var(--amber)"></div><span class="qll">ER Update</span></div>
+      <div class="qlb ql-n" data-lg="Note"><div class="qld" style="background:var(--text3)"></div><span class="qll">Note</span></div>
+    </div>
+    <div style="padding:0 20px"><div class="slbl">Logged Today</div><div id="lf"></div></div>
+  </div>
+  <nav class="navbar">
+    <div class="ni" data-nav="s-home"><div class="nic">H</div><div class="nl">Home</div></div>
+    <div class="ni on" data-nav="s-log"><div class="nic">+</div><div class="nl">Log</div></div>
+    <div class="ni" id="nav-s2"><div class="nic">O</div><div class="nl">Stabilize</div></div>
+    <div class="ni" data-nav="s-tl"><div class="nic">[]</div><div class="nl">Day</div></div>
+  </nav>
 </div>
 
 <div class="screen" id="s-tl">
-<div class="topbar"><span class="topbar-title">Day Timeline</span><button class="tbtn" data-nav="s-home">Home</button></div>
-<div class="sb"><div class="tlf" id="tlf"></div></div>
-<nav class="navbar">
-<div class="ni" data-nav="s-home"><div class="nic">H</div><div class="nl">Home</div></div>
-<div class="ni" data-nav="s-log"><div class="nic">+</div><div class="nl">Log</div></div>
-<div class="ni" id="nav-s3"><div class="nic">O</div><div class="nl">Stabilize</div></div>
-<div class="ni on" data-nav="s-tl"><div class="nic">[]</div><div class="nl">Day</div></div>
-</nav>
+  <div class="topbar"><span class="topbar-title">Day Timeline</span><button class="tbtn" data-nav="s-home">Home</button></div>
+  <div class="sb"><div class="tlf" id="tlf"></div></div>
+  <nav class="navbar">
+    <div class="ni" data-nav="s-home"><div class="nic">H</div><div class="nl">Home</div></div>
+    <div class="ni" data-nav="s-log"><div class="nic">+</div><div class="nl">Log</div></div>
+    <div class="ni" id="nav-s3"><div class="nic">O</div><div class="nl">Stabilize</div></div>
+    <div class="ni on" data-nav="s-tl"><div class="nic">[]</div><div class="nl">Day</div></div>
+  </nav>
 </div>
 
 <div class="screen" id="s-arc">
-<div class="topbar"><span class="topbar-title">Archive</span><div style="display:flex;gap:8px"><button class="tbtn" id="impb">Import</button><button class="tbtn" data-nav="s-home">Home</button></div></div>
-<div class="sb" style="padding:16px 20px"><div class="slbl" style="margin-bottom:12px">Nightly Reports</div><div id="arcf"></div><div id="arce" style="text-align:center;padding:40px 20px;font-size:13px;color:var(--text3);font-style:italic">No archived days yet.</div></div>
-<nav class="navbar">
-<div class="ni" data-nav="s-home"><div class="nic">H</div><div class="nl">Home</div></div>
-<div class="ni" data-nav="s-log"><div class="nic">+</div><div class="nl">Log</div></div>
-<div class="ni" id="nav-s4"><div class="nic">O</div><div class="nl">Stabilize</div></div>
-<div class="ni on" data-nav="s-arc"><div class="nic">^</div><div class="nl">Archive</div></div>
-</nav>
+  <div class="topbar"><span class="topbar-title">Archive</span><div style="display:flex;gap:8px"><button class="tbtn" id="impb">Import</button><button class="tbtn" data-nav="s-home">Home</button></div></div>
+  <div class="sb" style="padding:16px 20px"><div class="slbl" style="margin-bottom:12px">Nightly Reports</div><div id="arcf"></div><div id="arce" style="text-align:center;padding:40px 20px;font-size:13px;color:var(--text3);font-style:italic">No archived days yet.</div></div>
+  <nav class="navbar">
+    <div class="ni" data-nav="s-home"><div class="nic">H</div><div class="nl">Home</div></div>
+    <div class="ni" data-nav="s-log"><div class="nic">+</div><div class="nl">Log</div></div>
+    <div class="ni" id="nav-s4"><div class="nic">O</div><div class="nl">Stabilize</div></div>
+    <div class="ni on" data-nav="s-arc"><div class="nic">^</div><div class="nl">Archive</div></div>
+  </nav>
 </div>
 
 <div class="screen" id="s-s1">
-<div style="position:absolute;top:52px;right:16px;z-index:10"><button class="tbtn" data-nav="s-home">Exit</button></div>
-<div class="ss"><div class="sstep">LUX Layer -- Stabilize</div><div class="sbdy">
-<div style="margin-bottom:40px">
-<div class="al2">Feel your feet on the ground.</div>
-<div class="al2">Take one slow breath.</div>
-<div class="al2">Name one thing you can see right now.</div>
-<div class="al2 bd">You are here. You are present.</div>
-</div>
-<button class="cb2" data-nav="s-s2">I'm ready</button>
-</div></div>
+  <div style="position:absolute;top:52px;right:16px;z-index:10"><button class="tbtn" data-nav="s-home">Exit</button></div>
+  <div class="ss"><div class="sstep">LUX Layer -- Stabilize</div><div class="sbdy">
+    <div style="margin-bottom:40px">
+      <div class="al2">Feel your feet on the ground.</div>
+      <div class="al2">Take one slow breath.</div>
+      <div class="al2">Name one thing you can see right now.</div>
+      <div class="al2 bd">You are here. You are present.</div>
+    </div>
+    <button class="cb2" data-nav="s-s2">I'm ready</button>
+  </div></div>
 </div>
 
 <div class="screen" id="s-s2">
-<div style="position:absolute;top:52px;left:16px;font-family:var(--mono);font-size:10px;color:var(--text3)">S 2</div>
-<div style="position:absolute;top:52px;right:16px"><button class="tbtn" data-nav="s-home">Exit</button></div>
-<div class="ss"><div class="sstep">Mode Check</div><div class="sbdy">
-<div class="sq">How does your thinking feel right now?</div>
-<div class="ssub">No judgment. Just notice.</div>
-<div class="cb" data-mode="Clarity"><div class="cn c-cl">Clarity</div><div class="cd">I can see my options. Thinking is open.</div></div>
-<div class="cb" data-mode="Turbulent"><div class="cn c-tu">Turbulent</div><div class="cd">Thoughts are moving fast. Hard to settle.</div></div>
-<div class="cb" data-mode="Compressed"><div class="cn c-co">Compressed</div><div class="cd">Feels tight. Options feel narrow or gone.</div></div>
-</div></div>
+  <div style="position:absolute;top:52px;left:16px;font-family:var(--mono);font-size:10px;color:var(--text3)">S 2</div>
+  <div style="position:absolute;top:52px;right:16px"><button class="tbtn" data-nav="s-home">Exit</button></div>
+  <div class="ss"><div class="sstep">Mode Check</div><div class="sbdy">
+    <div class="sq">How does your thinking feel right now?</div>
+    <div class="ssub">No judgment. Just notice.</div>
+    <div class="cb" data-mode="Clarity"><div class="cn c-cl">Clarity</div><div class="cd">I can see my options. Thinking is open.</div></div>
+    <div class="cb" data-mode="Turbulent"><div class="cn c-tu">Turbulent</div><div class="cd">Thoughts are moving fast. Hard to settle.</div></div>
+    <div class="cb" data-mode="Compressed"><div class="cn c-co">Compressed</div><div class="cd">Feels tight. Options feel narrow or gone.</div></div>
+  </div></div>
 </div>
 
 <div class="screen" id="s-s3">
-<div style="position:absolute;top:52px;left:16px;font-family:var(--mono);font-size:10px;color:var(--text3)">S 3</div>
-<div style="position:absolute;top:52px;right:16px"><button class="tbtn" data-nav="s-home">Exit</button></div>
-<div class="ss" style="justify-content:flex-start;padding-top:80px;overflow-y:auto"><div class="sstep">Pressure Read</div>
-<div class="sq" style="text-align:left;margin-bottom:6px">What pressure do you notice?</div>
-<div class="ssub" style="text-align:left;margin-bottom:16px">Select all that apply.</div>
-<div id="pl"></div>
-<button class="cb2" data-nav="s-s4" style="margin-top:8px">Continue</button>
-</div>
+  <div style="position:absolute;top:52px;left:16px;font-family:var(--mono);font-size:10px;color:var(--text3)">S 3</div>
+  <div style="position:absolute;top:52px;right:16px"><button class="tbtn" data-nav="s-home">Exit</button></div>
+  <div class="ss" style="justify-content:flex-start;padding-top:80px;overflow-y:auto"><div class="sstep">Pressure Read</div>
+    <div class="sq" style="text-align:left;margin-bottom:6px">What pressure do you notice?</div>
+    <div class="ssub" style="text-align:left;margin-bottom:16px">Select all that apply.</div>
+    <div id="pl"></div>
+    <button class="cb2" data-nav="s-s4" style="margin-top:8px">Continue</button>
+  </div>
 </div>
 
 <div class="screen" id="s-s4">
-<div style="position:absolute;top:52px;left:16px;font-family:var(--mono);font-size:10px;color:var(--text3)">S 4</div>
-<div style="position:absolute;top:52px;right:16px"><button class="tbtn" data-nav="s-home">Exit</button></div>
-<div class="ss"><div class="sstep">Situation</div><div class="sbdy">
-<div class="sq">In one sentence, what's the situation?</div>
-<div class="ssub" style="margin-bottom:20px">Keep it short. Clarity lives in constraint.</div>
-<textarea class="ta" id="sit" maxlength="140" placeholder="What's happening right now..."></textarea>
-<div class="cc"><span id="sitc">0</span>/140</div>
-<button class="cb2" data-nav="s-s5">Continue</button>
-</div></div>
+  <div style="position:absolute;top:52px;left:16px;font-family:var(--mono);font-size:10px;color:var(--text3)">S 4</div>
+  <div style="position:absolute;top:52px;right:16px"><button class="tbtn" data-nav="s-home">Exit</button></div>
+  <div class="ss"><div class="sstep">Situation</div><div class="sbdy">
+    <div class="sq">In one sentence, what's the situation?</div>
+    <div class="ssub" style="margin-bottom:20px">Keep it short. Clarity lives in constraint.</div>
+    <textarea class="ta" id="sit" maxlength="140" placeholder="What's happening right now..."></textarea>
+    <div class="cc"><span id="sitc">0</span>/140</div>
+    <button class="cb2" data-nav="s-s5">Continue</button>
+  </div></div>
 </div>
 
 <div class="screen" id="s-s5">
-<div style="position:absolute;top:52px;left:16px;font-family:var(--mono);font-size:10px;color:var(--text3)">S 5</div>
-<div style="position:absolute;top:52px;right:16px"><button class="tbtn" data-nav="s-home">Exit</button></div>
-<div class="ss" style="justify-content:flex-start;padding-top:80px"><div class="sstep">Constraint Split</div>
-<div class="sq" style="text-align:left">Split the constraints.</div>
-<div class="ssub" style="text-align:left;margin-bottom:0">Separate what you can change from what you can't.</div>
-<div class="spl sp-c">Changeable</div>
-<textarea class="ta" id="cha" rows="3" placeholder="What can I actually influence..."></textarea>
-<div class="spl sp-f">Unchangeable</div>
-<textarea class="ta" id="unc" rows="3" placeholder="What is fixed, outside my control..."></textarea>
-<button class="cb2" data-nav="s-s6">Continue</button>
-</div>
+  <div style="position:absolute;top:52px;left:16px;font-family:var(--mono);font-size:10px;color:var(--text3)">S 5</div>
+  <div style="position:absolute;top:52px;right:16px"><button class="tbtn" data-nav="s-home">Exit</button></div>
+  <div class="ss" style="justify-content:flex-start;padding-top:80px"><div class="sstep">Constraint Split</div>
+    <div class="sq" style="text-align:left">Split the constraints.</div>
+    <div class="ssub" style="text-align:left;margin-bottom:0">Separate what you can change from what you can't.</div>
+    <div class="spl sp-c">Changeable</div>
+    <textarea class="ta" id="cha" rows="3" placeholder="What can I actually influence..."></textarea>
+    <div class="spl sp-f">Unchangeable</div>
+    <textarea class="ta" id="unc" rows="3" placeholder="What is fixed, outside my control..."></textarea>
+    <button class="cb2" data-nav="s-s6">Continue</button>
+  </div>
 </div>
 
 <div class="screen" id="s-s6">
-<div style="position:absolute;top:52px;left:16px;font-family:var(--mono);font-size:10px;color:var(--text3)">S 6</div>
-<div style="position:absolute;top:52px;right:16px"><button class="tbtn" data-nav="s-home">Exit</button></div>
-<div class="ss" style="justify-content:flex-start;padding-top:80px"><div class="sstep">Optionality</div>
-<div class="sq" style="text-align:left">What remains open?</div>
-<div class="ssub" style="text-align:left;margin-bottom:20px">Delay irreversible decisions until structure is clear.</div>
-<div class="of"><div class="ol">One thing I do not need to decide yet</div><input class="si" id="op1" placeholder="Not deciding yet..."></div>
-<div class="of"><div class="ol">One action that is safe right now</div><input class="si" id="op2" placeholder="Safe to do..."></div>
-<div class="of"><div class="ol">One thing to delay</div><input class="si" id="op3" placeholder="Delaying..."></div>
-<button class="cb2" id="outbtn">See outcome</button>
-</div>
+  <div style="position:absolute;top:52px;left:16px;font-family:var(--mono);font-size:10px;color:var(--text3)">S 6</div>
+  <div style="position:absolute;top:52px;right:16px"><button class="tbtn" data-nav="s-home">Exit</button></div>
+  <div class="ss" style="justify-content:flex-start;padding-top:80px"><div class="sstep">Optionality</div>
+    <div class="sq" style="text-align:left">What remains open?</div>
+    <div class="ssub" style="text-align:left;margin-bottom:20px">Delay irreversible decisions until structure is clear.</div>
+    <div class="of"><div class="ol">One thing I do not need to decide yet</div><input class="si" id="op1" placeholder="Not deciding yet..."></div>
+    <div class="of"><div class="ol">One action that is safe right now</div><input class="si" id="op2" placeholder="Safe to do..."></div>
+    <div class="of"><div class="ol">One thing to delay</div><input class="si" id="op3" placeholder="Delaying..."></div>
+    <button class="cb2" id="outbtn">See outcome</button>
+  </div>
 </div>
 
 <div class="screen" id="s-s7">
-<div style="position:absolute;top:52px;left:16px;font-family:var(--mono);font-size:10px;color:var(--text3)">S 7</div>
-<div style="position:absolute;top:52px;right:16px"><button class="tbtn" data-nav="s-home">Exit</button></div>
-<div class="ss" style="justify-content:flex-start;padding-top:80px"><div class="sstep">Outcome</div>
-<div class="sq" style="text-align:left;margin-bottom:16px">Structural read.</div>
-<div class="oc2" id="outc"></div>
-<button class="cb2" id="logstb">Log this structurally</button>
-<button class="cb2" style="margin-top:8px;background:var(--surface);border-color:var(--border2);color:var(--text2)" data-nav="s-home">Return home</button>
-</div>
+  <div style="position:absolute;top:52px;left:16px;font-family:var(--mono);font-size:10px;color:var(--text3)">S 7</div>
+  <div style="position:absolute;top:52px;right:16px"><button class="tbtn" data-nav="s-home">Exit</button></div>
+  <div class="ss" style="justify-content:flex-start;padding-top:80px"><div class="sstep">Outcome</div>
+    <div class="sq" style="text-align:left;margin-bottom:16px">Structural read.</div>
+    <div class="oc2" id="outc"></div>
+    <button class="cb2" id="logstb">Log this structurally</button>
+    <button class="cb2" style="margin-top:8px;background:var(--surface);border-color:var(--border2);color:var(--text2)" data-nav="s-home">Return home</button>
+  </div>
 </div>
 
 <!-- Overlays -->
-
 <div class="ov2" id="ov-lg"><div class="sh"><div class="shh"></div><div class="sht" id="sh-tp"></div><div class="shti" id="sh-ti"></div><input class="si" id="sh-in" style="margin-bottom:12px"><div class="shr"><button class="shb shb-cl" id="sh-cn">Cancel</button><button class="shb shb-ok" id="sh-ok">Log it</button></div></div></div>
 <div class="ov2" id="ov-er"><div class="sh"><div class="shh"></div><div class="sht">ER Update</div><div class="shti">Current ER value?</div><input class="si" id="er-in" placeholder="e.g. 1.75B" style="margin-bottom:12px"><div class="shr"><button class="shb shb-cl" id="er-cn">Cancel</button><button class="shb shb-ok" id="er-ok">Log</button></div></div></div>
 <div class="ov2" id="ov-pr"><div class="sh"><div class="shh"></div><div class="sht" id="pr-tp"></div><div class="shti" id="pr-ti"></div><input class="si" id="pr-in" style="margin-bottom:12px"><div class="shr"><button class="shb shb-cl" id="pr-cn">Cancel</button><button class="shb shb-ok" id="pr-ok">Save</button></div></div></div>
@@ -424,46 +470,40 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 
 <div class="vfab" id="vfab">mic</div>
 <div class="vov" id="vov">
-<div id="vtp" style="display:flex;flex-direction:column;align-items:center;width:100%">
-<div style="font-family:var(--mono);font-size:9px;letter-spacing:0.15em;color:var(--text3);text-transform:uppercase;margin-bottom:12px">Select Event Type</div>
-<div class="vtg">
-<div class="vtb" data-vt="Marker" style="color:var(--green);border-color:rgba(107,191,138,0.3)">Marker</div>
-<div class="vtb" data-vt="Milestone" style="color:var(--gold);border-color:rgba(200,169,110,0.3)">Milestone</div>
-<div class="vtb" data-vt="Moment Open" style="color:var(--blue);border-color:rgba(91,159,212,0.3)">Moment Open</div>
-<div class="vtb" data-vt="Sub-Loop Open" style="color:var(--blue-dim)">Sub-Loop</div>
-<div class="vtb" data-vt="ER" style="color:var(--amber);border-color:rgba(212,148,91,0.3)">ER Update</div>
-<div class="vtb" data-vt="Carryover" style="color:var(--violet);border-color:rgba(155,127,212,0.3)">Carryover</div>
-</div>
-</div>
-<div id="vlp" style="display:none;flex-direction:column;align-items:center;width:100%">
-<div class="vr" id="vrng">mic</div><div class="vs" id="vs">Listening...</div><div class="vtr" id="vtr"></div>
-</div>
-<div class="vres" id="vres"><div class="vrt" id="vrt"></div><div class="vrx" id="vrx"></div></div>
-<div class="va" id="vac" style="display:none"><div class="vac" id="v-retry">Retry</div><div class="vac vac-ok" id="v-ok">Log it</div></div>
-<div class="va" id="vcr" style="margin-top:12px"><div class="vac" id="v-cl">Close</div></div>
+  <div id="vtp" style="display:flex;flex-direction:column;align-items:center;width:100%">
+    <div style="font-family:var(--mono);font-size:9px;letter-spacing:0.15em;color:var(--text3);text-transform:uppercase;margin-bottom:12px">Select Event Type</div>
+    <div class="vtg">
+      <div class="vtb" data-vt="Marker" style="color:var(--green);border-color:rgba(107,191,138,0.3)">Marker</div>
+      <div class="vtb" data-vt="Milestone" style="color:var(--gold);border-color:rgba(200,169,110,0.3)">Milestone</div>
+      <div class="vtb" data-vt="Moment Open" style="color:var(--blue);border-color:rgba(91,159,212,0.3)">Moment Open</div>
+      <div class="vtb" data-vt="Sub-Loop Open" style="color:var(--blue-dim)">Sub-Loop</div>
+      <div class="vtb" data-vt="ER" style="color:var(--amber);border-color:rgba(212,148,91,0.3)">ER Update</div>
+      <div class="vtb" data-vt="Carryover" style="color:var(--violet);border-color:rgba(155,127,212,0.3)">Carryover</div>
+    </div>
+  </div>
+  <div id="vlp" style="display:none;flex-direction:column;align-items:center;width:100%">
+    <div class="vr" id="vrng">mic</div><div class="vs" id="vs">Listening...</div><div class="vtr" id="vtr"></div>
+  </div>
+  <div class="vres" id="vres"><div class="vrt" id="vrt"></div><div class="vrx" id="vrx"></div></div>
+  <div class="va" id="vac" style="display:none"><div class="vac" id="v-retry">Retry</div><div class="vac vac-ok" id="v-ok">Log it</div></div>
+  <div class="va" id="vcr" style="margin-top:12px"><div class="vac" id="v-cl">Close</div></div>
 </div>
 
 <div class="pov" id="pov">
-<div style="position:absolute;top:52px;right:16px"><button class="tbtn" id="pex">Exit</button></div>
-<div style="font-family:var(--mono);font-size:9px;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;margin-bottom:8px">Focus Mode</div>
-<div class="per" id="per">--</div><div class="plbl">Current ER</div>
-<div class="pa"><div class="pac" data-lg="Marker" style="color:var(--green);border-color:rgba(107,191,138,0.2)">+ Marker</div><div class="pac" id="p-erb" style="color:var(--amber);border-color:rgba(212,148,91,0.2)">ER Update</div></div>
+  <div style="position:absolute;top:52px;right:16px"><button class="tbtn" id="pex">Exit</button></div>
+  <div style="font-family:var(--mono);font-size:9px;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;margin-bottom:8px">Focus Mode</div>
+  <div class="per" id="per">--</div><div class="plbl">Current ER</div>
+  <div class="pa"><div class="pac" data-lg="Marker" style="color:var(--green);border-color:rgba(107,191,138,0.2)">+ Marker</div><div class="pac" id="p-erb" style="color:var(--amber);border-color:rgba(212,148,91,0.2)">ER Update</div></div>
 </div>
 
 <div class="toast" id="toast"></div>
 </div>
 
 <script>
-// FIX 4: Global error handler
 window.onerror = function(msg, src, line, col, err) {
   console.error('GLOBAL ERROR:', msg, src, line, col, err);
 };
 
-// FIX 6: Clear stale storage on load
-try { localStorage.removeItem('lux4b'); } catch(e) {}
-try { sessionStorage.removeItem('lux4b'); } catch(e) {}
-
-// FIX 1: Safe event binding helper
 function on(id, evt, fn) {
   var el = document.getElementById(id);
   if (!el) { console.warn('Missing element:', id); return; }
@@ -490,7 +530,10 @@ var D = {
 };
 
 function sv() {
-  try { localStorage.setItem('lux4b', JSON.stringify(D)); } catch(e) {
+  try { 
+    var str = JSON.stringify(D);
+    localStorage.setItem('lux4b', str); 
+  } catch(e) {
     try { sessionStorage.setItem('lux4b', JSON.stringify(D)); } catch(x) {}
   }
 }
@@ -519,11 +562,11 @@ function tick() {
       h = n.getHours() % 12 || 12,
       m = ('0' + n.getMinutes()).slice(-2),
       ap = n.getHours() >= 12 ? 'PM' : 'AM';
-  var ht = g('ht');
+  var ht = document.getElementById('ht');
   if (ht) ht.innerHTML = h + ':' + m + '<span>' + ap + '</span>';
   var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
   var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  var hd = g('hd');
+  var hd = document.getElementById('hd');
   if (hd) hd.textContent = days[n.getDay()] + '  ' + months[n.getMonth()] + ' ' + n.getDate() + ', ' + n.getFullYear();
 }
 
@@ -707,7 +750,7 @@ var cLT = '';
 function oLog(tp) {
   cLT = tp;
   var lbs = {Marker: 'What happened?', Milestone: 'Milestone name', 'Moment Open': 'Moment name', 'Moment Close': 'Which Moment?', 'Sub-Loop Open': 'Sub-Loop name', 'Sub-Loop Close': 'Which Sub-Loop?', Carryover: 'What carries over?', Note: 'Note'};
-  var phs = {Marker: 'Fed Horses, Took Meds...', Milestone: 'Wake Up, Lunch...', 'Moment Open': 'Afternoon Sequence...', 'Sub-Loop Open': 'Get Meds...', Carryover: 'Pick Up Frames...'};
+  var phs = {Marker: 'Fed Horses, Took Meds...', Milestone: 'Wake Up, Lunch...', 'Moment Open': 'Afternoon Sequence...', 'Sub-Loop Open': 'Get Meds...', Carryover: 'Pick Up Frames...', Note: 'Anything to note...'};
   var st = g('sh-tp'); if (st) st.textContent = tp;
   var ti = g('sh-ti'); if (ti) ti.textContent = lbs[tp] || tp;
   var si = g('sh-in');
@@ -836,363 +879,365 @@ function bArc() {
     h += '<div style="display:flex;gap:8px;margin-bottom:6px;flex-wrap:wrap"><span style="font-family:var(--mono);font-size:9px;color:var(--amber);background:rgba(212,148,91,0.08);border:1px solid rgba(212,148,91,0.15);padding:2px 7px;border-radius:3px">ER: ' + (n2.er || '--') + '</span>';
     if (n2.arc) h += '<span style="font-family:var(--mono);font-size:9px;color:var(--text3);padding:2px 7px">Arc: ' + n2.arc + '</span>';
     h += '</div><div class="nin" style="margin-bottom:8px">' + (n2.note || '') + '</div><details style="cursor:pointer"><summary style="font-family:var(--mono);font-size:9px;color:var(--text3);letter-spacing:0.08em;text-transform:uppercase;list-style:none">+ Event Log</summary><pre style="font-family:var(--mono);font-size:9px;color:var(--text3);margin-top:8px;white-space:pre-wrap;line-height:1.8">' + (n2.ev || '') + '</pre></details></div>';
-
+  }
+  f.innerHTML = h;
 }
-f.innerHTML = h;
-}
 
-var impType = ‘nightly’, impParsed = null;
+var impType = 'nightly', impParsed = null;
 function setIT(t) {
-impType = t;
-var ni = g(‘im-ni’), de = g(‘im-de’);
-if (ni) ni.classList.toggle(‘on’, t === ‘nightly’);
-if (de) de.classList.toggle(‘on’, t === ‘deca’);
-pvImp();
+  impType = t;
+  var ni = g('im-ni'), de = g('im-de');
+  if (ni) ni.classList.toggle('on', t === 'nightly');
+  if (de) de.classList.toggle('on', t === 'deca');
+  pvImp();
 }
 
 function pvImp() {
-var inp = g(‘im-in’);
-var txt = inp ? inp.value : ‘’;
-var pv = g(‘im-pv’);
-if (txt.trim().length < 30) { if (pv) pv.style.display = ‘none’; impParsed = null; return; }
-var r = {dt: ‘Unknown’, er: ‘–’, note: ‘’, ev: ‘’, arc: ‘’};
-var dm = txt.match(/(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)[,\s]+([A-Z][a-z]+.?\s+\d{1,2},?\s*\d{4})/i) || txt.match(/(March|April|May|June|July|August|September|October|November|December|January|February)\s+\d{1,2},?\s*\d{4}/i);
-if (dm) r.dt = dm[0].trim();
-var ems = txt.match(/\d+.\d+[ABC]/g);
-if (ems) { r.er = ems[ems.length - 1]; r.arc = ems.slice(0, 5).join(’ > ‘); }
-var ml = txt.match(/Marker[:\s]+([^\n]+)/gi) || [];
-r.ev = ml.map(function(m) { return ’  – Marker: ’ + m.replace(/^Marker[:\s]+/i, ‘’).trim(); }).join(’\n’);
-var ls = txt.split(’\n’).filter(function(l) { return l.trim().length > 20; });
-r.note = ls[ls.length - 1] || ‘’;
-impParsed = r;
-if (pv) {
-pv.innerHTML = ‘<div class="ir"><span class="ik">Date</span><span class="iv">’ + r.dt + ‘</span></div><div class="ir"><span class="ik">ER Close</span><span class="iv">’ + r.er + ‘</span></div><div class="ir"><span class="ik">Note</span><span class="iv">’ + r.note.substring(0, 60) + ‘</span></div>’;
-pv.style.display = ‘block’;
-}
+  var inp = g('im-in');
+  var txt = inp ? inp.value : '';
+  var pv = g('im-pv');
+  if (txt.trim().length < 30) { if (pv) pv.style.display = 'none'; impParsed = null; return; }
+  var r = {dt: 'Unknown', er: '--', note: '', ev: '', arc: ''};
+  var dm = txt.match(/(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)[,\s]+([A-Z][a-z]+.?\s+\d{1,2},?\s*\d{4})/i) || txt.match(/(March|April|May|June|July|August|September|October|November|December|January|February)\s+\d{1,2},?\s*\d{4}/i);
+  if (dm) r.dt = dm[0].trim();
+  var ems = txt.match(/\d+\.\d+[ABC]/g);
+  if (ems) { r.er = ems[ems.length - 1]; r.arc = ems.slice(0, 5).join(' > '); }
+  var ml = txt.match(/Marker[:\s]+([^\n]+)/gi) || [];
+  r.ev = ml.map(function(m) { return '  -- Marker: ' + m.replace(/^Marker[:\s]+/i, '').trim(); }).join('\n');
+  var ls = txt.split('\n').filter(function(l) { return l.trim().length > 20; });
+  r.note = ls[ls.length - 1] || '';
+  impParsed = r;
+  if (pv) {
+    pv.innerHTML = '<div class="ir"><span class="ik">Date</span><span class="iv">' + r.dt + '</span></div><div class="ir"><span class="ik">ER Close</span><span class="iv">' + r.er + '</span></div><div class="ir"><span class="ik">Note</span><span class="iv">' + r.note.substring(0, 60) + '</span></div>';
+    pv.style.display = 'block';
+  }
 }
 
 function cfImp() {
-if (!impParsed) { co(‘ov-im’); return; }
-D.nights.push({dt: impParsed.dt, dk: impParsed.dt, er: impParsed.er, note: impParsed.note || ‘(imported)’, ev: impParsed.ev, arc: impParsed.arc, ts: new Date().toISOString()});
-D.nights.sort(function(a, b) { return new Date(b.ts) - new Date(a.ts); });
-co(‘ov-im’); bArc(); sv(); toast(’Imported: ’ + impParsed.dt);
+  if (!impParsed) { co('ov-im'); return; }
+  D.nights.push({dt: impParsed.dt, dk: impParsed.dt, er: impParsed.er, note: impParsed.note || '(imported)', ev: impParsed.ev, arc: impParsed.arc, ts: new Date().toISOString()});
+  D.nights.sort(function(a, b) { return new Date(b.ts) - new Date(a.ts); });
+  co('ov-im'); bArc(); sv(); toast('Imported: ' + impParsed.dt);
 }
 
 var pItems = [
-{n: ‘Urgency’, d: ‘Feels like it has to happen now’},
-{n: ‘Guilt’, d: ‘Someone will be hurt or disappointed’},
-{n: ‘Fear’, d: “Something bad will happen if I don’t act”},
-{n: ‘Anger’, d: ‘I want to react to something done to me’},
-{n: ‘Obligation’, d: “I should do this because it’s expected”},
-{n: ‘Excitement’, d: “I want this so badly I can’t think straight”},
-{n: ‘Shame’, d: ‘I feel exposed or wrong’},
-{n: ‘No pressure’, d: ‘I feel clear’}
+  {n: 'Urgency', d: 'Feels like it has to happen now'},
+  {n: 'Guilt', d: 'Someone will be hurt or disappointed'},
+  {n: 'Fear', d: "Something bad will happen if I don't act"},
+  {n: 'Anger', d: 'I want to react to something done to me'},
+  {n: 'Obligation', d: "I should do this because it's expected"},
+  {n: 'Excitement', d: "I want this so badly I can't think straight"},
+  {n: 'Shame', d: 'I feel exposed or wrong'},
+  {n: 'No pressure', d: 'I feel clear'}
 ];
 
 function bPL() {
-var pl = g(‘pl’);
-if (!pl) return;
-var h = ‘’;
-for (var i = 0; i < pItems.length; i++) {
-var p = pItems[i];
-h += ‘<div class="pb" data-p="' + p.n + '"><div class="pc"><span class="pcm">v</span></div><div><div class="pn">’ + p.n + ‘</div><div class="pd">’ + p.d + ‘</div></div></div>’;
-}
-pl.innerHTML = h;
-pl.querySelectorAll(’.pb’).forEach(function(b) {
-b.addEventListener(‘click’, function() {
-this.classList.toggle(‘on’);
-var p = this.getAttribute(‘data-p’);
-if (this.classList.contains(‘on’)) {
-D.sPress.push(p);
-} else {
-var i = D.sPress.indexOf(p);
-if (i > -1) D.sPress.splice(i, 1);
-}
-});
-});
+  var pl = g('pl');
+  if (!pl) return;
+  var h = '';
+  for (var i = 0; i < pItems.length; i++) {
+    var p = pItems[i];
+    h += '<div class="pb" data-p="' + p.n + '"><div class="pc"><span class="pcm">v</span></div><div><div class="pn">' + p.n + '</div><div class="pd">' + p.d + '</div></div></div>';
+  }
+  pl.innerHTML = h;
+  pl.querySelectorAll('.pb').forEach(function(b) {
+    b.addEventListener('click', function() {
+      this.classList.toggle('on');
+      var p = this.getAttribute('data-p');
+      if (this.classList.contains('on')) {
+        D.sPress.push(p);
+      } else {
+        var idx = D.sPress.indexOf(p);
+        if (idx > -1) D.sPress.splice(idx, 1);
+      }
+    });
+  });
 }
 
 function gStab() {
-D.sMode = null; D.sPress = [];
-document.querySelectorAll(’.cb’).forEach(function(b) { b.classList.remove(‘on’); });
-document.querySelectorAll(’.pb’).forEach(function(b) { b.classList.remove(‘on’); });
-[‘sit’,‘cha’,‘unc’,‘op1’,‘op2’,‘op3’].forEach(function(id) { var e = g(id); if (e) e.value = ‘’; });
-var sc = g(‘sitc’); if (sc) sc.textContent = ‘0’;
-bPL(); nav(‘s-s1’);
+  D.sMode = null; D.sPress = [];
+  document.querySelectorAll('.cb').forEach(function(b) { b.classList.remove('on'); });
+  document.querySelectorAll('.pb').forEach(function(b) { b.classList.remove('on'); });
+  ['sit','cha','unc','op1','op2','op3'].forEach(function(id) { var e = g(id); if (e) e.value = ''; });
+  var sc = g('sitc'); if (sc) sc.textContent = '0';
+  bPL(); nav('s-s1');
 }
 
 function bOut() {
-var sit = (g(‘sit’) || {}).value || ‘–’,
-ch = (g(‘cha’) || {}).value || ‘–’,
-un = (g(‘unc’) || {}).value || ‘–’,
-sa = (g(‘op2’) || {}).value || ‘–’;
-var ps = D.sPress.join(’ + ’) || ‘none’, m = D.sMode || ‘–’;
-var mc = m === ‘Clarity’ ? ‘ov-g’ : ‘ov-w’;
-var oc = g(‘outc’);
-if (!oc) return;
-oc.innerHTML = ‘<div class="or"><span class="ok">Mode</span><span class="ov ' + mc + '">’ + m + ‘</span></div><div class="or"><span class="ok">Pressure</span><span class="ov">’ + ps + ‘</span></div><div class="or"><span class="ok">Situation</span><span class="ov">’ + sit.substring(0, 60) + ‘</span></div><div class="or"><span class="ok">Changeable</span><span class="ov">’ + ch.substring(0, 50) + ‘</span></div><div class="or"><span class="ok">Fixed</span><span class="ov">’ + un.substring(0, 50) + ‘</span></div><div class="or"><span class="ok">Safe action</span><span class="ov">’ + sa.substring(0, 50) + ‘</span></div><div class="or"><span class="ok">Optionality</span><span class="ov ov-g">preserved</span></div>’;
-nav(‘s-s7’);
+  var sit = (g('sit') || {}).value || '--',
+      ch = (g('cha') || {}).value || '--',
+      un = (g('unc') || {}).value || '--',
+      sa = (g('op2') || {}).value || '--';
+  var ps = D.sPress.join(' + ') || 'none', m = D.sMode || '--';
+  var mc = m === 'Clarity' ? 'ov-g' : 'ov-w';
+  var oc = g('outc');
+  if (!oc) return;
+  oc.innerHTML = '<div class="or"><span class="ok">Mode</span><span class="ov ' + mc + '">' + m + '</span></div><div class="or"><span class="ok">Pressure</span><span class="ov">' + ps + '</span></div><div class="or"><span class="ok">Situation</span><span class="ov">' + sit.substring(0, 60) + '</span></div><div class="or"><span class="ok">Changeable</span><span class="ov">' + ch.substring(0, 50) + '</span></div><div class="or"><span class="ok">Fixed</span><span class="ov">' + un.substring(0, 50) + '</span></div><div class="or"><span class="ok">Safe action</span><span class="ov">' + sa.substring(0, 50) + '</span></div><div class="or"><span class="ok">Optionality</span><span class="ov ov-g">preserved</span></div>';
+  nav('s-s7');
 }
 
 function uFC() {
-var log = D.erLog, fs, fc, fb2;
-if (!log || log.length < 2) {
-fs = ‘Stable Band’; fc = ‘fc-s’; fb2 = ‘Log ER entries to activate’;
-} else {
-var vs = log.slice(-5).map(function(e) { return e.v; }), cur = vs[vs.length-1], tr = cur - vs[vs.length-2];
-var h = new Date().getHours(), em = h >= 2 && h <= 8, ev2 = h >= 18;
-var bl = D.E.slice(0, 15);
-var bs = bl.filter(function(e) { return [‘Milestone’,‘Moment Open’,‘Sub-Loop Open’].indexOf(e.tp) !== -1; }).length;
-var fr = bl.filter(function(e) { return e.nm && /frustrat|conflict|stuck|tired|overwhelm/i.test(e.nm); }).length;
-var gn = bl.filter(function(e) { return e.nm && /coffee|meds|breakfast|lunch|dinner|horse|chore|walk/i.test(e.nm); }).length;
-var op = D.E.filter(function(e) { return e.st && e.st.indexOf(‘Open’) !== -1; }).length;
-if (fr >= 2 || (op >= 4 && fr >= 1)) { fs = ‘Grounding Recommended’; fc = ‘fc-d’; fb2 = ‘Friction + loop accumulation’; }
-else if (cur > 2.3 || (cur > 2.0 && tr > 0.15)) { fs = ‘Drift Risk’; fc = ‘fc-d’; fb2 = ‘ER elevated’; }
-else if ((ev2 && cur < 1.5 && tr <= 0) || (tr < -0.2 && cur < 1.6 && !gn)) { fs = ‘Descent Likely’; fc = ‘fc-dn’; fb2 = ‘ER declining’; }
-else if (tr > 0.2 && cur < 2.3) { fs = ‘Activation Rising’; fc = ‘fc-r’; fb2 = ‘Rapid ER rise’; }
-else if (cur >= 1.55 && cur <= 2.1 && tr >= -0.05 && bs >= 3 && (em || h <= 12)) { fs = ‘Build Mode Likely’; fc = ‘fc-b’; fb2 = (em ? ‘Early-morning’ : ‘Morning’) + ’ + active logging’; }
-else if (cur >= 1.6 && cur <= 2.0 && gn >= 1) { fs = ‘Build Mode Likely’; fc = ‘fc-b’; fb2 = ‘Stable ER + grounding active’; }
-else { fs = ‘Stable Band’; fc = ‘fc-s’; fb2 = ‘Steady ER in usable range’; }
-}
-var fse = g(‘fcs’); if (fse) { fse.textContent = fs; fse.className = ’fc-st ’ + fc; }
-var fce = g(‘fcc’); if (fce) { fce.textContent = ‘Moderate’; fce.className = ’fw-b ’ + fc; }
-var fbe = g(‘fcb’); if (fbe) fbe.textContent = ’Based on: ’ + fb2;
+  var log = D.erLog, fs, fc, fb2;
+  if (!log || log.length < 2) {
+    fs = 'Stable Band'; fc = 'fc-s'; fb2 = 'Log ER entries to activate';
+  } else {
+    var vs = log.slice(-5).map(function(e) { return e.v; }), cur = vs[vs.length-1], tr = cur - vs[vs.length-2];
+    var h = new Date().getHours(), em = h >= 2 && h <= 8, ev2 = h >= 18;
+    var bl = D.E.slice(0, 15);
+    var bs = bl.filter(function(e) { return ['Milestone','Moment Open','Sub-Loop Open'].indexOf(e.tp) !== -1; }).length;
+    var fr = bl.filter(function(e) { return e.nm && /frustrat|conflict|stuck|tired|overwhelm/i.test(e.nm); }).length;
+    var gn = bl.filter(function(e) { return e.nm && /coffee|meds|breakfast|lunch|dinner|horse|chore|walk/i.test(e.nm); }).length;
+    var op = D.E.filter(function(e) { return e.st && e.st.indexOf('Open') !== -1; }).length;
+    if (fr >= 2 || (op >= 4 && fr >= 1)) { fs = 'Grounding Recommended'; fc = 'fc-d'; fb2 = 'Friction + loop accumulation'; }
+    else if (cur > 2.3 || (cur > 2.0 && tr > 0.15)) { fs = 'Drift Risk'; fc = 'fc-d'; fb2 = 'ER elevated'; }
+    else if ((ev2 && cur < 1.5 && tr <= 0) || (tr < -0.2 && cur < 1.6 && !gn)) { fs = 'Descent Likely'; fc = 'fc-dn'; fb2 = 'ER declining'; }
+    else if (tr > 0.2 && cur < 2.3) { fs = 'Activation Rising'; fc = 'fc-r'; fb2 = 'Rapid ER rise'; }
+    else if (cur >= 1.55 && cur <= 2.1 && tr >= -0.05 && bs >= 3 && (em || h <= 12)) { fs = 'Build Mode Likely'; fc = 'fc-b'; fb2 = (em ? 'Early-morning' : 'Morning') + ' + active logging'; }
+    else if (cur >= 1.6 && cur <= 2.0 && gn >= 1) { fs = 'Build Mode Likely'; fc = 'fc-b'; fb2 = 'Stable ER + grounding active'; }
+    else { fs = 'Stable Band'; fc = 'fc-s'; fb2 = 'Steady ER in usable range'; }
+  }
+  var fse = g('fcs'); if (fse) { fse.textContent = fs; fse.className = 'fc-st ' + fc; }
+  var fce = g('fcc'); if (fce) { fce.textContent = 'Moderate'; fce.className = 'fw-b ' + fc; }
+  var fbe = g('fcb'); if (fbe) fbe.textContent = 'Based on: ' + fb2;
 }
 
 function vClose() {
-var ov = g(‘vov’); if (ov) ov.classList.remove(‘open’);
-if (D.vRec) { try { D.vRec.stop(); } catch(e) {} D.vRec = null; }
-var fab = g(‘vfab’); if (fab) fab.classList.remove(‘on’);
+  var ov = g('vov'); if (ov) ov.classList.remove('open');
+  if (D.vRec) { try { D.vRec.stop(); } catch(e) {} D.vRec = null; }
+  var fab = g('vfab'); if (fab) fab.classList.remove('on');
 }
 
 function sListen() {
-var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-if (!SR) { var vs = g(‘vs’); if (vs) vs.textContent = ‘Not supported’; return; }
-D.vRec = new SR();
-D.vRec.continuous = false; D.vRec.interimResults = true; D.vRec.lang = ‘en-US’;
-var fab = g(‘vfab’); if (fab) fab.classList.add(‘on’);
-var vr = g(‘vrng’); if (vr) vr.classList.add(‘on’);
-D.vRec.onresult = function(e) {
-var fin = ‘’, intr = ‘’;
-for (var i = e.resultIndex; i < e.results.length; i++) {
-if (e.results[i].isFinal) fin += e.results[i][0].transcript;
-else intr += e.results[i][0].transcript;
-}
-var vtr2 = g(‘vtr’); if (vtr2) vtr2.textContent = fin || intr;
-if (fin) { try { D.vRec.stop(); } catch(x) {} pVoice(fin.trim()); }
-};
-D.vRec.onerror = function(e) {
-var vs = g(‘vs’); if (vs) vs.textContent = e.error === ‘not-allowed’ ? ‘Mic denied’ : ‘Try again’;
-var fab2 = g(‘vfab’); if (fab2) fab2.classList.remove(‘on’);
-};
-D.vRec.onend = function() { var fab3 = g(‘vfab’); if (fab3) fab3.classList.remove(‘on’); };
-D.vRec.start();
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) { var vs = g('vs'); if (vs) vs.textContent = 'Not supported'; return; }
+  D.vRec = new SR();
+  D.vRec.continuous = false; D.vRec.interimResults = true; D.vRec.lang = 'en-US';
+  var fab = g('vfab'); if (fab) fab.classList.add('on');
+  var vr = g('vrng'); if (vr) vr.classList.add('on');
+  
+  D.vRec.onresult = function(e) {
+    var fin = '', intr = '';
+    for (var i = e.resultIndex; i < e.results.length; i++) {
+      if (e.results[i].isFinal) fin += e.results[i][0].transcript;
+      else intr += e.results[i][0].transcript;
+    }
+    var vtr2 = g('vtr'); if (vtr2) vtr2.textContent = fin || intr;
+    if (fin) { try { D.vRec.stop(); } catch(x) {} pVoice(fin.trim()); }
+  };
+  
+  D.vRec.onerror = function(e) {
+    var vs = g('vs'); if (vs) vs.textContent = e.error === 'not-allowed' ? 'Mic denied' : 'Try again';
+    var fab2 = g('vfab'); if (fab2) fab2.classList.remove('on');
+  };
+  
+  D.vRec.onend = function() { var fab3 = g('vfab'); if (fab3) fab3.classList.remove('on'); };
+  D.vRec.start();
 }
 
 function pVoice(txt) {
-var tp = D.vType || ‘Marker’, nm = txt.trim();
-var sm = {Milestone: ‘Met’, ‘Moment Open’: ‘Loop Open’, ‘Moment Close’: ‘Loop Collapsed’, ‘Sub-Loop Open’: ‘Loop Open’, ‘Sub-Loop Close’: ‘Closed’, Carryover: ‘Carryover (Loop Open)’, ER: ‘’};
-var st = sm[tp] || ‘’;
-if (tp === ‘ER’) { var mv = txt.match(/(\d+[.,]\d*\s*[ABCabc]?)/); if (mv) nm = mv[1].replace(’,’,’.’).replace(/\s/g,’’).toUpperCase(); }
-D.vParsed = {tp: tp, nm: nm, st: st};
-var vr2 = g(‘vres’); if (vr2) vr2.style.display = ‘block’;
-var vrt2 = g(‘vrt’); if (vrt2) vrt2.textContent = tp;
-var vrx2 = g(‘vrx’); if (vrx2) vrx2.textContent = nm + (st ? ’ – ’ + st : ‘’);
-var lp = g(‘vlp’); if (lp) lp.style.display = ‘none’;
-var va = g(‘vac’); if (va) va.style.display = ‘flex’;
-var vc = g(‘vcr’); if (vc) vc.style.display = ‘none’;
+  var tp = D.vType || 'Marker', nm = txt.trim();
+  var sm = {Milestone: 'Met', 'Moment Open': 'Loop Open', 'Moment Close': 'Loop Collapsed', 'Sub-Loop Open': 'Loop Open', 'Sub-Loop Close': 'Closed', Carryover: 'Carryover (Loop Open)', ER: ''};
+  var st = sm[tp] || '';
+  if (tp === 'ER') { var mv = txt.match(/(\d+[.,]\d*\s*[ABCabc]?)/); if (mv) nm = mv[1].replace(',','.').replace(/\s/g,'').toUpperCase(); }
+  D.vParsed = {tp: tp, nm: nm, st: st};
+  var vr2 = g('vres'); if (vr2) vr2.style.display = 'block';
+  var vrt2 = g('vrt'); if (vrt2) vrt2.textContent = tp;
+  var vrx2 = g('vrx'); if (vrx2) vrx2.textContent = nm + (st ? ' -- ' + st : '');
+  var lp = g('vlp'); if (lp) lp.style.display = 'none';
+  var va = g('vac'); if (va) va.style.display = 'flex';
+  var vc = g('vcr'); if (vc) vc.style.display = 'none';
 }
 
 function rf() { uER(); uPos(); bLF(); uFC(); }
 
 // WIRE UP ALL EVENTS
-// FIX 2: Using safe on() helper for all direct bindings
-
 tick();
 setInterval(tick, 10000);
 ld(); syncUI(); rf(); bArc(); bPL();
 
 // nav
-document.querySelectorAll(’[data-nav]’).forEach(function(el) {
-el.addEventListener(‘click’, function() { nav(this.getAttribute(‘data-nav’)); });
+document.querySelectorAll('[data-nav]').forEach(function(el) {
+  el.addEventListener('click', function() { nav(this.getAttribute('data-nav')); });
 });
 
 // log
-document.querySelectorAll(’[data-lg]’).forEach(function(el) {
-el.addEventListener(‘click’, function() { oLog(this.getAttribute(‘data-lg’)); });
+document.querySelectorAll('[data-lg]').forEach(function(el) {
+  el.addEventListener('click', function() { oLog(this.getAttribute('data-lg')); });
 });
 
 // model
-document.querySelectorAll(’.mbtn’).forEach(function(el) {
-el.addEventListener(‘click’, function() {
-document.querySelectorAll(’.mbtn’).forEach(function(b) { b.classList.remove(‘on’); });
-this.classList.add(‘on’);
-D.model = this.getAttribute(‘data-m’);
-var rm = g(‘rhm’); if (rm) rm.textContent = D.model;
-});
+document.querySelectorAll('.mbtn').forEach(function(el) {
+  el.addEventListener('click', function() {
+    document.querySelectorAll('.mbtn').forEach(function(b) { b.classList.remove('on'); });
+    this.classList.add('on');
+    D.model = this.getAttribute('data-m');
+    var rm = g('rhm'); if (rm) rm.textContent = D.model;
+  });
 });
 
 // priority edit
-document.querySelectorAll(’[data-pf]’).forEach(function(el) {
-el.addEventListener(‘click’, function() { oPri(this.getAttribute(‘data-pf’)); });
+document.querySelectorAll('[data-pf]').forEach(function(el) {
+  el.addEventListener('click', function() { oPri(this.getAttribute('data-pf')); });
 });
 
 // mode select (stabilize s2)
-document.querySelectorAll(’[data-mode]’).forEach(function(el) {
-el.addEventListener(‘click’, function() {
-document.querySelectorAll(’.cb’).forEach(function(b) { b.classList.remove(‘on’); });
-this.classList.add(‘on’);
-D.sMode = this.getAttribute(‘data-mode’);
-setTimeout(function() { nav(‘s-s3’); }, 300);
-});
+document.querySelectorAll('[data-mode]').forEach(function(el) {
+  el.addEventListener('click', function() {
+    document.querySelectorAll('.cb').forEach(function(b) { b.classList.remove('on'); });
+    this.classList.add('on');
+    D.sMode = this.getAttribute('data-mode');
+    setTimeout(function() { nav('s-s3'); }, 300);
+  });
 });
 
 // voice type
-document.querySelectorAll(’[data-vt]’).forEach(function(el) {
-el.addEventListener(‘click’, function() {
-D.vType = this.getAttribute(‘data-vt’);
-document.querySelectorAll(’.vtb’).forEach(function(b) { b.classList.remove(‘on’); });
-this.classList.add(‘on’);
-var tp = g(‘vtp’); if (tp) tp.style.display = ‘none’;
-var lp = g(‘vlp’); if (lp) lp.style.display = ‘flex’;
-var vr = g(‘vres’); if (vr) vr.style.display = ‘none’;
-var va = g(‘vac’); if (va) va.style.display = ‘none’;
-var vt2 = g(‘vtr’); if (vt2) vt2.textContent = ‘’;
-var vs = g(‘vs’); if (vs) vs.textContent = ‘Listening…’;
-sListen();
-});
-});
-
-// stab - FIX 2: safe on() helper
-on(‘stab-btn’, ‘click’, gStab);
-on(‘nav-s1’, ‘click’, gStab);
-on(‘nav-s2’, ‘click’, gStab);
-on(‘nav-s3’, ‘click’, gStab);
-on(‘nav-s4’, ‘click’, gStab);
-on(‘outbtn’, ‘click’, bOut);
-on(‘logstb’, ‘click’, function() {
-D.E.unshift({tp: ‘Marker’, nm: ’Stabilize – ’ + (D.sMode || ‘unknown’), st: ‘’, tm: now()});
-bLF(); sv(); toast(‘Logged’);
-setTimeout(function() { nav(‘s-home’); }, 600);
+document.querySelectorAll('[data-vt]').forEach(function(el) {
+  el.addEventListener('click', function() {
+    D.vType = this.getAttribute('data-vt');
+    document.querySelectorAll('.vtb').forEach(function(b) { b.classList.remove('on'); });
+    this.classList.add('on');
+    var tp = g('vtp'); if (tp) tp.style.display = 'none';
+    var lp = g('vlp'); if (lp) lp.style.display = 'flex';
+    var vr = g('vres'); if (vr) vr.style.display = 'none';
+    var va = g('vac'); if (va) va.style.display = 'none';
+    var vt2 = g('vtr'); if (vt2) vt2.textContent = '';
+    var vs = g('vs'); if (vs) vs.textContent = 'Listening...';
+    sListen();
+  });
 });
 
-var sitEl = g(‘sit’);
-if (sitEl) sitEl.addEventListener(‘input’, function() { var sc = g(‘sitc’); if (sc) sc.textContent = this.value.length; });
+// stab 
+on('stab-btn', 'click', gStab);
+on('nav-s1', 'click', gStab);
+on('nav-s2', 'click', gStab);
+on('nav-s3', 'click', gStab);
+on('nav-s4', 'click', gStab);
+on('outbtn', 'click', bOut);
+on('logstb', 'click', function() {
+  D.E.unshift({tp: 'Marker', nm: 'Stabilize -- ' + (D.sMode || 'unknown'), st: '', tm: now()});
+  bLF(); sv(); toast('Logged');
+  setTimeout(function() { nav('s-home'); }, 600);
+});
+
+var sitEl = g('sit');
+if (sitEl) sitEl.addEventListener('input', function() { var sc = g('sitc'); if (sc) sc.textContent = this.value.length; });
 
 // er
-on(‘erpill’, ‘click’, oER);
-on(‘qa-er’, ‘click’, oER);
-on(‘ql-er’, ‘click’, oER);
-on(‘p-erb’, ‘click’, oER);
-on(‘er-cn’, ‘click’, cER);
-on(‘er-ok’, ‘click’, cfER);
+on('erpill', 'click', oER);
+on('qa-er', 'click', oER);
+on('ql-er', 'click', oER);
+on('p-erb', 'click', oER);
+on('er-cn', 'click', cER);
+on('er-ok', 'click', cfER);
 
 // close loop
-on(‘qa-cl’, ‘click’, function() {
-for (var i = 0; i < D.E.length; i++) {
-if (D.E[i].st && D.E[i].st.indexOf(‘Open’) !== -1) {
-D.E.unshift({tp: ‘Moment Close’, nm: D.E[i].nm, st: ‘Loop Collapsed’, tm: now()});
-rf(); sv(); toast(‘Loop closed’); return;
-}
-}
-toast(‘No open loops’);
+on('qa-cl', 'click', function() {
+  for (var i = 0; i < D.E.length; i++) {
+    if (D.E[i].st && D.E[i].st.indexOf('Open') !== -1) {
+      D.E.unshift({tp: 'Moment Close', nm: D.E[i].nm, st: 'Loop Collapsed', tm: now()});
+      rf(); sv(); toast('Loop closed'); return;
+    }
+  }
+  toast('No open loops');
 });
 
 // day close
-on(‘cpill’, ‘click’, oDy);
-on(‘dy-cn’, ‘click’, function() { co(‘ov-dy’); });
-on(‘dy-ok’, ‘click’, cfDy);
+on('cpill', 'click', oDy);
+on('dy-cn', 'click', function() { co('ov-dy'); });
+on('dy-ok', 'click', cfDy);
 
 // log overlay
-on(‘sh-cn’, ‘click’, cLog);
-on(‘sh-ok’, ‘click’, cfLog);
+on('sh-cn', 'click', cLog);
+on('sh-ok', 'click', cfLog);
 
 // priority
-on(‘pr-cn’, ‘click’, function() { co(‘ov-pr’); });
-on(‘pr-ok’, ‘click’, cfPri);
+on('pr-cn', 'click', function() { co('ov-pr'); });
+on('pr-ok', 'click', cfPri);
 
 // rehydrate
-on(‘rhb’, ‘click’, oRH);
-on(‘rh-cn’, ‘click’, function() { co(‘ov-rh’); });
-on(‘rh-ok’, ‘click’, cpRH);
+on('rhb', 'click', oRH);
+on('rh-cn', 'click', function() { co('ov-rh'); });
+on('rh-ok', 'click', cpRH);
 
 // fw toggle
-on(‘fwb2’, ‘click’, function() {
-D.fw = !D.fw;
-var fb = g(‘fwb’), ft = g(‘fwt’);
-if (fb) { fb.textContent = D.fw ? ‘Framework Loaded’ : ‘Framework Off’; fb.className = ’fw-b ’ + (D.fw ? ‘fw-on’ : ‘fw-off’); }
-if (ft) ft.textContent = D.fw ? ‘On’ : ‘Off’;
-sv();
+on('fwb2', 'click', function() {
+  D.fw = !D.fw;
+  var fb = g('fwb'), ft = g('fwt');
+  if (fb) { fb.textContent = D.fw ? 'Framework Loaded' : 'Framework Off'; fb.className = 'fw-b ' + (D.fw ? 'fw-on' : 'fw-off'); }
+  if (ft) ft.textContent = D.fw ? 'On' : 'Off';
+  sv();
 });
 
 // import
-on(‘impb’, ‘click’, function() {
-var i = g(‘im-in’); if (i) i.value = ‘’;
-var p = g(‘im-pv’); if (p) p.style.display = ‘none’;
-oo(‘ov-im’);
+on('impb', 'click', function() {
+  var i = g('im-in'); if (i) i.value = '';
+  var p = g('im-pv'); if (p) p.style.display = 'none';
+  oo('ov-im');
 });
-on(‘im-cn’, ‘click’, function() { co(‘ov-im’); });
-on(‘im-ok’, ‘click’, cfImp);
-on(‘im-ni’, ‘click’, function() { setIT(‘nightly’); });
-on(‘im-de’, ‘click’, function() { setIT(‘deca’); });
-var imInEl = g(‘im-in’);
-if (imInEl) imInEl.addEventListener(‘input’, pvImp);
+on('im-cn', 'click', function() { co('ov-im'); });
+on('im-ok', 'click', cfImp);
+on('im-ni', 'click', function() { setIT('nightly'); });
+on('im-de', 'click', function() { setIT('deca'); });
+var imInEl = g('im-in');
+if (imInEl) imInEl.addEventListener('input', pvImp);
 
 // voice
-on(‘vfab’, ‘click’, function() {
-var ov = g(‘vov’); if (!ov) return;
-if (ov.classList.contains(‘open’)) { vClose(); return; }
-D.vType = null;
-var tp = g(‘vtp’); if (tp) tp.style.display = ‘flex’;
-var lp = g(‘vlp’); if (lp) lp.style.display = ‘none’;
-var vr = g(‘vres’); if (vr) vr.style.display = ‘none’;
-var va = g(‘vac’); if (va) va.style.display = ‘none’;
-var vc = g(‘vcr’); if (vc) vc.style.display = ‘flex’;
-ov.classList.add(‘open’);
+on('vfab', 'click', function() {
+  var ov = g('vov'); if (!ov) return;
+  if (ov.classList.contains('open')) { vClose(); return; }
+  D.vType = null;
+  var tp = g('vtp'); if (tp) tp.style.display = 'flex';
+  var lp = g('vlp'); if (lp) lp.style.display = 'none';
+  var vr = g('vres'); if (vr) vr.style.display = 'none';
+  var va = g('vac'); if (va) va.style.display = 'none';
+  var vc = g('vcr'); if (vc) vc.style.display = 'flex';
+  ov.classList.add('open');
 });
-on(‘v-cl’, ‘click’, vClose);
-on(‘v-retry’, ‘click’, function() {
-D.vParsed = null;
-var tp = g(‘vtp’); if (tp) tp.style.display = ‘flex’;
-var lp = g(‘vlp’); if (lp) lp.style.display = ‘none’;
-var vr = g(‘vres’); if (vr) vr.style.display = ‘none’;
-var va = g(‘vac’); if (va) va.style.display = ‘none’;
-var vc = g(‘vcr’); if (vc) vc.style.display = ‘flex’;
+on('v-cl', 'click', vClose);
+on('v-retry', 'click', function() {
+  D.vParsed = null;
+  var tp = g('vtp'); if (tp) tp.style.display = 'flex';
+  var lp = g('vlp'); if (lp) lp.style.display = 'none';
+  var vr = g('vres'); if (vr) vr.style.display = 'none';
+  var va = g('vac'); if (va) va.style.display = 'none';
+  var vc = g('vcr'); if (vc) vc.style.display = 'flex';
 });
-on(‘v-ok’, ‘click’, function() {
-var p = D.vParsed; if (!p) return;
-if (p.tp === ‘ER’) {
-D.er = p.nm; var n = parseFloat(p.nm); if (!isNaN(n)) D.erLog.push({t: now(), v: n, l: p.nm}); uER();
-} else {
-D.E.unshift({tp: p.tp, nm: p.nm, st: p.st, tm: now()}); bLF(); bTL();
-}
-sv(); vClose(); toast(p.tp + ’: ’ + p.nm);
+on('v-ok', 'click', function() {
+  var p = D.vParsed; if (!p) return;
+  if (p.tp === 'ER') {
+    D.er = p.nm; var n = parseFloat(p.nm); if (!isNaN(n)) D.erLog.push({t: now(), v: n, l: p.nm}); uER();
+  } else {
+    D.E.unshift({tp: p.tp, nm: p.nm, st: p.st, tm: now()}); bLF(); bTL();
+  }
+  sv(); vClose(); toast(p.tp + ': ' + p.nm);
 });
 
 // focus/paint mode
-on(‘pb’, ‘click’, function() {
-var ov = g(‘pov’); if (!ov) return;
-if (ov.classList.contains(‘on’)) { ov.classList.remove(‘on’); this.classList.remove(‘on’); }
-else { ov.classList.add(‘on’); this.classList.add(‘on’); var pe = g(‘per’); if (pe) pe.textContent = D.er; }
+on('pb', 'click', function() {
+  var ov = g('pov'); if (!ov) return;
+  if (ov.classList.contains('on')) { ov.classList.remove('on'); this.classList.remove('on'); }
+  else { ov.classList.add('on'); this.classList.add('on'); var pe = g('per'); if (pe) pe.textContent = D.er; }
 });
-on(‘pex’, ‘click’, function() {
-var ov = g(‘pov’); if (ov) ov.classList.remove(‘on’);
-var pb2 = g(‘pb’); if (pb2) pb2.classList.remove(‘on’);
+on('pex', 'click', function() {
+  var ov = g('pov'); if (ov) ov.classList.remove('on');
+  var pb2 = g('pb'); if (pb2) pb2.classList.remove('on');
 });
 
 // loops header toggle
-on(‘lhdr’, ‘click’, function() {
-var ll = g(‘llist’);
-if (ll) ll.style.display = ll.style.display === ‘none’ ? ‘’ : ‘none’;
+on('lhdr', 'click', function() {
+  var ll = g('llist');
+  if (ll) ll.style.display = ll.style.display === 'none' ? '' : 'none';
 });
 
 // focus mode actions
-document.querySelectorAll(’.pac[data-lg]’).forEach(function(el) {
-el.addEventListener(‘click’, function() { oLog(this.getAttribute(‘data-lg’)); });
+document.querySelectorAll('.pac[data-lg]').forEach(function(el) {
+  el.addEventListener('click', function() { oLog(this.getAttribute('data-lg')); });
 });
 
-console.log(‘LUX Layer: init complete’);
+console.log('LUX Layer: init complete, stabilized.');
 </script>
 
 </body>
 </html>
+
+
