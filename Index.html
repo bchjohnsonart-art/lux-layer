@@ -2,1785 +2,1298 @@
 
 <html lang="en">
 <head>
-  <link rel="apple-touch-icon" href="data:image/jpeg;base64,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CM0Ju5zDhw2tfa+x526KEE7EEuZawsePHe9uW/RERFJLgREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREX//2Q==">
-  <link rel="icon" type="image/jpeg" href="data:image/jpeg;base64,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CM0Ju5zDhw2tfa+x526KEE7EEuZawsePHe9uW/RERFJLgREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREX//2Q==">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="LUX Layer">
-  <meta name="theme-color" content="#0a0d0f">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>LUX Layer</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --bg: #0a0d0f; --bg2: #0f1316; --bg3: #141a1e;
-  --surface: #1a2128; --surface2: #1f2830;
-  --border: #252f38; --border2: #2e3a45;
-  --text: #d8e4ec; --text2: #8fa8b8; --text3: #566878;
-  --gold: #c8a96e; --gold-dim: #8a6e3f;
-  --blue: #5b9fd4; --blue-dim: #2e5a7e; --blue-light: #a8cfe8;
-  --green: #6dbf8a; --green-dim: #2e6644;
-  --amber: #d4945b; --amber-dim: #7a4e28;
-  --violet: #9b7fd4; --violet-dim: #4a3a7a;
-  --red: #d46b6b; --red-dim: #7a2e2e;
-  --accent: #4a8fa8;
-  --font-mono: 'DM Mono', monospace;
-  --font-sans: 'DM Sans', sans-serif;
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0d0f;--bg2:#0f1316;--bg3:#141a1e;
+  --surface:#1a2128;--surface2:#1f2830;
+  --border:#252f38;--border2:#2e3a45;
+  --text:#d8e4ec;--text2:#8fa8b8;--text3:#566878;
+  --gold:#c8a96e;--gold-dim:#8a6e3f;
+  --blue:#5b9fd4;--blue-dim:#2e5a7e;--blue-light:#a8cfe8;
+  --green:#6dbf8a;--amber:#d4945b;--violet:#9b7fd4;--red:#d46b6b;
+  --accent:#4a8fa8;
+  --mono:-apple-system-font,monospace;
+  --sans:-apple-system,'Helvetica Neue',sans-serif;
 }
-html, body { height:100%; width:100%; background:var(--bg); color:var(--text); font-family:var(--font-sans); font-size:15px; line-height:1.5; overflow:hidden; }
-#app { height:100vh; width:100%; max-width:430px; margin:0 auto; position:relative; overflow:hidden; display:flex; flex-direction:column; }
-
-/* SCREENS */
-.screen { position:absolute; inset:0; display:flex; flex-direction:column; opacity:0; pointer-events:none; transition:opacity 0.22s ease; overflow:hidden; }
-.screen.active { opacity:1; pointer-events:all; }
-
-/* TOPBAR */
-.topbar { display:flex; align-items:center; justify-content:space-between; padding:52px 20px 12px; border-bottom:1px solid var(–border); background:var(–bg); flex-shrink:0; }
-.topbar-title { font-family:var(–font-mono); font-size:11px; letter-spacing:0.12em; color:var(–text3); text-transform:uppercase; }
-.topbar-action { font-family:var(–font-mono); font-size:11px; letter-spacing:0.08em; color:var(–accent); cursor:pointer; padding:4px 8px; border:1px solid var(–border2); border-radius:4px; background:transparent; transition:background 0.15s; }
-.topbar-action:hover { background:var(–surface); }
-
-/* SCROLL */
-.scroll-body { flex:1; overflow-y:auto; overflow-x:hidden; -webkit-overflow-scrolling:touch; padding-bottom:80px; }
-.scroll-body::-webkit-scrollbar { display:none; }
-
-/* HOME HEADER */
-.home-header { padding:24px 20px 16px; border-bottom:1px solid var(–border); }
-.home-date { font-family:var(–font-mono); font-size:11px; color:var(–text3); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:4px; }
-.home-time { font-family:var(–font-mono); font-size:34px; font-weight:300; color:var(–text); letter-spacing:-0.02em; line-height:1; }
-.home-time span { font-size:14px; color:var(–text3); font-weight:400; letter-spacing:0.05em; margin-left:6px; }
-.status-row { display:flex; align-items:center; gap:8px; margin-top:10px; flex-wrap:wrap; }
-.status-pill { font-family:var(–font-mono); font-size:10px; letter-spacing:0.1em; padding:3px 8px; border-radius:3px; text-transform:uppercase; }
-.status-open { background:rgba(107,191,138,0.12); color:var(–green); border:1px solid rgba(107,191,138,0.2); }
-.er-badge { font-family:var(–font-mono); font-size:11px; color:var(–amber); background:rgba(212,148,91,0.08); border:1px solid rgba(212,148,91,0.2); padding:3px 8px; border-radius:3px; cursor:pointer; }
-.er-badge:hover { background:rgba(212,148,91,0.14); }
-
-/* PRIORITY BLOCK */
-.priority-block { margin:14px 20px 0; background:var(–surface); border:1px solid var(–border); border-radius:8px; overflow:hidden; }
-.priority-row { display:flex; align-items:center; padding:10px 14px; border-bottom:1px solid var(–border); gap:12px; }
-.priority-row:last-child { border-bottom:none; }
-.pr-key { font-family:var(–font-mono); font-size:9px; letter-spacing:0.12em; color:var(–text3); text-transform:uppercase; min-width:70px; }
-.pr-val { font-size:12px; color:var(–text2); flex:1; }
-.pr-val.warn { color:var(–amber); }
-.pr-val.risk { color:var(–red); }
-.pr-val.carry { color:var(–violet); }
-.pr-val.good { color:var(–green); }
-.pr-edit { font-family:var(–font-mono); font-size:10px; color:var(–text3); cursor:pointer; padding:2px 6px; border:1px solid var(–border2); border-radius:3px; background:transparent; transition:all 0.15s; }
-.pr-edit:hover { color:var(–accent); border-color:var(–accent); }
-
-/* MODEL SELECTOR */
-.model-block { margin:14px 20px 0; background:var(–surface); border:1px solid var(–border); border-radius:8px; overflow:hidden; }
-.model-header { display:flex; align-items:center; justify-content:space-between; padding:10px 14px; border-bottom:1px solid var(–border); }
-.model-title { font-family:var(–font-mono); font-size:9px; letter-spacing:0.15em; color:var(–text3); text-transform:uppercase; }
-.fw-status { font-family:var(–font-mono); font-size:9px; padding:2px 8px; border-radius:3px; letter-spacing:0.06em; }
-.fw-loaded { background:rgba(107,191,138,0.1); color:var(–green); border:1px solid rgba(107,191,138,0.2); }
-.fw-unloaded { background:rgba(212,91,91,0.1); color:var(–red); border:1px solid rgba(212,91,91,0.2); }
-.model-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; padding:10px 12px; }
-.model-btn { background:var(–bg3); border:1px solid var(–border); border-radius:6px; padding:8px 6px; cursor:pointer; text-align:center; transition:all 0.15s; }
-.model-btn:hover { background:var(–surface2); }
-.model-btn.active { background:rgba(74,143,168,0.1); border-color:rgba(74,143,168,0.4); }
-.model-name { font-family:var(–font-mono); font-size:10px; letter-spacing:0.04em; color:var(–text2); }
-.model-btn.active .model-name { color:var(–accent); }
-.model-role { font-size:9px; color:var(–text3); margin-top:2px; }
-.model-actions { display:flex; gap:6px; padding:0 12px 10px; }
-.model-action-btn { flex:1; padding:8px; border-radius:6px; font-family:var(–font-mono); font-size:10px; letter-spacing:0.06em; cursor:pointer; border:1px solid var(–border2); background:var(–bg3); color:var(–text3); transition:all 0.15s; text-transform:uppercase; }
-.model-action-btn.primary { background:rgba(74,143,168,0.08); color:var(–accent); border-color:rgba(74,143,168,0.25); }
-.model-action-btn:hover { background:var(–surface2); color:var(–text2); }
-.model-action-btn.primary:hover { background:rgba(74,143,168,0.16); }
-
-/* POSITION BLOCK */
-.position-block { margin:14px 20px 0; background:var(–surface); border:1px solid var(–border); border-radius:8px; padding:12px 14px; }
-.position-label { font-family:var(–font-mono); font-size:9px; letter-spacing:0.15em; color:var(–text3); text-transform:uppercase; margin-bottom:8px; }
-.position-item { display:flex; justify-content:space-between; align-items:center; padding:5px 0; border-bottom:1px solid var(–border); }
-.position-item:last-child { border-bottom:none; }
-.position-key { font-family:var(–font-mono); font-size:10px; color:var(–text3); letter-spacing:0.06em; }
-.position-val { font-family:var(–font-mono); font-size:11px; color:var(–text2); text-align:right; max-width:62%; }
-.position-val.highlight { color:var(–blue-light); }
-.position-val.warn { color:var(–amber); }
-.position-val.carry { color:var(–violet); }
-
-/* QUICK ACTIONS */
-.quick-actions { display:flex; gap:8px; padding:14px 20px 0; overflow-x:auto; }
-.quick-actions::-webkit-scrollbar { display:none; }
-.qa-btn { flex-shrink:0; background:var(–surface); border:1px solid var(–border); border-radius:20px; padding:7px 14px; font-family:var(–font-mono); font-size:10px; letter-spacing:0.06em; color:var(–text2); cursor:pointer; white-space:nowrap; transition:all 0.15s; }
-.qa-btn:hover { background:var(–surface2); border-color:var(–border2); color:var(–text); }
-.qa-btn.green { color:var(–green); border-color:rgba(107,191,138,0.2); }
-.qa-btn.amber { color:var(–amber); border-color:rgba(212,148,91,0.2); }
-.qa-btn.violet { color:var(–violet); border-color:rgba(155,127,212,0.2); }
-
-/* MAIN ACTIONS */
-.main-actions { display:grid; grid-template-columns:1fr 1fr; gap:10px; padding:14px 20px 0; }
-.action-btn { background:var(–surface); border:1px solid var(–border); border-radius:8px; padding:16px 14px; cursor:pointer; transition:all 0.15s; text-align:left; display:flex; flex-direction:column; gap:5px; }
-.action-btn:hover, .action-btn:active { background:var(–surface2); border-color:var(–border2); transform:translateY(-1px); }
-.action-btn.primary { grid-column:span 2; background:rgba(74,143,168,0.08); border-color:rgba(74,143,168,0.25); }
-.action-btn.primary:hover { background:rgba(74,143,168,0.14); border-color:rgba(74,143,168,0.4); }
-.action-btn.painting { grid-column:span 2; background:rgba(200,169,110,0.06); border-color:rgba(200,169,110,0.2); }
-.action-btn.painting.active { background:rgba(200,169,110,0.12); border-color:rgba(200,169,110,0.4); }
-.btn-icon { font-size:17px; line-height:1; }
-.btn-label { font-family:var(–font-mono); font-size:11px; letter-spacing:0.08em; color:var(–text2); text-transform:uppercase; }
-.btn-sub { font-size:11px; color:var(–text3); line-height:1.3; }
-
-/* OPEN LOOPS */
-.loops-panel { margin:14px 20px 0; background:var(–surface); border:1px solid var(–border); border-radius:8px; overflow:hidden; }
-.loops-header { display:flex; align-items:center; justify-content:space-between; padding:10px 14px; border-bottom:1px solid var(–border); cursor:pointer; }
-.loops-title { font-family:var(–font-mono); font-size:10px; letter-spacing:0.1em; color:var(–text3); text-transform:uppercase; }
-.loops-count { font-family:var(–font-mono); font-size:10px; color:var(–violet); background:rgba(155,127,212,0.1); border:1px solid rgba(155,127,212,0.2); padding:2px 7px; border-radius:3px; }
-.loop-item { display:flex; align-items:center; gap:10px; padding:9px 14px; border-bottom:1px solid var(–border); }
-.loop-item:last-child { border-bottom:none; }
-.loop-dot { width:6px; height:6px; border-radius:50%; flex-shrink:0; }
-.loop-text { font-size:12px; color:var(–text2); flex:1; }
-.loop-tag { font-family:var(–font-mono); font-size:9px; letter-spacing:0.06em; padding:2px 6px; border-radius:3px; text-transform:uppercase; }
-.tag-moment { background:rgba(91,159,212,0.1); color:var(–blue); }
-.tag-carry { background:rgba(155,127,212,0.1); color:var(–violet); }
-.loop-close-btn { font-family:var(–font-mono); font-size:9px; color:var(–text3); padding:2px 6px; border:1px solid var(–border2); border-radius:3px; cursor:pointer; background:transparent; transition:all 0.15s; }
-.loop-close-btn:hover { color:var(–green); border-color:var(–green); }
-
-/* ER SECTION */
-.er-section { margin:14px 20px 0; }
-.section-label { font-family:var(–font-mono); font-size:9px; letter-spacing:0.15em; color:var(–text3); text-transform:uppercase; margin-bottom:8px; padding:0 2px; }
-.er-graph-wrap { background:var(–surface); border:1px solid var(–border); border-radius:8px; padding:14px 16px; }
-.er-graph-svg { width:100%; height:70px; display:block; }
-
-/* QUICK LOG */
-.quicklog-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; padding:16px 20px; }
-.ql-btn { background:var(–surface); border:1px solid var(–border); border-radius:8px; padding:14px 12px; cursor:pointer; transition:all 0.15s; display:flex; align-items:center; gap:10px; }
-.ql-btn:hover { background:var(–surface2); border-color:var(–border2); }
-.ql-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
-.ql-label { font-family:var(–font-mono); font-size:11px; letter-spacing:0.06em; color:var(–text2); }
-.ql-er { grid-column:span 2; background:rgba(212,148,91,0.06); border-color:rgba(212,148,91,0.15); }
-.ql-er .ql-label { color:var(–amber); }
-.ql-note { grid-column:span 2; }
-
-/* LOG OVERLAY */
-.log-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.75); display:flex; align-items:flex-end; z-index:100; opacity:0; pointer-events:none; transition:opacity 0.2s; }
-.log-overlay.open { opacity:1; pointer-events:all; }
-.log-sheet { width:100%; max-width:430px; margin:0 auto; background:var(–bg3); border-top:1px solid var(–border2); border-radius:16px 16px 0 0; padding:20px 20px 44px; transform:translateY(100%); transition:transform 0.25s ease; }
-.log-overlay.open .log-sheet { transform:translateY(0); }
-.sheet-handle { width:36px; height:4px; background:var(–border2); border-radius:2px; margin:0 auto 20px; }
-.sheet-type-label { font-family:var(–font-mono); font-size:10px; letter-spacing:0.12em; color:var(–text3); text-transform:uppercase; margin-bottom:6px; }
-.sheet-title { font-size:20px; font-weight:500; color:var(–text); margin-bottom:20px; }
-.sheet-input { width:100%; background:var(–surface); border:1px solid var(–border2); border-radius:8px; padding:12px 14px; color:var(–text); font-family:var(–font-sans); font-size:15px; outline:none; margin-bottom:12px; transition:border-color 0.15s; -webkit-appearance:none; }
-.sheet-input:focus { border-color:var(–accent); }
-.sheet-input::placeholder { color:var(–text3); }
-.sheet-row { display:flex; gap:8px; }
-.sheet-btn { flex:1; padding:13px; border-radius:8px; font-family:var(–font-mono); font-size:12px; letter-spacing:0.06em; cursor:pointer; border:1px solid var(–border2); transition:all 0.15s; }
-.sheet-btn.confirm { background:rgba(74,143,168,0.12); color:var(–accent); border-color:rgba(74,143,168,0.3); }
-.sheet-btn.confirm:hover { background:rgba(74,143,168,0.2); }
-.sheet-btn.cancel { background:var(–surface); color:var(–text3); }
-
-/* TIMELINE */
-.timeline-feed { padding:16px 20px; }
-.timeline-item { display:flex; gap:14px; padding:0 0 20px; position:relative; }
-.timeline-item::after { content:’’; position:absolute; left:7px; top:18px; bottom:0; width:1px; background:var(–border); }
-.timeline-item:last-child::after { display:none; }
-.tl-dot { width:16px; height:16px; border-radius:50%; flex-shrink:0; margin-top:2px; border:2px solid transparent; position:relative; z-index:1; }
-.tl-dot.milestone { background:rgba(200,169,110,0.15); border-color:var(–gold); }
-.tl-dot.moment { background:rgba(91,159,212,0.15); border-color:var(–blue); }
-.tl-dot.subloop { background:rgba(91,159,212,0.08); border-color:var(–blue-dim); }
-.tl-dot.marker { background:rgba(109,191,138,0.12); border-color:var(–green); }
-.tl-dot.er { background:rgba(212,148,91,0.12); border-color:var(–amber); }
-.tl-dot.carry { background:rgba(155,127,212,0.12); border-color:var(–violet); }
-.tl-body { flex:1; padding-bottom:2px; }
-.tl-type { font-family:var(–font-mono); font-size:9px; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:2px; }
-.tl-type.milestone { color:var(–gold); }
-.tl-type.moment { color:var(–blue); }
-.tl-type.subloop { color:var(–blue-dim); }
-.tl-type.marker { color:var(–green); }
-.tl-type.er { color:var(–amber); }
-.tl-type.carry { color:var(–violet); }
-.tl-name { font-size:13px; color:var(–text); line-height:1.3; margin-bottom:2px; }
-.tl-meta { font-family:var(–font-mono); font-size:10px; color:var(–text3); }
-.tl-status { font-family:var(–font-mono); font-size:10px; padding:2px 6px; border-radius:3px; margin-left:6px; }
-.status-met { background:rgba(200,169,110,0.1); color:var(–gold); }
-.status-open { background:rgba(91,159,212,0.1); color:var(–blue); }
-.status-closed { background:rgba(109,191,138,0.1); color:var(–green); }
-.status-carryover { background:rgba(155,127,212,0.1); color:var(–violet); }
-
-/* STABILIZE */
-.stab-screen { flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:40px 28px; text-align:center; }
-.stab-step { font-family:var(–font-mono); font-size:9px; letter-spacing:0.2em; color:var(–text3); text-transform:uppercase; margin-bottom:32px; }
-.stab-body { flex:1; display:flex; flex-direction:column; justify-content:center; width:100%; }
-.arrival-lines { margin-bottom:40px; }
-.arrival-line { font-size:20px; font-weight:300; color:var(–text); line-height:1.6; opacity:0; animation:fadeUp 0.5s ease forwards; }
-.arrival-line:nth-child(1) { animation-delay:0.1s; }
-.arrival-line:nth-child(2) { animation-delay:0.4s; }
-.arrival-line:nth-child(3) { animation-delay:0.7s; }
-.arrival-line.bold { font-weight:500; margin-top:12px; font-size:22px; }
-@keyframes fadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
-.stab-q { font-size:24px; font-weight:400; color:var(–text); line-height:1.3; margin-bottom:8px; }
-.stab-sub { font-size:13px; color:var(–text3); font-style:italic; margin-bottom:28px; }
-.choice-list { display:flex; flex-direction:column; gap:10px; width:100%; }
-.choice-btn { background:var(–surface); border:1px solid var(–border); border-radius:10px; padding:16px 18px; cursor:pointer; text-align:left; transition:all 0.15s; }
-.choice-btn:hover, .choice-btn.selected { background:var(–surface2); border-color:var(–border2); }
-.choice-btn.selected { border-color:var(–accent); }
-.choice-name { font-size:15px; font-weight:500; margin-bottom:3px; }
-.choice-desc { font-size:12px; color:var(–text3); line-height:1.4; }
-.choice-name.clarity { color:var(–blue-light); }
-.choice-name.turbulent { color:var(–amber); }
-.choice-name.compressed { color:var(–red); }
-.pressure-grid { display:flex; flex-direction:column; gap:8px; width:100%; }
-.pressure-btn { background:var(–surface); border:1px solid var(–border); border-radius:8px; padding:12px 16px; cursor:pointer; text-align:left; transition:all 0.15s; display:flex; align-items:center; gap:12px; }
-.pressure-btn.selected { background:rgba(74,143,168,0.08); border-color:rgba(74,143,168,0.3); }
-.pressure-check { width:18px; height:18px; border:1px solid var(–border2); border-radius:4px; flex-shrink:0; display:flex; align-items:center; justify-content:center; transition:all 0.15s; }
-.pressure-btn.selected .pressure-check { background:var(–accent); border-color:var(–accent); }
-.pressure-check-mark { width:10px; height:10px; opacity:0; transition:opacity 0.1s; color:white; font-size:10px; line-height:1; }
-.pressure-btn.selected .pressure-check-mark { opacity:1; }
-.pressure-text { flex:1; }
-.pressure-name { font-size:14px; font-weight:500; color:var(–text); }
-.pressure-desc { font-size:11px; color:var(–text3); margin-top:1px; }
-.stab-textarea { width:100%; background:var(–surface); border:1px solid var(–border2); border-radius:10px; padding:14px 16px; color:var(–text); font-family:var(–font-sans); font-size:15px; line-height:1.5; outline:none; resize:none; min-height:90px; transition:border-color 0.15s; -webkit-appearance:none; }
-.stab-textarea:focus { border-color:var(–accent); }
-.stab-textarea::placeholder { color:var(–text3); }
-.char-count { font-family:var(–font-mono); font-size:10px; color:var(–text3); text-align:right; margin-top:4px; }
-.split-label { font-family:var(–font-mono); font-size:9px; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:6px; margin-top:16px; }
-.split-label.change { color:var(–accent); }
-.split-label.fixed { color:var(–text3); }
-.optionality-field { margin-bottom:14px; }
-.optionality-label { font-size:12px; color:var(–text3); margin-bottom:6px; font-style:italic; }
-.outcome-card { background:var(–surface); border:1px solid var(–border); border-radius:10px; padding:16px 18px; margin-bottom:10px; text-align:left; width:100%; }
-.outcome-row { display:flex; justify-content:space-between; align-items:flex-start; padding:5px 0; border-bottom:1px solid var(–border); }
-.outcome-row:last-child { border-bottom:none; }
-.outcome-key { font-family:var(–font-mono); font-size:10px; color:var(–text3); letter-spacing:0.06em; text-transform:uppercase; padding-top:1px; min-width:90px; }
-.outcome-val { font-size:12px; color:var(–text2); text-align:right; flex:1; line-height:1.4; }
-.outcome-val.good { color:var(–green); }
-.outcome-val.warn { color:var(–amber); }
-.outcome-actions { display:flex; flex-direction:column; gap:8px; width:100%; margin-top:8px; }
-.outcome-action-btn { width:100%; padding:13px; border-radius:8px; font-family:var(–font-mono); font-size:11px; letter-spacing:0.08em; cursor:pointer; border:1px solid var(–border2); background:var(–surface); color:var(–text2); transition:all 0.15s; text-transform:uppercase; }
-.outcome-action-btn.primary { background:rgba(74,143,168,0.1); color:var(–accent); border-color:rgba(74,143,168,0.3); }
-.outcome-action-btn:hover { background:var(–surface2); }
-.outcome-action-btn.primary:hover { background:rgba(74,143,168,0.18); }
-
-.cta-btn { width:100%; padding:15px; border-radius:10px; font-family:var(–font-mono); font-size:12px; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; border:1px solid rgba(74,143,168,0.3); background:rgba(74,143,168,0.1); color:var(–accent); transition:all 0.15s; margin-top:20px; }
-.cta-btn:hover { background:rgba(74,143,168,0.18); border-color:rgba(74,143,168,0.5); }
-
-/* PAINTING MODE */
-.painting-overlay { position:fixed; inset:0; background:var(–bg); z-index:200; display:flex; flex-direction:column; opacity:0; pointer-events:none; transition:opacity 0.3s; }
-.painting-overlay.active { opacity:1; pointer-events:all; }
-.painting-header { padding:56px 24px 16px; border-bottom:1px solid var(–border); }
-.painting-mode-label { font-family:var(–font-mono); font-size:9px; letter-spacing:0.2em; color:var(–gold-dim); text-transform:uppercase; margin-bottom:4px; }
-.painting-module { font-size:22px; font-weight:300; color:var(–gold); }
-.painting-body { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; padding:24px; }
-.painting-er { font-family:var(–font-mono); font-size:48px; font-weight:300; color:var(–amber); letter-spacing:-0.02em; text-align:center; }
-.painting-er-label { font-family:var(–font-mono); font-size:10px; color:var(–text3); letter-spacing:0.1em; text-transform:uppercase; margin-top:-12px; text-align:center; }
-.painting-actions { display:flex; gap:10px; width:100%; max-width:300px; }
-.painting-action { flex:1; padding:14px; border-radius:8px; font-family:var(–font-mono); font-size:11px; letter-spacing:0.06em; cursor:pointer; border:1px solid var(–border2); background:var(–surface); color:var(–text2); text-align:center; transition:all 0.15s; text-transform:uppercase; }
-.painting-action:hover { background:var(–surface2); }
-.painting-action.log { color:var(–green); border-color:rgba(107,191,138,0.2); background:rgba(107,191,138,0.06); }
-.painting-action.er { color:var(–amber); border-color:rgba(212,148,91,0.2); background:rgba(212,148,91,0.06); }
-.painting-exit { position:absolute; top:56px; right:20px; }
-
-/* REHYDRATE MODAL */
-.rehydrate-modal { position:fixed; inset:0; background:rgba(0,0,0,0.8); display:flex; align-items:flex-end; z-index:150; opacity:0; pointer-events:none; transition:opacity 0.2s; }
-.rehydrate-modal.open { opacity:1; pointer-events:all; }
-.rehydrate-sheet { width:100%; max-width:430px; margin:0 auto; background:var(–bg3); border-top:1px solid var(–border2); border-radius:16px 16px 0 0; padding:20px 20px 44px; transform:translateY(100%); transition:transform 0.25s ease; }
-.rehydrate-modal.open .rehydrate-sheet { transform:translateY(0); }
-.rh-title { font-size:20px; font-weight:500; color:var(–text); margin-bottom:6px; }
-.rh-sub { font-size:13px; color:var(–text3); margin-bottom:20px; font-style:italic; }
-.rh-model-name { font-family:var(–font-mono); font-size:14px; color:var(–accent); margin-bottom:20px; }
-.rh-preview { background:var(–surface); border:1px solid var(–border); border-radius:8px; padding:14px; font-family:var(–font-mono); font-size:10px; color:var(–text3); line-height:1.8; margin-bottom:16px; white-space:pre-wrap; max-height:160px; overflow-y:auto; }
-.rh-actions { display:flex; flex-direction:column; gap:8px; }
-.rh-btn { width:100%; padding:13px; border-radius:8px; font-family:var(–font-mono); font-size:11px; letter-spacing:0.08em; cursor:pointer; border:1px solid var(–border2); background:var(–surface); color:var(–text2); transition:all 0.15s; text-transform:uppercase; }
-.rh-btn.primary { background:rgba(74,143,168,0.1); color:var(–accent); border-color:rgba(74,143,168,0.3); }
-.rh-btn:hover { background:var(–surface2); }
-.rh-btn.primary:hover { background:rgba(74,143,168,0.18); }
-
-/* NAV */
-.navbar { position:absolute; bottom:0; left:0; right:0; height:70px; background:var(–bg); border-top:1px solid var(–border); display:flex; align-items:center; justify-content:space-around; padding-bottom:6px; z-index:10; }
-.nav-item { display:flex; flex-direction:column; align-items:center; gap:3px; cursor:pointer; padding:6px 14px; border-radius:8px; transition:background 0.15s; }
-.nav-item:hover { background:var(–surface); }
-.nav-item.active .nav-label { color:var(–accent); }
-.nav-icon { font-size:17px; line-height:1; }
-.nav-label { font-family:var(–font-mono); font-size:9px; letter-spacing:0.08em; color:var(–text3); text-transform:uppercase; }
-
+html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.5;overflow:hidden}
+#app{height:100vh;width:100%;max-width:430px;margin:0 auto;position:relative;overflow:hidden}
+.screen{position:absolute;inset:0;display:flex;flex-direction:column;opacity:0;pointer-events:none;transition:opacity 0.22s;overflow:hidden}
+.screen.active{opacity:1;pointer-events:all}
+.scroll-body{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;padding-bottom:80px}
+.scroll-body::-webkit-scrollbar{display:none}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:52px 20px 12px;border-bottom:1px solid var(--border);background:var(--bg);flex-shrink:0}
+.topbar-title{font-family:var(--mono);font-size:11px;letter-spacing:0.12em;color:var(--text3);text-transform:uppercase}
+.topbar-btn{font-family:var(--mono);font-size:11px;color:var(--accent);cursor:pointer;padding:4px 8px;border:1px solid var(--border2);border-radius:4px;background:transparent}
+/* HOME */
+.home-header{padding:24px 20px 16px;border-bottom:1px solid var(--border)}
+.home-date{font-family:var(--mono);font-size:11px;color:var(--text3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px}
+.home-time{font-family:var(--mono);font-size:34px;font-weight:300;color:var(--text);letter-spacing:-0.02em;line-height:1}
+.home-time span{font-size:14px;color:var(--text3);margin-left:6px}
+.status-row{display:flex;align-items:center;gap:8px;margin-top:10px;flex-wrap:wrap}
+.pill{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;padding:3px 8px;border-radius:3px;text-transform:uppercase;cursor:pointer}
+.pill-open{background:rgba(107,191,138,0.12);color:var(--green);border:1px solid rgba(107,191,138,0.2)}
+.pill-closed{background:rgba(91,159,212,0.1);color:var(--blue);border:1px solid rgba(91,159,212,0.2)}
+.pill-er{color:var(--amber);background:rgba(212,148,91,0.08);border:1px solid rgba(212,148,91,0.2)}
+.pill-close{background:rgba(155,127,212,0.1);color:var(--violet);border:1px solid rgba(155,127,212,0.2)}
+/* BLOCKS */
+.block{margin:14px 20px 0;background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.block-header{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid var(--border)}
+.block-label{font-family:var(--mono);font-size:9px;letter-spacing:0.15em;color:var(--text3);text-transform:uppercase}
+.block-row{display:flex;align-items:center;justify-content:space-between;padding:9px 14px;border-bottom:1px solid var(--border)}
+.block-row:last-child{border-bottom:none}
+.row-key{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:0.06em;min-width:75px}
+.row-val{font-size:12px;color:var(--text2);text-align:right;flex:1}
+.row-val.hl{color:var(--blue-light)}
+.row-val.warn{color:var(--amber)}
+.row-val.carry{color:var(--violet)}
+.edit-btn{font-family:var(--mono);font-size:9px;color:var(--text3);cursor:pointer;padding:2px 6px;border:1px solid var(--border2);border-radius:3px;background:transparent;margin-left:8px}
+/* MODEL */
+.model-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:10px 12px}
+.model-btn{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 6px;cursor:pointer;text-align:center;transition:all 0.15s}
+.model-btn.active{background:rgba(74,143,168,0.1);border-color:rgba(74,143,168,0.4)}
+.model-name{font-family:var(--mono);font-size:10px;color:var(--text2)}
+.model-btn.active .model-name{color:var(--accent)}
+.model-role{font-size:9px;color:var(--text3);margin-top:2px}
+.model-actions{display:flex;gap:6px;padding:0 12px 10px}
+.model-action{flex:1;padding:8px;border-radius:6px;font-family:var(--mono);font-size:10px;cursor:pointer;border:1px solid var(--border2);background:var(--bg3);color:var(--text3);text-transform:uppercase;text-align:center}
+.model-action.primary{background:rgba(74,143,168,0.08);color:var(--accent);border-color:rgba(74,143,168,0.25)}
 /* FORECAST */
-.forecast-block { margin:14px 20px 0; border-radius:8px; overflow:hidden; border:1px solid var(–border); }
-.forecast-header { display:flex; align-items:center; justify-content:space-between; padding:10px 14px; background:var(–surface); border-bottom:1px solid var(–border); }
-.forecast-label { font-family:var(–font-mono); font-size:9px; letter-spacing:0.15em; color:var(–text3); text-transform:uppercase; }
-.forecast-body { padding:12px 14px; background:var(–surface); }
-.forecast-state { font-family:var(–font-mono); font-size:13px; font-weight:500; margin-bottom:4px; }
-.forecast-basis { font-size:11px; color:var(–text3); font-style:italic; }
-.forecast-confidence { font-family:var(–font-mono); font-size:9px; padding:2px 7px; border-radius:3px; border:1px solid; }
-.fc-stable { color:var(–green); border-color:rgba(107,191,138,0.3); background:rgba(107,191,138,0.08); }
-.fc-build { color:var(–blue-light); border-color:rgba(168,207,232,0.3); background:rgba(168,207,232,0.06); }
-.fc-rising { color:var(–amber); border-color:rgba(212,148,91,0.3); background:rgba(212,148,91,0.08); }
-.fc-drift { color:var(–red); border-color:rgba(212,91,91,0.3); background:rgba(212,91,91,0.08); }
-.fc-descent { color:var(–text3); border-color:var(–border2); background:var(–surface2); }
-
-/* DAY CLOSE MODAL */
-.day-modal { position:fixed; inset:0; background:rgba(0,0,0,0.8); display:flex; align-items:flex-end; z-index:180; opacity:0; pointer-events:none; transition:opacity 0.2s; }
-.day-modal.open { opacity:1; pointer-events:all; }
-.day-sheet { width:100%; max-width:430px; margin:0 auto; background:var(–bg3); border-top:1px solid var(–border2); border-radius:16px 16px 0 0; padding:20px 20px 44px; transform:translateY(100%); transition:transform 0.25s ease; }
-.day-modal.open .day-sheet { transform:translateY(0); }
-.day-modal-title { font-size:20px; font-weight:500; color:var(–text); margin-bottom:8px; }
-.day-modal-sub { font-size:13px; color:var(–text3); margin-bottom:20px; font-style:italic; }
-.nightly-textarea { width:100%; background:var(–surface); border:1px solid var(–border2); border-radius:8px; padding:12px 14px; color:var(–text); font-family:var(–font-sans); font-size:13px; line-height:1.5; outline:none; resize:none; height:120px; margin-bottom:12px; }
-.nightly-textarea::placeholder { color:var(–text3); }
-.nightly-textarea:focus { border-color:var(–accent); }
-
-/* NIGHTLY ARCHIVE */
-.nightly-item { background:var(–surface); border:1px solid var(–border); border-radius:8px; padding:12px 14px; margin-bottom:8px; }
-.nightly-date { font-family:var(–font-mono); font-size:10px; color:var(–accent); margin-bottom:4px; }
-.nightly-text { font-size:12px; color:var(–text2); line-height:1.4; }
-
-/* IMPORT */
-.import-modal { position:fixed; inset:0; background:rgba(0,0,0,0.85); display:flex; align-items:flex-end; z-index:190; opacity:0; pointer-events:none; transition:opacity 0.2s; }
-.import-modal.open { opacity:1; pointer-events:all; }
-.import-sheet { width:100%; max-width:430px; margin:0 auto; background:var(–bg3); border-top:1px solid var(–border2); border-radius:16px 16px 0 0; padding:20px 20px 44px; transform:translateY(100%); transition:transform 0.25s ease; max-height:85vh; overflow-y:auto; }
-.import-modal.open .import-sheet { transform:translateY(0); }
-.import-preview { background:var(–surface); border:1px solid var(–border); border-radius:8px; padding:12px 14px; margin-bottom:12px; }
-.import-preview-row { display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px solid var(–border); font-size:12px; }
-.import-preview-row:last-child { border-bottom:none; }
-.import-preview-key { font-family:var(–font-mono); font-size:10px; color:var(–text3); text-transform:uppercase; letter-spacing:0.06em; }
-.import-preview-val { color:var(–text2); max-width:60%; text-align:right; }
-.import-type-row { display:flex; gap:8px; margin-bottom:12px; }
-.import-type-btn { flex:1; padding:8px; border-radius:6px; font-family:var(–font-mono); font-size:10px; cursor:pointer; border:1px solid var(–border2); background:var(–surface); color:var(–text3); transition:all 0.15s; text-align:center; text-transform:uppercase; letter-spacing:0.06em; }
-.import-type-btn.active { background:rgba(74,143,168,0.1); color:var(–accent); border-color:rgba(74,143,168,0.3); }
-
-.toast { position:fixed; top:60px; left:50%; transform:translateX(-50%); background:var(–surface2); border:1px solid var(–border2); border-radius:8px; padding:10px 18px; font-family:var(–font-mono); font-size:11px; color:var(–green); z-index:300; opacity:0; transition:opacity 0.2s; white-space:nowrap; }
-.toast.show { opacity:1; }
-
+.forecast-state{font-family:var(--mono);font-size:13px;font-weight:500;margin-bottom:4px}
+.forecast-basis{font-size:11px;color:var(--text3);font-style:italic}
+.fc-conf{font-family:var(--mono);font-size:9px;padding:2px 7px;border-radius:3px;border:1px solid}
+.fc-stable{color:var(--green);border-color:rgba(107,191,138,0.3);background:rgba(107,191,138,0.08)}
+.fc-build{color:var(--blue-light);border-color:rgba(168,207,232,0.3);background:rgba(168,207,232,0.06)}
+.fc-rising{color:var(--amber);border-color:rgba(212,148,91,0.3);background:rgba(212,148,91,0.08)}
+.fc-drift{color:var(--red);border-color:rgba(212,91,91,0.3);background:rgba(212,91,91,0.08)}
+.fc-descent{color:var(--text3);border-color:var(--border2);background:var(--surface2)}
+/* QUICK ACTIONS */
+.qa-strip{display:flex;gap:8px;padding:14px 20px 0;overflow-x:auto}
+.qa-strip::-webkit-scrollbar{display:none}
+.qa-btn{flex-shrink:0;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:7px 14px;font-family:var(--mono);font-size:10px;color:var(--text2);cursor:pointer;white-space:nowrap}
+.qa-marker{color:var(--green);border-color:rgba(107,191,138,0.2)}
+.qa-er{color:var(--amber);border-color:rgba(212,148,91,0.2)}
+.qa-loop{color:var(--violet);border-color:rgba(155,127,212,0.2)}
+/* MAIN ACTIONS */
+.main-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 20px 0}
+.action-btn{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px 14px;cursor:pointer;text-align:left;display:flex;flex-direction:column;gap:5px;transition:all 0.15s}
+.action-btn:active{background:var(--surface2);border-color:var(--border2)}
+.action-btn.stab{grid-column:span 2;background:rgba(74,143,168,0.08);border-color:rgba(74,143,168,0.25)}
+.action-btn.paint{grid-column:span 2;background:rgba(200,169,110,0.06);border-color:rgba(200,169,110,0.2)}
+.btn-icon{font-size:17px;line-height:1}
+.btn-lbl{font-family:var(--mono);font-size:11px;letter-spacing:0.08em;color:var(--text2);text-transform:uppercase}
+.btn-sub{font-size:11px;color:var(--text3);line-height:1.3}
+/* LOOPS */
+.loop-item{display:flex;align-items:center;gap:10px;padding:9px 14px;border-bottom:1px solid var(--border)}
+.loop-item:last-child{border-bottom:none}
+.loop-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.loop-text{font-size:12px;color:var(--text2);flex:1}
+.loop-tag{font-family:var(--mono);font-size:9px;letter-spacing:0.06em;padding:2px 6px;border-radius:3px;text-transform:uppercase}
+.tag-moment{background:rgba(91,159,212,0.1);color:var(--blue)}
+.tag-carry{background:rgba(155,127,212,0.1);color:var(--violet)}
+.loop-close{font-family:var(--mono);font-size:9px;color:var(--text3);cursor:pointer;padding:2px 6px;border:1px solid var(--border2);border-radius:3px;background:transparent}
+/* ER GRAPH */
+.er-section{margin:14px 20px 0}
+.section-label{font-family:var(--mono);font-size:9px;letter-spacing:0.15em;color:var(--text3);text-transform:uppercase;margin-bottom:8px}
+.er-wrap{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 16px}
+.er-svg{width:100%;height:70px;display:block}
+.er-meta{display:flex;justify-content:space-between;margin-top:4px}
+.er-meta span{font-family:var(--mono);font-size:9px;color:var(--text3)}
+/* LOG SCREEN */
+.ql-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;padding:16px 20px}
+.ql-btn{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px 12px;cursor:pointer;display:flex;align-items:center;gap:10px;transition:all 0.15s}
+.ql-btn:active{background:var(--surface2)}
+.ql-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.ql-lbl{font-family:var(--mono);font-size:11px;letter-spacing:0.06em;color:var(--text2)}
+.ql-er{grid-column:span 2;background:rgba(212,148,91,0.06);border-color:rgba(212,148,91,0.15)}
+.ql-er .ql-lbl{color:var(--amber)}
+.ql-note{grid-column:span 2}
+/* TIMELINE */
+.tl-feed{padding:16px 20px}
+.tl-item{display:flex;gap:14px;padding:0 0 20px;position:relative}
+.tl-item::after{content:'';position:absolute;left:7px;top:18px;bottom:0;width:1px;background:var(--border)}
+.tl-item:last-child::after{display:none}
+.tl-dot{width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:2px;border:2px solid transparent;position:relative;z-index:1}
+.tl-milestone{background:rgba(200,169,110,0.15);border-color:var(--gold)}
+.tl-moment{background:rgba(91,159,212,0.15);border-color:var(--blue)}
+.tl-subloop{background:rgba(91,159,212,0.08);border-color:var(--blue-dim)}
+.tl-marker{background:rgba(109,191,138,0.12);border-color:var(--green)}
+.tl-er{background:rgba(212,148,91,0.12);border-color:var(--amber)}
+.tl-carry{background:rgba(155,127,212,0.12);border-color:var(--violet)}
+.tl-body{flex:1}
+.tl-type{font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:2px}
+.type-milestone{color:var(--gold)}
+.type-moment{color:var(--blue)}
+.type-subloop{color:var(--blue-dim)}
+.type-marker{color:var(--green)}
+.type-er{color:var(--amber)}
+.type-carry{color:var(--violet)}
+.tl-name{font-size:13px;color:var(--text);line-height:1.3;margin-bottom:2px}
+.tl-meta{font-family:var(--mono);font-size:10px;color:var(--text3)}
+.tl-status{font-family:var(--mono);font-size:10px;padding:2px 6px;border-radius:3px;margin-left:6px}
+.s-met{background:rgba(200,169,110,0.1);color:var(--gold)}
+.s-open{background:rgba(91,159,212,0.1);color:var(--blue)}
+.s-closed{background:rgba(109,191,138,0.1);color:var(--green)}
+.s-carry{background:rgba(155,127,212,0.1);color:var(--violet)}
+.tl-edit{font-family:var(--mono);font-size:9px;color:var(--text3);cursor:pointer;padding:2px 6px;border:1px solid var(--border);border-radius:3px;background:transparent;margin-left:6px}
+.tl-del{font-family:var(--mono);font-size:9px;color:var(--red);cursor:pointer;padding:2px 5px;border:1px solid rgba(212,91,91,0.2);border-radius:3px;background:transparent;margin-left:4px}
+/* STABILIZE */
+.stab-screen{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:40px 28px;text-align:center}
+.stab-step{font-family:var(--mono);font-size:9px;letter-spacing:0.2em;color:var(--text3);text-transform:uppercase;margin-bottom:32px}
+.stab-body{flex:1;display:flex;flex-direction:column;justify-content:center;width:100%}
+.arrival-line{font-size:20px;font-weight:300;color:var(--text);line-height:1.6;opacity:0;animation:fadeUp 0.5s ease forwards}
+.arrival-line:nth-child(1){animation-delay:0.1s}
+.arrival-line:nth-child(2){animation-delay:0.4s}
+.arrival-line:nth-child(3){animation-delay:0.7s}
+.arrival-line.bold{font-weight:500;margin-top:12px;font-size:22px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.stab-q{font-size:24px;font-weight:400;color:var(--text);line-height:1.3;margin-bottom:8px}
+.stab-sub{font-size:13px;color:var(--text3);font-style:italic;margin-bottom:28px}
+.choice-btn{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 18px;cursor:pointer;text-align:left;transition:all 0.15s;margin-bottom:10px}
+.choice-btn.sel{border-color:var(--accent);background:var(--surface2)}
+.choice-name{font-size:15px;font-weight:500;margin-bottom:3px}
+.choice-desc{font-size:12px;color:var(--text3);line-height:1.4}
+.c-clarity{color:var(--blue-light)}
+.c-turbulent{color:var(--amber)}
+.c-compressed{color:var(--red)}
+.press-btn{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 16px;cursor:pointer;text-align:left;transition:all 0.15s;display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.press-btn.sel{background:rgba(74,143,168,0.08);border-color:rgba(74,143,168,0.3)}
+.press-check{width:18px;height:18px;border:1px solid var(--border2);border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.15s}
+.press-btn.sel .press-check{background:var(--accent);border-color:var(--accent)}
+.check-mark{opacity:0;transition:opacity 0.1s;color:white;font-size:10px}
+.press-btn.sel .check-mark{opacity:1}
+.press-name{font-size:14px;font-weight:500;color:var(--text)}
+.press-desc{font-size:11px;color:var(--text3);margin-top:1px}
+.stab-ta{width:100%;background:var(--surface);border:1px solid var(--border2);border-radius:10px;padding:14px 16px;color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.5;outline:none;resize:none;min-height:90px;-webkit-appearance:none}
+.stab-ta:focus{border-color:var(--accent)}
+.stab-ta::placeholder{color:var(--text3)}
+.char-count{font-family:var(--mono);font-size:10px;color:var(--text3);text-align:right;margin-top:4px}
+.split-lbl{font-family:var(--mono);font-size:9px;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:6px;margin-top:16px}
+.split-change{color:var(--accent)}
+.split-fixed{color:var(--text3)}
+.opt-field{margin-bottom:14px}
+.opt-lbl{font-size:12px;color:var(--text3);margin-bottom:6px;font-style:italic}
+.outcome-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 18px;margin-bottom:10px;text-align:left;width:100%}
+.out-row{display:flex;justify-content:space-between;align-items:flex-start;padding:5px 0;border-bottom:1px solid var(--border)}
+.out-row:last-child{border-bottom:none}
+.out-key{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:0.06em;text-transform:uppercase;min-width:90px}
+.out-val{font-size:12px;color:var(--text2);text-align:right;flex:1;line-height:1.4}
+.out-good{color:var(--green)}
+.out-warn{color:var(--amber)}
+/* SHEET INPUT */
+.sheet-input{width:100%;background:var(--surface);border:1px solid var(--border2);border-radius:8px;padding:12px 14px;color:var(--text);font-family:var(--sans);font-size:15px;outline:none;-webkit-appearance:none}
+.sheet-input:focus{border-color:var(--accent)}
+.sheet-input::placeholder{color:var(--text3)}
+/* CTA */
+.cta-btn{width:100%;padding:15px;border-radius:10px;font-family:var(--mono);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;border:1px solid rgba(74,143,168,0.3);background:rgba(74,143,168,0.1);color:var(--accent);margin-top:20px}
+/* OVERLAYS */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);display:flex;align-items:flex-end;z-index:100;opacity:0;pointer-events:none;transition:opacity 0.2s}
+.overlay.open{opacity:1;pointer-events:all}
+.sheet{width:100%;max-width:430px;margin:0 auto;background:var(--bg3);border-top:1px solid var(--border2);border-radius:16px 16px 0 0;padding:20px 20px 44px;transform:translateY(100%);transition:transform 0.25s ease;max-height:85vh;overflow-y:auto}
+.overlay.open .sheet{transform:translateY(0)}
+.sheet-handle{width:36px;height:4px;background:var(--border2);border-radius:2px;margin:0 auto 20px}
+.sheet-type{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;color:var(--text3);text-transform:uppercase;margin-bottom:6px}
+.sheet-title{font-size:20px;font-weight:500;color:var(--text);margin-bottom:20px}
+.sheet-row{display:flex;gap:8px}
+.sheet-btn{flex:1;padding:13px;border-radius:8px;font-family:var(--mono);font-size:12px;letter-spacing:0.06em;cursor:pointer;border:1px solid var(--border2);transition:all 0.15s}
+.sheet-confirm{background:rgba(74,143,168,0.12);color:var(--accent);border-color:rgba(74,143,168,0.3)}
+.sheet-cancel{background:var(--surface);color:var(--text3)}
 /* VOICE */
-.voice-btn { position:fixed; bottom:82px; right:18px; width:52px; height:52px; border-radius:50%; background:rgba(74,143,168,0.15); border:1px solid rgba(74,143,168,0.35); display:flex; align-items:center; justify-content:center; cursor:pointer; z-index:50; transition:all 0.2s; box-shadow:0 2px 16px rgba(0,0,0,0.4); }
-.voice-btn:hover { background:rgba(74,143,168,0.25); }
-.voice-btn.listening { background:rgba(212,91,91,0.18); border-color:rgba(212,91,91,0.5); animation:pulse 1.2s ease infinite; }
-.voice-btn.listening .mic-icon { color:var(–red); }
-@keyframes pulse { 0%,100%{ box-shadow:0 0 0 0 rgba(212,91,91,0.3); } 50%{ box-shadow:0 0 0 10px rgba(212,91,91,0); } }
-.mic-icon { font-size:20px; color:var(–accent); transition:color 0.2s; }
-.voice-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.85); display:flex; flex-direction:column; align-items:center; justify-content:center; z-index:150; opacity:0; pointer-events:none; transition:opacity 0.2s; }
-.voice-overlay.open { opacity:1; pointer-events:all; }
-.voice-ring { width:120px; height:120px; border-radius:50%; background:rgba(74,143,168,0.08); border:1px solid rgba(74,143,168,0.2); display:flex; align-items:center; justify-content:center; margin-bottom:24px; position:relative; }
-.voice-ring.active { border-color:rgba(212,91,91,0.5); background:rgba(212,91,91,0.08); }
-.voice-ring.active::after { content:’’; position:absolute; inset:-8px; border-radius:50%; border:1px solid rgba(212,91,91,0.2); animation:ringPulse 1.2s ease infinite; }
-@keyframes ringPulse { 0%{ transform:scale(1); opacity:0.6; } 100%{ transform:scale(1.2); opacity:0; } }
-.voice-mic-big { font-size:44px; }
-.voice-status { font-family:var(–font-mono); font-size:11px; letter-spacing:0.12em; color:var(–text3); text-transform:uppercase; margin-bottom:12px; }
-.voice-transcript { font-size:16px; color:var(–text); text-align:center; max-width:280px; min-height:48px; line-height:1.5; margin-bottom:24px; font-style:italic; }
-.voice-result { background:var(–surface); border:1px solid var(–border2); border-radius:10px; padding:14px 16px; width:280px; margin-bottom:16px; }
-.voice-result-type { font-family:var(–font-mono); font-size:9px; letter-spacing:0.12em; color:var(–accent); text-transform:uppercase; margin-bottom:4px; }
-.voice-result-text { font-size:14px; color:var(–text); }
-.voice-actions { display:flex; gap:10px; }
-.voice-action { padding:12px 24px; border-radius:8px; font-family:var(–font-mono); font-size:11px; letter-spacing:0.08em; cursor:pointer; border:1px solid var(–border2); background:var(–surface); color:var(–text2); transition:all 0.15s; text-transform:uppercase; }
-.voice-action.confirm { background:rgba(74,143,168,0.1); color:var(–accent); border-color:rgba(74,143,168,0.3); }
-.voice-action:hover { background:var(–surface2); }
-.voice-action.confirm:hover { background:rgba(74,143,168,0.2); }
-.voice-hint { font-size:11px; color:var(–text3); text-align:center; margin-top:16px; font-style:italic; max-width:260px; line-height:1.5; }
+.voice-fab{position:fixed;bottom:82px;right:18px;width:52px;height:52px;border-radius:50%;background:rgba(74,143,168,0.15);border:1px solid rgba(74,143,168,0.35);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:50;font-size:20px}
+.voice-fab.listening{background:rgba(212,91,91,0.18);border-color:rgba(212,91,91,0.5);animation:pulse 1.2s ease infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(212,91,91,0.3)}50%{box-shadow:0 0 0 10px rgba(212,91,91,0)}}
+.voice-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.85);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:150;opacity:0;pointer-events:none;transition:opacity 0.2s;padding:28px}
+.voice-overlay.open{opacity:1;pointer-events:all}
+.voice-ring{width:100px;height:100px;border-radius:50%;background:rgba(74,143,168,0.08);border:1px solid rgba(74,143,168,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:40px;position:relative}
+.voice-ring.active{border-color:rgba(212,91,91,0.5);background:rgba(212,91,91,0.08)}
+.voice-status{font-family:var(--mono);font-size:11px;letter-spacing:0.12em;color:var(--text3);text-transform:uppercase;margin-bottom:12px}
+.voice-transcript{font-size:16px;color:var(--text);text-align:center;min-height:44px;line-height:1.5;margin-bottom:20px;font-style:italic}
+.voice-result{background:var(--surface);border:1px solid var(--border2);border-radius:10px;padding:14px 16px;width:100%;margin-bottom:16px;display:none}
+.voice-result-type{font-family:var(--mono);font-size:9px;letter-spacing:0.12em;color:var(--accent);text-transform:uppercase;margin-bottom:4px}
+.voice-result-text{font-size:14px;color:var(--text)}
+.voice-type-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;width:100%;max-width:300px;margin-bottom:20px}
+.vt-btn{background:var(--surface);border:1px solid var(--border2);border-radius:8px;padding:10px;font-family:var(--mono);font-size:11px;cursor:pointer;text-align:center;transition:all 0.15s}
+.vt-btn.sel{outline:2px solid var(--accent)}
+.voice-actions{display:flex;gap:10px}
+.voice-action{padding:12px 20px;border-radius:8px;font-family:var(--mono);font-size:11px;letter-spacing:0.08em;cursor:pointer;border:1px solid var(--border2);background:var(--surface);color:var(--text2);text-transform:uppercase}
+.voice-action.confirm{background:rgba(74,143,168,0.1);color:var(--accent);border-color:rgba(74,143,168,0.3)}
+/* REHYDRATE */
+.rh-preview{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px;font-family:var(--mono);font-size:10px;color:var(--text3);line-height:1.8;margin-bottom:16px;white-space:pre-wrap;max-height:160px;overflow-y:auto}
+/* ARCHIVE */
+.nightly-item{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-bottom:8px}
+.nightly-date{font-family:var(--mono);font-size:10px;color:var(--accent);margin-bottom:4px}
+.nightly-note{font-size:12px;color:var(--text2);line-height:1.4}
+/* PAINTING */
+.paint-overlay{position:fixed;inset:0;background:var(--bg);z-index:200;display:flex;flex-direction:column;opacity:0;pointer-events:none;transition:opacity 0.3s}
+.paint-overlay.active{opacity:1;pointer-events:all}
+.paint-er{font-family:var(--mono);font-size:52px;font-weight:300;color:var(--amber);text-align:center;margin-bottom:4px}
+.paint-lbl{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:0.1em;text-transform:uppercase;text-align:center;margin-bottom:32px}
+.paint-actions{display:flex;gap:10px;width:100%;max-width:280px}
+.paint-action{flex:1;padding:14px;border-radius:8px;font-family:var(--mono);font-size:11px;cursor:pointer;border:1px solid var(--border2);background:var(--surface);color:var(--text2);text-align:center;text-transform:uppercase}
+/* NAVBAR */
+.navbar{position:absolute;bottom:0;left:0;right:0;height:70px;background:var(--bg);border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-around;padding-bottom:6px;z-index:10}
+.nav-item{display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;padding:6px 14px;border-radius:8px}
+.nav-item.active .nav-lbl{color:var(--accent)}
+.nav-icon{font-size:17px;line-height:1}
+.nav-lbl{font-family:var(--mono);font-size:9px;letter-spacing:0.08em;color:var(--text3);text-transform:uppercase}
+/* TOAST */
+.toast{position:fixed;top:60px;left:50%;transform:translateX(-50%);background:var(--surface2);border:1px solid var(--border2);border-radius:8px;padding:10px 18px;font-family:var(--mono);font-size:11px;color:var(--green);z-index:300;opacity:0;transition:opacity 0.2s;white-space:nowrap;pointer-events:none}
+.toast.show{opacity:1}
+/* IMPORT */
+.import-type-row{display:flex;gap:8px;margin-bottom:12px}
+.import-type-btn{flex:1;padding:8px;border-radius:6px;font-family:var(--mono);font-size:10px;cursor:pointer;border:1px solid var(--border2);background:var(--surface);color:var(--text3);text-align:center;text-transform:uppercase;letter-spacing:0.06em}
+.import-type-btn.active{background:rgba(74,143,168,0.1);color:var(--accent);border-color:rgba(74,143,168,0.3)}
+.import-ta{width:100%;background:var(--surface);border:1px solid var(--border2);border-radius:8px;padding:12px 14px;color:var(--text);font-family:var(--sans);font-size:13px;line-height:1.5;outline:none;resize:none;height:160px;margin-bottom:12px;-webkit-appearance:none}
+.import-ta:focus{border-color:var(--accent)}
+.import-ta::placeholder{color:var(--text3)}
+.import-preview{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-bottom:12px;display:none}
+.imp-row{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--border);font-size:12px}
+.imp-row:last-child{border-bottom:none}
+.imp-key{font-family:var(--mono);font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em}
+.imp-val{color:var(--text2);max-width:60%;text-align:right}
+.fw-badge{font-family:var(--mono);font-size:9px;padding:2px 8px;border-radius:3px;letter-spacing:0.06em}
+.fw-on{background:rgba(107,191,138,0.1);color:var(--green);border:1px solid rgba(107,191,138,0.2)}
+.fw-off{background:rgba(212,91,91,0.1);color:var(--red);border:1px solid rgba(212,91,91,0.2)}
 </style>
-
 </head>
 <body>
 <div id="app">
 
-  <!-- ══ HOME ══ -->
+<!-- HOME -->
 
-  <div class="screen active" id="screen-home">
-    <div class="scroll-body">
-      <div class="home-header">
-        <div class="home-date" id="home-date"></div>
-        <div class="home-time" id="home-time"></div>
-        <div class="status-row">
-          <div class="status-pill status-open" id="day-status-pill">Day Open</div>
-          <div class="er-badge" id="er-current" onclick="openERLog()">ER —</div>
-          <div class="status-pill" id="day-close-btn" onclick="openDayClose()" style="background:rgba(155,127,212,0.1);color:var(--violet);border:1px solid rgba(155,127,212,0.2);cursor:pointer;">Close Day</div>
-        </div>
+<div class="screen active" id="scr-home">
+  <div class="scroll-body">
+    <div class="home-header">
+      <div class="home-date" id="home-date"></div>
+      <div class="home-time" id="home-time"><span></span></div>
+      <div class="status-row">
+        <div class="pill pill-open" id="day-pill">Day Open</div>
+        <div class="pill pill-er" id="er-pill" onclick="openERLog()">ER --</div>
+        <div class="pill pill-close" id="close-pill" onclick="openDayClose()">Close Day</div>
       </div>
-
-```
-  <!-- PRIORITY / GUIDANCE -->
-  <div class="priority-block">
-    <div class="priority-row">
-      <span class="pr-key">Today</span>
-      <span class="pr-val" id="pr-today">Early morning / Rehydration</span>
-      <button class="pr-edit" onclick="editPriority('today')">edit</button>
     </div>
-    <div class="priority-row">
-      <span class="pr-key">Priority</span>
-      <span class="pr-val warn" id="pr-priority">Framework compression</span>
-      <button class="pr-edit" onclick="editPriority('priority')">edit</button>
+    <div class="block">
+      <div class="block-row"><span class="row-key">TODAY</span><span class="row-val" id="pr-today">Early morning</span><button class="edit-btn" onclick="editPri('today')">edit</button></div>
+      <div class="block-row"><span class="row-key">PRIORITY</span><span class="row-val warn" id="pr-priority">Framework</span><button class="edit-btn" onclick="editPri('priority')">edit</button></div>
+      <div class="block-row"><span class="row-key">OPEN LOOP</span><span class="row-val carry" id="pr-loop">--</span><button class="edit-btn" onclick="editPri('loop')">edit</button></div>
+      <div class="block-row"><span class="row-key">RISK</span><span class="row-val" id="pr-risk">None flagged</span><button class="edit-btn" onclick="editPri('risk')">edit</button></div>
     </div>
-    <div class="priority-row">
-      <span class="pr-key">Open Loop</span>
-      <span class="pr-val carry" id="pr-loop">Pick Up Frames</span>
-      <button class="pr-edit" onclick="editPriority('loop')">edit</button>
+    <div class="block">
+      <div class="block-header"><span class="block-label">Model Layer</span><span class="fw-badge fw-on" id="fw-badge">Framework Loaded</span></div>
+      <div class="model-grid" id="model-grid">
+        <div class="model-btn active" onclick="selModel('LUX',this)"><div class="model-name">LUX</div><div class="model-role">Primary</div></div>
+        <div class="model-btn" onclick="selModel('Claude',this)"><div class="model-name">Claude</div><div class="model-role">Logic</div></div>
+        <div class="model-btn" onclick="selModel('Gemini',this)"><div class="model-name">Gemini</div><div class="model-role">Research</div></div>
+        <div class="model-btn" onclick="selModel('Grok',this)"><div class="model-name">Grok</div><div class="model-role">Alt read</div></div>
+        <div class="model-btn" onclick="selModel('Perplx',this)"><div class="model-name">Perplx</div><div class="model-role">Search</div></div>
+        <div class="model-btn" onclick="selModel('Kimi',this)"><div class="model-name">Kimi</div><div class="model-role">Support</div></div>
+      </div>
+      <div class="model-actions">
+        <div class="model-action primary" onclick="openRehydrate()">Rehydrate to <span id="rh-model">LUX</span></div>
+        <div class="model-action" onclick="toggleFW()">FW: <span id="fw-toggle">On</span></div>
+      </div>
     </div>
-    <div class="priority-row">
-      <span class="pr-key">Risk</span>
-      <span class="pr-val" id="pr-risk">None flagged</span>
-      <button class="pr-edit" onclick="editPriority('risk')">edit</button>
+    <div class="block">
+      <div class="block-header"><span class="block-label">Current Position</span></div>
+      <div class="block-row"><span class="row-key">Moment</span><span class="row-val hl" id="pos-moment">--</span></div>
+      <div class="block-row"><span class="row-key">Sub-Loops</span><span class="row-val warn" id="pos-sub">0</span></div>
+      <div class="block-row"><span class="row-key">Carryover</span><span class="row-val carry" id="pos-carry">none</span></div>
     </div>
+    <div class="qa-strip">
+      <div class="qa-btn qa-marker" onclick="openLog('Marker')">+ Marker</div>
+      <div class="qa-btn qa-er" onclick="openERLog()">ER Update</div>
+      <div class="qa-btn qa-loop" onclick="closeTopLoop()">Close Loop</div>
+      <div class="qa-btn" onclick="openLog('Sub-Loop Open')">Sub-Loop</div>
+      <div class="qa-btn" onclick="openLog('Milestone')">Milestone</div>
+    </div>
+    <div class="main-grid">
+      <div class="action-btn stab" onclick="gotoStab()"><div class="btn-icon">O</div><div class="btn-lbl">Stabilize</div><div class="btn-sub">Ground / pressure / optionality</div></div>
+      <div class="action-btn" onclick="goTo('scr-log')"><div class="btn-icon">+</div><div class="btn-lbl">Log</div><div class="btn-sub">Marker, Milestone, ER</div></div>
+      <div class="action-btn" onclick="goTo('scr-timeline')"><div class="btn-icon">[]</div><div class="btn-lbl">Day View</div><div class="btn-sub">Timeline</div></div>
+      <div class="action-btn" onclick="goTo('scr-archive')"><div class="btn-icon">^</div><div class="btn-lbl">Archive</div><div class="btn-sub">Nightlies / Decas</div></div>
+      <div class="action-btn paint" id="paint-btn" onclick="togglePaint()"><div class="btn-icon">P</div><div class="btn-lbl">Focus Mode</div><div class="btn-sub">Minimal / ER + Marker only</div></div>
+    </div>
+    <div class="block" style="margin-bottom:0">
+      <div class="block-header" onclick="toggleLoops()" style="cursor:pointer"><span class="block-label">Open Loops</span><span class="fw-badge" id="loops-count" style="background:rgba(155,127,212,0.1);color:var(--violet);border-color:rgba(155,127,212,0.2)">0</span></div>
+      <div id="loops-list"></div>
+    </div>
+    <div class="er-section">
+      <div class="section-label">ER Arc</div>
+      <div class="er-wrap">
+        <svg class="er-svg" id="er-svg" viewBox="0 0 320 70" preserveAspectRatio="none"></svg>
+        <div class="er-meta"><span>Wake</span><span id="er-now" style="color:var(--amber)"></span><span>Now</span></div>
+      </div>
+    </div>
+    <div class="block">
+      <div class="block-header"><span class="block-label">State Forecast</span><span class="fw-badge fc-stable" id="fc-conf">--</span></div>
+      <div style="padding:12px 14px">
+        <div class="forecast-state fc-stable" id="fc-state">--</div>
+        <div class="forecast-basis" id="fc-basis">Log ER entries to activate</div>
+      </div>
+    </div>
+    <div style="height:16px"></div>
   </div>
-
-  <!-- MODEL SELECTOR -->
-  <div class="model-block">
-    <div class="model-header">
-      <span class="model-title">Model Layer</span>
-      <span class="fw-status fw-loaded" id="fw-status">Framework Loaded</span>
-    </div>
-    <div class="model-grid" id="model-grid">
-      <div class="model-btn active" onclick="selectModel('LUX', this)">
-        <div class="model-name">LUX</div>
-        <div class="model-role">Primary</div>
-      </div>
-      <div class="model-btn" onclick="selectModel('Claude', this)">
-        <div class="model-name">Claude</div>
-        <div class="model-role">Logic</div>
-      </div>
-      <div class="model-btn" onclick="selectModel('Gemini', this)">
-        <div class="model-name">Gemini</div>
-        <div class="model-role">Research</div>
-      </div>
-      <div class="model-btn" onclick="selectModel('Grok', this)">
-        <div class="model-name">Grok</div>
-        <div class="model-role">Alt read</div>
-      </div>
-      <div class="model-btn" onclick="selectModel('Perplexity', this)">
-        <div class="model-name">Perplx</div>
-        <div class="model-role">Search</div>
-      </div>
-      <div class="model-btn" onclick="selectModel('Kimi', this)">
-        <div class="model-name">Kimi</div>
-        <div class="model-role">Support</div>
-      </div>
-    </div>
-    <div class="model-actions">
-      <button class="model-action-btn primary" onclick="openRehydrate()">Rehydrate to <span id="rehydrate-model-name">LUX</span></button>
-      <button class="model-action-btn" onclick="toggleFramework()">FW: <span id="fw-toggle-label">On</span></button>
-    </div>
-  </div>
-
-  <!-- POSITION -->
-  <div class="position-block">
-    <div class="position-label">Current Position</div>
-    <div class="position-item">
-      <span class="position-key">Moment</span>
-      <span class="position-val highlight" id="pos-moment">Early Morning Sequence</span>
-    </div>
-    <div class="position-item">
-      <span class="position-key">Open Sub-Loops</span>
-      <span class="position-val warn" id="pos-subloops">1</span>
-    </div>
-    <div class="position-item">
-      <span class="position-key">Carryover</span>
-      <span class="position-val carry" id="pos-carry">1 (Pick Up Frames)</span>
-    </div>
-  </div>
-
-  <!-- QUICK ACTIONS -->
-  <div class="quick-actions">
-    <button class="qa-btn green" onclick="openLog('Marker')">+ Marker</button>
-    <button class="qa-btn amber" onclick="openERLog()">ER Update</button>
-    <button class="qa-btn violet" onclick="closeTopLoop()">Close Loop</button>
-    <button class="qa-btn" onclick="openLog('Sub-Loop Open')">Sub-Loop Open</button>
-    <button class="qa-btn" onclick="openLog('Milestone')">Milestone</button>
-  </div>
-
-  <!-- MAIN ACTIONS -->
-  <div class="main-actions">
-    <div class="action-btn primary" onclick="gotoStabilize()">
-      <div class="btn-icon">◎</div>
-      <div class="btn-label">Stabilize</div>
-      <div class="btn-sub">Ground · pressure · optionality</div>
-    </div>
-    <div class="action-btn" onclick="showScreen('screen-log')">
-      <div class="btn-icon">⊕</div>
-      <div class="btn-label">Log</div>
-      <div class="btn-sub">Marker, Milestone, ER</div>
-    </div>
-    <div class="action-btn" onclick="showScreen('screen-timeline')">
-      <div class="btn-icon">◫</div>
-      <div class="btn-label">Day View</div>
-      <div class="btn-sub">Timeline & shape</div>
-    </div>
-    <div class="action-btn" onclick="showScreen('screen-archive')">
-      <div class="btn-icon">↗</div>
-      <div class="btn-label">Archive</div>
-      <div class="btn-sub">Nightlies · Decas · History</div>
-    </div>
-    <div class="action-btn painting" id="painting-btn" onclick="togglePaintingMode()">
-      <div class="btn-icon">🎨</div>
-      <div class="btn-label">Painting Mode</div>
-      <div class="btn-sub">Minimal interface · ER + Marker only</div>
-    </div>
-  </div>
-
-  <!-- OPEN LOOPS -->
-  <div class="loops-panel">
-    <div class="loops-header" onclick="toggleLoops()">
-      <span class="loops-title">Open Loops</span>
-      <span class="loops-count" id="loops-count">2</span>
-    </div>
-    <div id="loops-list">
-      <div class="loop-item">
-        <div class="loop-dot" style="background:var(--blue)"></div>
-        <span class="loop-text">Early Morning Sequence</span>
-        <span class="loop-tag tag-moment">Moment</span>
-        <button class="loop-close-btn" onclick="closeLoopItem('Early Morning Sequence')">close</button>
-      </div>
-      <div class="loop-item">
-        <div class="loop-dot" style="background:var(--violet)"></div>
-        <span class="loop-text">Pick Up Frames</span>
-        <span class="loop-tag tag-carry">Carryover</span>
-        <button class="loop-close-btn" onclick="closeLoopItem('Pick Up Frames')">mark done</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ER ARC -->
-  <div class="er-section">
-    <div class="section-label">ER Arc — Today</div>
-    <div class="er-graph-wrap">
-      <svg class="er-graph-svg" id="er-svg" viewBox="0 0 320 70" preserveAspectRatio="none"></svg>
-      <div style="display:flex;justify-content:space-between;margin-top:4px;">
-        <span style="font-family:var(--font-mono);font-size:9px;color:var(--text3)">Wake</span>
-        <span style="font-family:var(--font-mono);font-size:9px;color:var(--amber)" id="er-now-label"></span>
-        <span style="font-family:var(--font-mono);font-size:9px;color:var(--text3)">Now</span>
-      </div>
-    </div>
-  </div>
-  <!-- FORECAST -->
-  <div class="forecast-block" id="forecast-block">
-    <div class="forecast-header">
-      <span class="forecast-label">State Forecast</span>
-      <span class="forecast-confidence fc-stable" id="forecast-confidence">Moderate</span>
-    </div>
-    <div class="forecast-body">
-      <div class="forecast-state fc-build" id="forecast-state">Build Mode Likely</div>
-      <div class="forecast-basis" id="forecast-basis">Based on ER trend + early-morning pattern</div>
-    </div>
-  </div>
-
-  <div style="height:16px"></div>
+  <nav class="navbar">
+    <div class="nav-item active" onclick="goTo('scr-home')"><div class="nav-icon">H</div><div class="nav-lbl">Home</div></div>
+    <div class="nav-item" onclick="goTo('scr-log')"><div class="nav-icon">+</div><div class="nav-lbl">Log</div></div>
+    <div class="nav-item" onclick="gotoStab()"><div class="nav-icon">O</div><div class="nav-lbl">Stabilize</div></div>
+    <div class="nav-item" onclick="goTo('scr-timeline')"><div class="nav-icon">[]</div><div class="nav-lbl">Day</div></div>
+  </nav>
 </div>
 
-<nav class="navbar">
-  <div class="nav-item active" onclick="showScreen('screen-home')"><div class="nav-icon">⌂</div><div class="nav-label">Home</div></div>
-  <div class="nav-item" onclick="showScreen('screen-log')"><div class="nav-icon">⊕</div><div class="nav-label">Log</div></div>
-  <div class="nav-item" onclick="gotoStabilize()"><div class="nav-icon">◎</div><div class="nav-label">Stabilize</div></div>
-  <div class="nav-item" onclick="showScreen('screen-timeline')"><div class="nav-icon">◫</div><div class="nav-label">Day</div></div>
-</nav>
-```
+<!-- LOG -->
 
+<div class="screen" id="scr-log">
+  <div class="topbar"><span class="topbar-title">Quick Log</span><button class="topbar-btn" onclick="goTo('scr-home')">Home</button></div>
+  <div class="scroll-body">
+    <div class="ql-grid">
+      <div class="ql-btn" onclick="openLog('Marker')"><div class="ql-dot" style="background:var(--green)"></div><span class="ql-lbl">Marker</span></div>
+      <div class="ql-btn" onclick="openLog('Milestone')"><div class="ql-dot" style="background:var(--gold)"></div><span class="ql-lbl">Milestone</span></div>
+      <div class="ql-btn" onclick="openLog('Moment Open')"><div class="ql-dot" style="background:var(--blue)"></div><span class="ql-lbl">Moment Open</span></div>
+      <div class="ql-btn" onclick="openLog('Moment Close')"><div class="ql-dot" style="background:var(--blue-dim)"></div><span class="ql-lbl">Moment Close</span></div>
+      <div class="ql-btn" onclick="openLog('Sub-Loop Open')"><div class="ql-dot" style="background:var(--blue-dim)"></div><span class="ql-lbl">Sub-Loop Open</span></div>
+      <div class="ql-btn" onclick="openLog('Sub-Loop Close')"><div class="ql-dot" style="background:var(--border2)"></div><span class="ql-lbl">Sub-Loop Close</span></div>
+      <div class="ql-btn" onclick="openLog('Carryover')"><div class="ql-dot" style="background:var(--violet)"></div><span class="ql-lbl">Carryover</span></div>
+      <div class="ql-btn ql-er" onclick="openERLog()"><div class="ql-dot" style="background:var(--amber)"></div><span class="ql-lbl">ER Update</span></div>
+      <div class="ql-btn ql-note" onclick="openLog('Note')"><div class="ql-dot" style="background:var(--text3)"></div><span class="ql-lbl">Note</span></div>
+    </div>
+    <div style="padding:0 20px"><div class="section-label">Logged Today</div><div id="log-feed"></div></div>
   </div>
-
-  <!-- ══ QUICK LOG ══ -->
-
-  <div class="screen" id="screen-log">
-    <div class="topbar">
-      <span class="topbar-title">Quick Log</span>
-      <button class="topbar-action" onclick="showScreen('screen-home')">Home</button>
-    </div>
-    <div class="scroll-body">
-      <div class="quicklog-grid">
-        <div class="ql-btn" onclick="openLog('Marker')"><div class="ql-dot" style="background:var(--green)"></div><span class="ql-label">Marker</span></div>
-        <div class="ql-btn" onclick="openLog('Milestone')"><div class="ql-dot" style="background:var(--gold)"></div><span class="ql-label">Milestone</span></div>
-        <div class="ql-btn" onclick="openLog('Moment Open')"><div class="ql-dot" style="background:var(--blue)"></div><span class="ql-label">Moment Open</span></div>
-        <div class="ql-btn" onclick="openLog('Moment Close')"><div class="ql-dot" style="background:var(--blue-dim)"></div><span class="ql-label">Moment Close</span></div>
-        <div class="ql-btn" onclick="openLog('Sub-Loop Open')"><div class="ql-dot" style="background:var(--blue-dim)"></div><span class="ql-label">Sub-Loop Open</span></div>
-        <div class="ql-btn" onclick="openLog('Sub-Loop Close')"><div class="ql-dot" style="background:var(--border2)"></div><span class="ql-label">Sub-Loop Close</span></div>
-        <div class="ql-btn" onclick="openLog('Carryover')"><div class="ql-dot" style="background:var(--violet)"></div><span class="ql-label">Carryover</span></div>
-        <div class="ql-btn ql-er" onclick="openERLog()"><div class="ql-dot" style="background:var(--amber)"></div><span class="ql-label">ER Update</span></div>
-        <div class="ql-btn ql-note" onclick="openLog('Note')"><div class="ql-dot" style="background:var(--text3)"></div><span class="ql-label">Note</span></div>
-      </div>
-      <div style="padding:0 20px">
-        <div class="section-label">Logged Today</div>
-        <div id="log-feed"></div>
-      </div>
-    </div>
-    <nav class="navbar">
-      <div class="nav-item" onclick="showScreen('screen-home')"><div class="nav-icon">⌂</div><div class="nav-label">Home</div></div>
-      <div class="nav-item active" onclick="showScreen('screen-log')"><div class="nav-icon">⊕</div><div class="nav-label">Log</div></div>
-      <div class="nav-item" onclick="gotoStabilize()"><div class="nav-icon">◎</div><div class="nav-label">Stabilize</div></div>
-      <div class="nav-item" onclick="showScreen('screen-timeline')"><div class="nav-icon">◫</div><div class="nav-label">Day</div></div>
-    </nav>
-  </div>
-
-  <!-- ══ TIMELINE ══ -->
-
-  <div class="screen" id="screen-timeline">
-    <div class="topbar">
-      <span class="topbar-title">Day Timeline</span>
-      <button class="topbar-action" onclick="showScreen('screen-home')">Home</button>
-    </div>
-    <div class="scroll-body">
-      <div class="timeline-feed" id="timeline-feed"></div>
-    </div>
-    <nav class="navbar">
-      <div class="nav-item" onclick="showScreen('screen-home')"><div class="nav-icon">⌂</div><div class="nav-label">Home</div></div>
-      <div class="nav-item" onclick="showScreen('screen-log')"><div class="nav-icon">⊕</div><div class="nav-label">Log</div></div>
-      <div class="nav-item" onclick="gotoStabilize()"><div class="nav-icon">◎</div><div class="nav-label">Stabilize</div></div>
-      <div class="nav-item active" onclick="showScreen('screen-timeline')"><div class="nav-icon">◫</div><div class="nav-label">Day</div></div>
-    </nav>
-  </div>
-
-  <!-- ══ STABILIZE S1–S7 ══ -->
-
-  <div class="screen" id="screen-s1">
-    <div style="position:absolute;top:52px;right:16px;z-index:10;"><button class="topbar-action" onclick="showScreen('screen-home')">Exit</button></div>
-    <div class="stab-screen">
-      <div class="stab-step">LUX Layer — Stabilize</div>
-      <div class="stab-body">
-        <div class="arrival-lines">
-          <div class="arrival-line">Feel your feet on the ground.</div>
-          <div class="arrival-line">Take one slow breath.</div>
-          <div class="arrival-line">Name one thing you can see right now.</div>
-          <div class="arrival-line bold">You are here. You are present.</div>
-        </div>
-        <button class="cta-btn" onclick="showScreen('screen-s2')">I'm ready</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="screen" id="screen-s2">
-    <div style="position:absolute;top:52px;left:16px;font-family:var(--font-mono);font-size:10px;color:var(--text3);padding-top:4px;">S 2</div>
-    <div style="position:absolute;top:52px;right:16px;z-index:10;"><button class="topbar-action" onclick="showScreen('screen-home')">Exit</button></div>
-    <div class="stab-screen">
-      <div class="stab-step">Mode Check</div>
-      <div class="stab-body">
-        <div class="stab-q">How does your thinking feel right now?</div>
-        <div class="stab-sub">This is read-only. No judgment. Just notice.</div>
-        <div class="choice-list">
-          <div class="choice-btn" onclick="selectMode('Clarity',this)"><div class="choice-name clarity">Clarity</div><div class="choice-desc">I can see my options. Thinking is open.</div></div>
-          <div class="choice-btn" onclick="selectMode('Turbulent',this)"><div class="choice-name turbulent">Turbulent</div><div class="choice-desc">Thoughts are moving fast. Hard to settle.</div></div>
-          <div class="choice-btn" onclick="selectMode('Compressed',this)"><div class="choice-name compressed">Compressed</div><div class="choice-desc">Feels tight. Options feel narrow or gone.</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="screen" id="screen-s3">
-    <div style="position:absolute;top:52px;left:16px;font-family:var(--font-mono);font-size:10px;color:var(--text3);padding-top:4px;">S 3</div>
-    <div style="position:absolute;top:52px;right:16px;z-index:10;"><button class="topbar-action" onclick="showScreen('screen-home')">Exit</button></div>
-    <div class="stab-screen" style="justify-content:flex-start;padding-top:80px;">
-      <div class="stab-step">Pressure Read</div>
-      <div class="stab-q" style="text-align:left;margin-bottom:6px;">What pressure do you notice?</div>
-      <div class="stab-sub" style="text-align:left;margin-bottom:20px;">Select all that apply. Emotions are information.</div>
-      <div class="pressure-grid">
-        <div class="pressure-btn" onclick="togglePressure('Urgency',this)"><div class="pressure-check"><span class="pressure-check-mark">✓</span></div><div class="pressure-text"><div class="pressure-name">Urgency</div><div class="pressure-desc">Feels like it has to happen now</div></div></div>
-        <div class="pressure-btn" onclick="togglePressure('Guilt',this)"><div class="pressure-check"><span class="pressure-check-mark">✓</span></div><div class="pressure-text"><div class="pressure-name">Guilt</div><div class="pressure-desc">Someone will be hurt or disappointed</div></div></div>
-        <div class="pressure-btn" onclick="togglePressure('Fear',this)"><div class="pressure-check"><span class="pressure-check-mark">✓</span></div><div class="pressure-text"><div class="pressure-name">Fear</div><div class="pressure-desc">Something bad will happen if I don't act</div></div></div>
-        <div class="pressure-btn" onclick="togglePressure('Anger',this)"><div class="pressure-check"><span class="pressure-check-mark">✓</span></div><div class="pressure-text"><div class="pressure-name">Anger</div><div class="pressure-desc">I want to react to something done to me</div></div></div>
-        <div class="pressure-btn" onclick="togglePressure('Obligation',this)"><div class="pressure-check"><span class="pressure-check-mark">✓</span></div><div class="pressure-text"><div class="pressure-name">Obligation</div><div class="pressure-desc">I should do this because it's expected</div></div></div>
-        <div class="pressure-btn" onclick="togglePressure('Excitement',this)"><div class="pressure-check"><span class="pressure-check-mark">✓</span></div><div class="pressure-text"><div class="pressure-name">Excitement</div><div class="pressure-desc">I want this so badly I can't think straight</div></div></div>
-        <div class="pressure-btn" onclick="togglePressure('Shame',this)"><div class="pressure-check"><span class="pressure-check-mark">✓</span></div><div class="pressure-text"><div class="pressure-name">Shame</div><div class="pressure-desc">I feel exposed or wrong</div></div></div>
-        <div class="pressure-btn" onclick="togglePressure('None',this)"><div class="pressure-check"><span class="pressure-check-mark">✓</span></div><div class="pressure-text"><div class="pressure-name">No pressure detected</div><div class="pressure-desc">I feel clear</div></div></div>
-      </div>
-      <button class="cta-btn" onclick="showScreen('screen-s4')">Continue</button>
-    </div>
-  </div>
-
-  <div class="screen" id="screen-s4">
-    <div style="position:absolute;top:52px;left:16px;font-family:var(--font-mono);font-size:10px;color:var(--text3);padding-top:4px;">S 4</div>
-    <div style="position:absolute;top:52px;right:16px;z-index:10;"><button class="topbar-action" onclick="showScreen('screen-home')">Exit</button></div>
-    <div class="stab-screen">
-      <div class="stab-step">Situation</div>
-      <div class="stab-body">
-        <div class="stab-q">In one sentence, what's the situation?</div>
-        <div class="stab-sub" style="margin-bottom:20px;">Keep it short. Clarity lives in constraint.</div>
-        <textarea class="stab-textarea" id="situation-input" maxlength="140" placeholder="What's happening right now..." oninput="updateCharCount(this,'situation-count')"></textarea>
-        <div class="char-count"><span id="situation-count">0</span>/140</div>
-        <button class="cta-btn" onclick="showScreen('screen-s5')">Continue</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="screen" id="screen-s5">
-    <div style="position:absolute;top:52px;left:16px;font-family:var(--font-mono);font-size:10px;color:var(--text3);padding-top:4px;">S 5</div>
-    <div style="position:absolute;top:52px;right:16px;z-index:10;"><button class="topbar-action" onclick="showScreen('screen-home')">Exit</button></div>
-    <div class="stab-screen" style="justify-content:flex-start;padding-top:80px;">
-      <div class="stab-step">Constraint Split</div>
-      <div class="stab-q" style="text-align:left;">Split the constraints.</div>
-      <div class="stab-sub" style="text-align:left;margin-bottom:0;">Separate what you can change from what you can't.</div>
-      <div class="split-label change">Changeable</div>
-      <textarea class="stab-textarea" id="changeable-input" rows="3" placeholder="What can I actually influence..."></textarea>
-      <div class="split-label fixed">Unchangeable</div>
-      <textarea class="stab-textarea" id="unchangeable-input" rows="3" placeholder="What is fixed, outside my control..."></textarea>
-      <button class="cta-btn" onclick="showScreen('screen-s6')">Continue</button>
-    </div>
-  </div>
-
-  <div class="screen" id="screen-s6">
-    <div style="position:absolute;top:52px;left:16px;font-family:var(--font-mono);font-size:10px;color:var(--text3);padding-top:4px;">S 6</div>
-    <div style="position:absolute;top:52px;right:16px;z-index:10;"><button class="topbar-action" onclick="showScreen('screen-home')">Exit</button></div>
-    <div class="stab-screen" style="justify-content:flex-start;padding-top:80px;">
-      <div class="stab-step">Optionality</div>
-      <div class="stab-q" style="text-align:left;">What remains open right now?</div>
-      <div class="stab-sub" style="text-align:left;margin-bottom:20px;">Delay irreversible decisions until structure is clear.</div>
-      <div class="optionality-field"><div class="optionality-label">One thing I do not need to decide yet</div><input class="sheet-input" id="opt1" placeholder="Not deciding yet..." style="margin:0"></div>
-      <div class="optionality-field"><div class="optionality-label">One action that is safe right now</div><input class="sheet-input" id="opt2" placeholder="Safe to do..." style="margin:0"></div>
-      <div class="optionality-field"><div class="optionality-label">One thing to delay</div><input class="sheet-input" id="opt3" placeholder="Delaying..." style="margin:0"></div>
-      <button class="cta-btn" onclick="buildOutcome()">See outcome</button>
-    </div>
-  </div>
-
-  <div class="screen" id="screen-s7">
-    <div style="position:absolute;top:52px;left:16px;font-family:var(--font-mono);font-size:10px;color:var(--text3);padding-top:4px;">S 7</div>
-    <div style="position:absolute;top:52px;right:16px;z-index:10;"><button class="topbar-action" onclick="showScreen('screen-home')">Exit</button></div>
-    <div class="stab-screen" style="justify-content:flex-start;padding-top:80px;">
-      <div class="stab-step">Outcome</div>
-      <div class="stab-q" style="text-align:left;margin-bottom:16px;">Structural read.</div>
-      <div class="outcome-card" id="outcome-card"></div>
-      <div class="outcome-actions">
-        <button class="outcome-action-btn primary" onclick="logStabilizeSession()">Log this structurally</button>
-        <button class="outcome-action-btn" onclick="copyOutcome()">Copy snapshot</button>
-        <button class="outcome-action-btn" onclick="showScreen('screen-home')">Return home</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ LOG OVERLAY ══ -->
-
-  <div class="log-overlay" id="log-overlay">
-    <div class="log-sheet">
-      <div class="sheet-handle"></div>
-      <div class="sheet-type-label" id="sheet-type-label"></div>
-      <div class="sheet-title" id="sheet-title"></div>
-      <input class="sheet-input" id="sheet-input" placeholder=""/>
-      <div class="sheet-row">
-        <button class="sheet-btn cancel" onclick="closeLog()">Cancel</button>
-        <button class="sheet-btn confirm" onclick="confirmLog()">Log it</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ ER OVERLAY ══ -->
-
-  <div class="log-overlay" id="er-overlay">
-    <div class="log-sheet">
-      <div class="sheet-handle"></div>
-      <div class="sheet-type-label">ER Update</div>
-      <div class="sheet-title">Current ER value?</div>
-      <input class="sheet-input" id="er-input" placeholder="e.g. 1.75B"/>
-      <div class="sheet-row">
-        <button class="sheet-btn cancel" onclick="closeERLog()">Cancel</button>
-        <button class="sheet-btn confirm" onclick="confirmER()">Log</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ PRIORITY EDIT OVERLAY ══ -->
-
-  <div class="log-overlay" id="priority-overlay">
-    <div class="log-sheet">
-      <div class="sheet-handle"></div>
-      <div class="sheet-type-label" id="priority-field-label"></div>
-      <div class="sheet-title" id="priority-sheet-title"></div>
-      <input class="sheet-input" id="priority-input" placeholder=""/>
-      <div class="sheet-row">
-        <button class="sheet-btn cancel" onclick="closePriority()">Cancel</button>
-        <button class="sheet-btn confirm" onclick="confirmPriority()">Save</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ PAINTING MODE ══ -->
-
-  <div class="painting-overlay" id="painting-overlay">
-    <div class="painting-exit"><button class="topbar-action" onclick="togglePaintingMode()">Exit</button></div>
-    <div class="painting-header">
-      <div class="painting-mode-label">Module</div>
-      <div class="painting-module">Painting Session</div>
-    </div>
-    <div class="painting-body">
-      <div class="painting-er" id="painting-er-val">1.8B</div>
-      <div class="painting-er-label">Current ER</div>
-      <div class="painting-actions">
-        <button class="painting-action log" onclick="openLogPainting()">+ Marker</button>
-        <button class="painting-action er" onclick="openERLogPainting()">ER Update</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ REHYDRATE MODAL ══ -->
-
-  <div class="rehydrate-modal" id="rehydrate-modal">
-    <div class="rehydrate-sheet">
-      <div class="sheet-handle"></div>
-      <div class="rh-title">Rehydrate to Model</div>
-      <div class="rh-sub">Load framework + current structure into selected node.</div>
-      <div class="rh-model-name" id="rh-model-display">→ LUX (ChatGPT)</div>
-      <div class="rh-preview" id="rh-preview"></div>
-      <div class="rh-actions">
-        <button class="rh-btn primary" onclick="copyRehydration()">Copy rehydration packet</button>
-        <button class="rh-btn" onclick="closeRehydrate()">Cancel</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ DAY CLOSE MODAL ══ -->
-
-  <div class="day-modal" id="day-modal">
-    <div class="day-sheet">
-      <div class="sheet-handle"></div>
-      <div class="day-modal-title">Close the Day</div>
-      <div class="day-modal-sub">Add a closing note or summary (optional)</div>
-      <textarea class="nightly-textarea" id="nightly-note" placeholder="Key events, observations, how the day went..."></textarea>
-      <div style="display:flex;gap:8px;">
-        <button class="sheet-btn cancel" onclick="closeDayModal()">Cancel</button>
-        <button class="sheet-btn confirm" onclick="confirmDayClose()">Close Day + Archive</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ ARCHIVE SCREEN ══ -->
-
-  <div class="screen" id="screen-archive">
-    <div class="topbar">
-      <span class="topbar-title">Archive</span>
-      <div style="display:flex;gap:8px;">
-        <button class="topbar-action" onclick="openImport()">Import</button>
-        <button class="topbar-action" onclick="showScreen('screen-home')">Home</button>
-      </div>
-    </div>
-    <div class="scroll-body" style="padding:16px 20px;">
-      <div class="section-label" style="margin-bottom:12px;">Nightly Reports</div>
-      <div id="archive-feed"></div>
-      <div id="archive-empty" style="text-align:center;padding:40px 20px;font-size:13px;color:var(--text3);font-style:italic;">No archived days yet.<br>Close your first day to begin.</div>
-    </div>
-    <nav class="navbar">
-      <div class="nav-item" onclick="showScreen('screen-home')"><div class="nav-icon">⌂</div><div class="nav-label">Home</div></div>
-      <div class="nav-item" onclick="showScreen('screen-log')"><div class="nav-icon">⊕</div><div class="nav-label">Log</div></div>
-      <div class="nav-item" onclick="gotoStabilize()"><div class="nav-icon">◎</div><div class="nav-label">Stabilize</div></div>
-      <div class="nav-item active" onclick="showScreen('screen-archive')"><div class="nav-icon">↗</div><div class="nav-label">Archive</div></div>
-    </nav>
-  </div>
-
-  <!-- ══ IMPORT MODAL ══ -->
-
-  <div class="import-modal" id="import-modal">
-    <div class="import-sheet">
-      <div class="sheet-handle"></div>
-      <div class="day-modal-title">Import Report</div>
-      <div class="day-modal-sub">Paste a Nightly Report or Deca Form. The app will parse and archive it.</div>
-      <div class="import-type-row">
-        <button class="import-type-btn active" id="import-type-nightly" onclick="setImportType('nightly',this)">Nightly</button>
-        <button class="import-type-btn" id="import-type-deca" onclick="setImportType('deca',this)">Deca</button>
-      </div>
-      <textarea class="nightly-textarea" id="import-input" placeholder="Paste your Nightly Report or Deca Form here..." style="height:160px;" oninput="previewImport()"></textarea>
-      <div id="import-preview-block" style="display:none">
-        <div style="font-family:var(--font-mono);font-size:9px;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;">Parsed Preview</div>
-        <div class="import-preview" id="import-preview"></div>
-      </div>
-      <div style="display:flex;gap:8px;margin-top:12px;">
-        <button class="sheet-btn cancel" onclick="closeImport()">Cancel</button>
-        <button class="sheet-btn confirm" id="import-confirm-btn" onclick="confirmImport()" disabled style="opacity:0.4;">Import</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ VOICE BUTTON ══ -->
-
-  <div class="voice-btn" id="voice-btn" onclick="toggleVoice()">
-    <span class="mic-icon">🎙</span>
-  </div>
-
-  <!-- ══ VOICE OVERLAY ══ -->
-
-  <div class="voice-overlay" id="voice-overlay">
-    <div id="voice-type-select" style="display:flex;flex-direction:column;align-items:center;width:100%;padding:0 28px;gap:10px;margin-bottom:20px;">
-      <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:0.15em;color:var(--text3);text-transform:uppercase;margin-bottom:4px;">Select Event Type</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;max-width:300px;">
-        <button class="voice-type-btn" onclick="setVoiceType('Marker',this)" style="background:rgba(109,191,138,0.1);border:1px solid rgba(109,191,138,0.3);color:var(--green);border-radius:8px;padding:10px;font-family:var(--font-mono);font-size:11px;cursor:pointer;">Marker</button>
-        <button class="voice-type-btn" onclick="setVoiceType('Milestone',this)" style="background:rgba(200,169,110,0.1);border:1px solid rgba(200,169,110,0.3);color:var(--gold);border-radius:8px;padding:10px;font-family:var(--font-mono);font-size:11px;cursor:pointer;">Milestone</button>
-        <button class="voice-type-btn" onclick="setVoiceType('Moment Open',this)" style="background:rgba(91,159,212,0.1);border:1px solid rgba(91,159,212,0.3);color:var(--blue);border-radius:8px;padding:10px;font-family:var(--font-mono);font-size:11px;cursor:pointer;">Moment Open</button>
-        <button class="voice-type-btn" onclick="setVoiceType('Moment Close',this)" style="background:rgba(91,159,212,0.06);border:1px solid rgba(91,159,212,0.15);color:var(--blue-dim);border-radius:8px;padding:10px;font-family:var(--font-mono);font-size:11px;cursor:pointer;">Moment Close</button>
-        <button class="voice-type-btn" onclick="setVoiceType('Sub-Loop Open',this)" style="background:rgba(91,159,212,0.06);border:1px solid rgba(91,159,212,0.15);color:var(--blue-dim);border-radius:8px;padding:10px;font-family:var(--font-mono);font-size:11px;cursor:pointer;">Sub-Loop Open</button>
-        <button class="voice-type-btn" onclick="setVoiceType('Sub-Loop Close',this)" style="background:rgba(74,143,168,0.06);border:1px solid rgba(74,143,168,0.15);color:var(--text3);border-radius:8px;padding:10px;font-family:var(--font-mono);font-size:11px;cursor:pointer;">Sub-Loop Close</button>
-        <button class="voice-type-btn" onclick="setVoiceType('ER',this)" style="background:rgba(212,148,91,0.1);border:1px solid rgba(212,148,91,0.3);color:var(--amber);border-radius:8px;padding:10px;font-family:var(--font-mono);font-size:11px;cursor:pointer;">ER Update</button>
-        <button class="voice-type-btn" onclick="setVoiceType('Carryover',this)" style="background:rgba(155,127,212,0.1);border:1px solid rgba(155,127,212,0.3);color:var(--violet);border-radius:8px;padding:10px;font-family:var(--font-mono);font-size:11px;cursor:pointer;">Carryover</button>
-      </div>
-    </div>
-    <div id="voice-listen-panel" style="display:none;flex-direction:column;align-items:center;width:100%;">
-      <div class="voice-ring" id="voice-ring"><span class="voice-mic-big">🎙</span></div>
-      <div class="voice-status" id="voice-status">Listening…</div>
-      <div class="voice-transcript" id="voice-transcript"></div>
-    </div>
-    <div class="voice-result" id="voice-result" style="display:none">
-      <div class="voice-result-type" id="voice-result-type"></div>
-      <div class="voice-result-text" id="voice-result-text"></div>
-    </div>
-    <div class="voice-actions" id="voice-actions" style="display:none">
-      <button class="voice-action" onclick="cancelVoiceLog()">Retry</button>
-      <button class="voice-action confirm" onclick="confirmVoiceLog()">Log it</button>
-    </div>
-    <div class="voice-actions" id="voice-close-actions">
-      <button class="voice-action" onclick="closeVoice()">Close</button>
-    </div>
-    <div class="voice-hint" id="voice-hint" style="display:none"></div>
-  </div>
-
-  <div class="toast" id="toast"></div>
+  <nav class="navbar">
+    <div class="nav-item" onclick="goTo('scr-home')"><div class="nav-icon">H</div><div class="nav-lbl">Home</div></div>
+    <div class="nav-item active" onclick="goTo('scr-log')"><div class="nav-icon">+</div><div class="nav-lbl">Log</div></div>
+    <div class="nav-item" onclick="gotoStab()"><div class="nav-icon">O</div><div class="nav-lbl">Stabilize</div></div>
+    <div class="nav-item" onclick="goTo('scr-timeline')"><div class="nav-icon">[]</div><div class="nav-lbl">Day</div></div>
+  </nav>
 </div>
+
+<!-- TIMELINE -->
+
+<div class="screen" id="scr-timeline">
+  <div class="topbar"><span class="topbar-title">Day Timeline</span><button class="topbar-btn" onclick="goTo('scr-home')">Home</button></div>
+  <div class="scroll-body"><div class="tl-feed" id="tl-feed"></div></div>
+  <nav class="navbar">
+    <div class="nav-item" onclick="goTo('scr-home')"><div class="nav-icon">H</div><div class="nav-lbl">Home</div></div>
+    <div class="nav-item" onclick="goTo('scr-log')"><div class="nav-icon">+</div><div class="nav-lbl">Log</div></div>
+    <div class="nav-item" onclick="gotoStab()"><div class="nav-icon">O</div><div class="nav-lbl">Stabilize</div></div>
+    <div class="nav-item active" onclick="goTo('scr-timeline')"><div class="nav-icon">[]</div><div class="nav-lbl">Day</div></div>
+  </nav>
+</div>
+
+<!-- ARCHIVE -->
+
+<div class="screen" id="scr-archive">
+  <div class="topbar"><span class="topbar-title">Archive</span><div style="display:flex;gap:8px"><button class="topbar-btn" onclick="openImport()">Import</button><button class="topbar-btn" onclick="goTo('scr-home')">Home</button></div></div>
+  <div class="scroll-body" style="padding:16px 20px">
+    <div class="section-label" style="margin-bottom:12px">Nightly Reports</div>
+    <div id="archive-feed"></div>
+    <div id="archive-empty" style="text-align:center;padding:40px 20px;font-size:13px;color:var(--text3);font-style:italic">No archived days yet.<br>Close your first day to begin.</div>
+  </div>
+  <nav class="navbar">
+    <div class="nav-item" onclick="goTo('scr-home')"><div class="nav-icon">H</div><div class="nav-lbl">Home</div></div>
+    <div class="nav-item" onclick="goTo('scr-log')"><div class="nav-icon">+</div><div class="nav-lbl">Log</div></div>
+    <div class="nav-item" onclick="gotoStab()"><div class="nav-icon">O</div><div class="nav-lbl">Stabilize</div></div>
+    <div class="nav-item active" onclick="goTo('scr-archive')"><div class="nav-icon">^</div><div class="nav-lbl">Archive</div></div>
+  </nav>
+</div>
+
+<!-- STABILIZE S1-S7 -->
+
+<div class="screen" id="scr-s1">
+  <div style="position:absolute;top:52px;right:16px;z-index:10"><button class="topbar-btn" onclick="goTo('scr-home')">Exit</button></div>
+  <div class="stab-screen">
+    <div class="stab-step">LUX Layer -- Stabilize</div>
+    <div class="stab-body">
+      <div style="margin-bottom:40px">
+        <div class="arrival-line">Feel your feet on the ground.</div>
+        <div class="arrival-line">Take one slow breath.</div>
+        <div class="arrival-line">Name one thing you can see right now.</div>
+        <div class="arrival-line bold">You are here. You are present.</div>
+      </div>
+      <button class="cta-btn" onclick="goTo('scr-s2')">I'm ready</button>
+    </div>
+  </div>
+</div>
+
+<div class="screen" id="scr-s2">
+  <div style="position:absolute;top:52px;left:16px;font-family:var(--mono);font-size:10px;color:var(--text3)">S 2</div>
+  <div style="position:absolute;top:52px;right:16px"><button class="topbar-btn" onclick="goTo('scr-home')">Exit</button></div>
+  <div class="stab-screen">
+    <div class="stab-step">Mode Check</div>
+    <div class="stab-body">
+      <div class="stab-q">How does your thinking feel right now?</div>
+      <div class="stab-sub">No judgment. Just notice.</div>
+      <div class="choice-btn" onclick="selMode('Clarity',this)"><div class="choice-name c-clarity">Clarity</div><div class="choice-desc">I can see my options. Thinking is open.</div></div>
+      <div class="choice-btn" onclick="selMode('Turbulent',this)"><div class="choice-name c-turbulent">Turbulent</div><div class="choice-desc">Thoughts are moving fast. Hard to settle.</div></div>
+      <div class="choice-btn" onclick="selMode('Compressed',this)"><div class="choice-name c-compressed">Compressed</div><div class="choice-desc">Feels tight. Options feel narrow or gone.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="screen" id="scr-s3">
+  <div style="position:absolute;top:52px;left:16px;font-family:var(--mono);font-size:10px;color:var(--text3)">S 3</div>
+  <div style="position:absolute;top:52px;right:16px"><button class="topbar-btn" onclick="goTo('scr-home')">Exit</button></div>
+  <div class="stab-screen" style="justify-content:flex-start;padding-top:80px">
+    <div class="stab-step">Pressure Read</div>
+    <div class="stab-q" style="text-align:left;margin-bottom:6px">What pressure do you notice?</div>
+    <div class="stab-sub" style="text-align:left;margin-bottom:16px">Select all that apply.</div>
+    <div id="press-list"></div>
+    <button class="cta-btn" onclick="goTo('scr-s4')">Continue</button>
+  </div>
+</div>
+
+<div class="screen" id="scr-s4">
+  <div style="position:absolute;top:52px;left:16px;font-family:var(--mono);font-size:10px;color:var(--text3)">S 4</div>
+  <div style="position:absolute;top:52px;right:16px"><button class="topbar-btn" onclick="goTo('scr-home')">Exit</button></div>
+  <div class="stab-screen">
+    <div class="stab-step">Situation</div>
+    <div class="stab-body">
+      <div class="stab-q">In one sentence, what's the situation?</div>
+      <div class="stab-sub" style="margin-bottom:20px">Keep it short. Clarity lives in constraint.</div>
+      <textarea class="stab-ta" id="sit-input" maxlength="140" placeholder="What's happening right now..." oninput="document.getElementById('sit-count').textContent=this.value.length"></textarea>
+      <div class="char-count"><span id="sit-count">0</span>/140</div>
+      <button class="cta-btn" onclick="goTo('scr-s5')">Continue</button>
+    </div>
+  </div>
+</div>
+
+<div class="screen" id="scr-s5">
+  <div style="position:absolute;top:52px;left:16px;font-family:var(--mono);font-size:10px;color:var(--text3)">S 5</div>
+  <div style="position:absolute;top:52px;right:16px"><button class="topbar-btn" onclick="goTo('scr-home')">Exit</button></div>
+  <div class="stab-screen" style="justify-content:flex-start;padding-top:80px">
+    <div class="stab-step">Constraint Split</div>
+    <div class="stab-q" style="text-align:left">Split the constraints.</div>
+    <div class="stab-sub" style="text-align:left;margin-bottom:0">Separate what you can change from what you can't.</div>
+    <div class="split-lbl split-change">Changeable</div>
+    <textarea class="stab-ta" id="change-input" rows="3" placeholder="What can I actually influence..."></textarea>
+    <div class="split-lbl split-fixed">Unchangeable</div>
+    <textarea class="stab-ta" id="unchange-input" rows="3" placeholder="What is fixed, outside my control..."></textarea>
+    <button class="cta-btn" onclick="goTo('scr-s6')">Continue</button>
+  </div>
+</div>
+
+<div class="screen" id="scr-s6">
+  <div style="position:absolute;top:52px;left:16px;font-family:var(--mono);font-size:10px;color:var(--text3)">S 6</div>
+  <div style="position:absolute;top:52px;right:16px"><button class="topbar-btn" onclick="goTo('scr-home')">Exit</button></div>
+  <div class="stab-screen" style="justify-content:flex-start;padding-top:80px">
+    <div class="stab-step">Optionality</div>
+    <div class="stab-q" style="text-align:left">What remains open?</div>
+    <div class="stab-sub" style="text-align:left;margin-bottom:20px">Delay irreversible decisions until structure is clear.</div>
+    <div class="opt-field"><div class="opt-lbl">One thing I do not need to decide yet</div><input class="sheet-input" id="opt1" placeholder="Not deciding yet..."></div>
+    <div class="opt-field"><div class="opt-lbl">One action that is safe right now</div><input class="sheet-input" id="opt2" placeholder="Safe to do..."></div>
+    <div class="opt-field"><div class="opt-lbl">One thing to delay</div><input class="sheet-input" id="opt3" placeholder="Delaying..."></div>
+    <button class="cta-btn" onclick="buildOutcome()">See outcome</button>
+  </div>
+</div>
+
+<div class="screen" id="scr-s7">
+  <div style="position:absolute;top:52px;left:16px;font-family:var(--mono);font-size:10px;color:var(--text3)">S 7</div>
+  <div style="position:absolute;top:52px;right:16px"><button class="topbar-btn" onclick="goTo('scr-home')">Exit</button></div>
+  <div class="stab-screen" style="justify-content:flex-start;padding-top:80px">
+    <div class="stab-step">Outcome</div>
+    <div class="stab-q" style="text-align:left;margin-bottom:16px">Structural read.</div>
+    <div class="outcome-card" id="outcome-card"></div>
+    <button class="cta-btn" onclick="logStab()">Log this structurally</button>
+    <button class="cta-btn" style="margin-top:8px;background:var(--surface);border-color:var(--border2);color:var(--text2)" onclick="goTo('scr-home')">Return home</button>
+  </div>
+</div>
+
+<!-- OVERLAYS -->
+
+<div class="overlay" id="log-overlay">
+  <div class="sheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-type" id="sh-type"></div>
+    <div class="sheet-title" id="sh-title"></div>
+    <input class="sheet-input" id="sh-input" style="margin-bottom:12px">
+    <div class="sheet-row">
+      <button class="sheet-btn sheet-cancel" onclick="closeLog()">Cancel</button>
+      <button class="sheet-btn sheet-confirm" onclick="confirmLog()">Log it</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="er-overlay">
+  <div class="sheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-type">ER Update</div>
+    <div class="sheet-title">Current ER value?</div>
+    <input class="sheet-input" id="er-input" placeholder="e.g. 1.75B" style="margin-bottom:12px">
+    <div class="sheet-row">
+      <button class="sheet-btn sheet-cancel" onclick="closeERLog()">Cancel</button>
+      <button class="sheet-btn sheet-confirm" onclick="confirmER()">Log</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="pri-overlay">
+  <div class="sheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-type" id="pri-type"></div>
+    <div class="sheet-title" id="pri-title"></div>
+    <input class="sheet-input" id="pri-input" style="margin-bottom:12px">
+    <div class="sheet-row">
+      <button class="sheet-btn sheet-cancel" onclick="closePri()">Cancel</button>
+      <button class="sheet-btn sheet-confirm" onclick="confirmPri()">Save</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="day-overlay">
+  <div class="sheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-title">Close the Day</div>
+    <p style="font-size:13px;color:var(--text3);margin-bottom:16px;font-style:italic">Add a closing note (optional)</p>
+    <textarea class="import-ta" id="day-note" placeholder="Key events, how the day went..."></textarea>
+    <div class="sheet-row">
+      <button class="sheet-btn sheet-cancel" onclick="closeDayOv()">Cancel</button>
+      <button class="sheet-btn sheet-confirm" onclick="confirmDay()">Close + Archive</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="rh-overlay">
+  <div class="sheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-title">Rehydrate to Model</div>
+    <p style="font-size:13px;color:var(--text3);margin-bottom:8px;font-style:italic">Load framework + structure into selected node.</p>
+    <div style="font-family:var(--mono);font-size:14px;color:var(--accent);margin-bottom:16px" id="rh-target">-> LUX</div>
+    <div class="rh-preview" id="rh-preview"></div>
+    <div class="sheet-row">
+      <button class="sheet-btn sheet-cancel" onclick="closeRH()">Cancel</button>
+      <button class="sheet-btn sheet-confirm" onclick="copyRH()">Copy packet</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="import-overlay">
+  <div class="sheet">
+    <div class="sheet-handle"></div>
+    <div class="sheet-title">Import Report</div>
+    <p style="font-size:13px;color:var(--text3);margin-bottom:12px;font-style:italic">Paste a Nightly or Deca. App will parse and archive it.</p>
+    <div class="import-type-row">
+      <button class="import-type-btn active" id="imp-nightly" onclick="setImpType('nightly',this)">Nightly</button>
+      <button class="import-type-btn" id="imp-deca" onclick="setImpType('deca',this)">Deca</button>
+    </div>
+    <textarea class="import-ta" id="imp-input" placeholder="Paste your report here..." oninput="previewImport()"></textarea>
+    <div class="import-preview" id="imp-preview"></div>
+    <div class="sheet-row">
+      <button class="sheet-btn sheet-cancel" onclick="closeImport()">Cancel</button>
+      <button class="sheet-btn sheet-confirm" id="imp-confirm" onclick="confirmImport()">Import</button>
+    </div>
+  </div>
+</div>
+
+<!-- VOICE -->
+
+<div class="voice-fab" id="voice-fab" onclick="toggleVoice()">mic</div>
+<div class="voice-overlay" id="voice-overlay">
+  <div id="voice-type-panel" style="display:flex;flex-direction:column;align-items:center;width:100%">
+    <div style="font-family:var(--mono);font-size:9px;letter-spacing:0.15em;color:var(--text3);text-transform:uppercase;margin-bottom:12px">Select Event Type</div>
+    <div class="voice-type-grid">
+      <div class="vt-btn" onclick="setVT('Marker',this)" style="color:var(--green);border-color:rgba(107,191,138,0.3)">Marker</div>
+      <div class="vt-btn" onclick="setVT('Milestone',this)" style="color:var(--gold);border-color:rgba(200,169,110,0.3)">Milestone</div>
+      <div class="vt-btn" onclick="setVT('Moment Open',this)" style="color:var(--blue);border-color:rgba(91,159,212,0.3)">Moment Open</div>
+      <div class="vt-btn" onclick="setVT('Sub-Loop Open',this)" style="color:var(--blue-dim)">Sub-Loop</div>
+      <div class="vt-btn" onclick="setVT('ER',this)" style="color:var(--amber);border-color:rgba(212,148,91,0.3)">ER Update</div>
+      <div class="vt-btn" onclick="setVT('Carryover',this)" style="color:var(--violet);border-color:rgba(155,127,212,0.3)">Carryover</div>
+    </div>
+  </div>
+  <div id="voice-listen-panel" style="display:none;flex-direction:column;align-items:center;width:100%">
+    <div class="voice-ring" id="voice-ring">mic</div>
+    <div class="voice-status" id="voice-status">Listening...</div>
+    <div class="voice-transcript" id="voice-transcript"></div>
+  </div>
+  <div class="voice-result" id="voice-result">
+    <div class="voice-result-type" id="vr-type"></div>
+    <div class="voice-result-text" id="vr-text"></div>
+  </div>
+  <div class="voice-actions" id="voice-actions" style="display:none">
+    <div class="voice-action" onclick="retryVoice()">Retry</div>
+    <div class="voice-action confirm" onclick="confirmVoice()">Log it</div>
+  </div>
+  <div class="voice-actions" id="voice-close" style="margin-top:16px">
+    <div class="voice-action" onclick="closeVoice()">Close</div>
+  </div>
+</div>
+
+<!-- PAINTING MODE -->
+
+<div class="paint-overlay" id="paint-overlay">
+  <div style="position:absolute;top:52px;right:16px"><button class="topbar-btn" onclick="togglePaint()">Exit</button></div>
+  <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px">
+    <div style="font-family:var(--mono);font-size:9px;letter-spacing:0.2em;color:var(--gold-dim);text-transform:uppercase;margin-bottom:8px">Focus Mode</div>
+    <div class="paint-er" id="paint-er">--</div>
+    <div class="paint-lbl">Current ER</div>
+    <div class="paint-actions">
+      <div class="paint-action" onclick="openLog('Marker')" style="color:var(--green);border-color:rgba(107,191,138,0.2)">+ Marker</div>
+      <div class="paint-action" onclick="openERLog()" style="color:var(--amber);border-color:rgba(212,148,91,0.2)">ER Update</div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
 
 <script>
-// ── PERSISTENCE ──
-function saveState() {
-  try {
-    const toSave = {
-      er: state.er,
-      erLog: state.erLog,
-      logEntries: state.logEntries,
-      priority: state.priority,
-      selectedModel: state.selectedModel,
-      frameworkLoaded: state.frameworkLoaded,
-      dayOpen: state.dayOpen,
-      dayDate: state.dayDate,
-      nightlies: state.nightlies,
-    };
-    localStorage.setItem('lux_state', JSON.stringify(toSave));
-  } catch(e) {}
-}
-
-function loadState() {
-  try {
-    const saved = localStorage.getItem('lux_state');
-    if (!saved) return;
-    const s = JSON.parse(saved);
-    const today = new Date().toDateString();
-    // Only restore if same day
-    if (s.dayDate === today) {
-      if (s.er) state.er = s.er;
-      if (s.erLog) state.erLog = s.erLog;
-      if (s.logEntries) state.logEntries = s.logEntries;
-      if (s.priority) state.priority = s.priority;
-      if (s.selectedModel) state.selectedModel = s.selectedModel;
-      if (typeof s.frameworkLoaded !== 'undefined') state.frameworkLoaded = s.frameworkLoaded;
-      if (typeof s.dayOpen !== 'undefined') state.dayOpen = s.dayOpen;
-      if (s.nightlies) state.nightlies = s.nightlies;
-    } else {
-      // New day — archive yesterday's entries if any
-      if (s.logEntries && s.logEntries.length > 0 && s.nightlies) {
-        state.nightlies = s.nightlies;
-      }
-    }
-    state.dayDate = today;
-  } catch(e) {}
-}
-
-const state = {
+var S = {
   er: '1.8B',
-  erLog: [
-    { time:'Wake', val:1.3, label:'1.3B', note:'Wake' },
-  ],
+  erLog: [{time:'Wake',val:1.3,label:'1.3B'}],
+  entries: [],
+  model: 'LUX',
+  fw: true,
   dayOpen: true,
   dayDate: new Date().toDateString(),
   nightlies: [],
-  selectedMode: null,
-  selectedPressures: [],
-  selectedModel: 'LUX',
-  frameworkLoaded: true,
-  paintingActive: false,
-  logEntries: [
-    { type:'Milestone', name:'Wake Up', status:'Met', time:'1:17am' },
-    { type:'Marker', name:'Took Morning Meds', status:'', time:'1:37am' },
-    { type:'Marker', name:'Coffee / Rehydration Initiated', status:'', time:'1:40am' },
-    { type:'Moment Open', name:'Early Morning Sequence', status:'Loop Open', time:'1:17am' },
-  ],
-  priority: { today:'Early morning / Rehydration', priority:'Framework compression', loop:'Pick Up Frames', risk:'None flagged' },
-  editingPriorityField: null,
+  priority: {today:'Early morning',priority:'Framework compression',loop:'Pick Up Frames',risk:'None flagged'},
+  selMode: null,
+  selPress: [],
+  impType: 'nightly',
+  impParsed: null,
+  voiceType: null,
+  voiceRec: null,
+  voiceParsed: null
 };
 
-// CLOCK
-function updateClock() {
-  const now = new Date();
-  const h = now.getHours(); const m = String(now.getMinutes()).padStart(2,'0');
-  const ampm = h>=12?'PM':'AM'; const h12 = h%12||12;
-  document.getElementById('home-time').innerHTML = `${h12}:${m}<span>${ampm}</span>`;
-  const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  document.getElementById('home-date').textContent = `${days[now.getDay()]}  ${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
+// PERSIST
+function save() {
+  try { localStorage.setItem('lux4', JSON.stringify({er:S.er,erLog:S.erLog,entries:S.entries,model:S.model,fw:S.fw,dayOpen:S.dayOpen,dayDate:S.dayDate,nightlies:S.nightlies,priority:S.priority})); } catch(e) {}
+  try { sessionStorage.setItem('lux4', JSON.stringify({er:S.er,erLog:S.erLog,entries:S.entries,model:S.model,fw:S.fw,dayOpen:S.dayOpen,dayDate:S.dayDate,nightlies:S.nightlies,priority:S.priority})); } catch(e) {}
 }
-updateClock(); setInterval(updateClock, 10000);
+function load() {
+  var d = null;
+  try { d = JSON.parse(localStorage.getItem('lux4')); } catch(e) {}
+  if (!d) { try { d = JSON.parse(sessionStorage.getItem('lux4')); } catch(e) {} }
+  if (!d) return;
+  var today = new Date().toDateString();
+  if (d.dayDate === today) {
+    if (d.er) S.er = d.er;
+    if (d.erLog && d.erLog.length) S.erLog = d.erLog;
+    if (d.entries) S.entries = d.entries;
+    if (d.priority) S.priority = d.priority;
+    if (d.model) S.model = d.model;
+    if (typeof d.fw !== 'undefined') S.fw = d.fw;
+    if (typeof d.dayOpen !== 'undefined') S.dayOpen = d.dayOpen;
+  }
+  if (d.nightlies) S.nightlies = d.nightlies;
+  S.dayDate = today;
+}
 
-function updateERDisplay() {
-  document.getElementById('er-current').textContent = `ER — ${state.er}`;
-  document.getElementById('painting-er-val').textContent = state.er;
-  const last = state.erLog[state.erLog.length-1];
-  const lbl = document.getElementById('er-now-label');
-  if (lbl) lbl.textContent = last ? last.label : '';
+// CLOCK
+function tick() {
+  var n = new Date();
+  var h = n.getHours() % 12 || 12;
+  var m = ('0'+n.getMinutes()).slice(-2);
+  var ap = n.getHours() >= 12 ? 'PM' : 'AM';
+  var el = document.getElementById('home-time');
+  if (el) el.innerHTML = h+':'+m+'<span>'+ap+'</span>';
+  var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var de = document.getElementById('home-date');
+  if (de) de.textContent = days[n.getDay()]+'  '+months[n.getMonth()]+' '+n.getDate()+', '+n.getFullYear();
+}
+tick(); setInterval(tick, 10000);
+
+// NAV
+function goTo(id) {
+  var screens = document.querySelectorAll('.screen');
+  for (var i=0;i<screens.length;i++) screens[i].classList.remove('active');
+  var t = document.getElementById(id);
+  if (t) t.classList.add('active');
+  if (id === 'scr-timeline') buildTimeline();
+  if (id === 'scr-log') buildLogFeed();
+  if (id === 'scr-archive') buildArchive();
+}
+
+// ER
+function updateER() {
+  var ep = document.getElementById('er-pill');
+  if (ep) ep.textContent = 'ER -- '+S.er;
+  var pe = document.getElementById('paint-er');
+  if (pe) pe.textContent = S.er;
+  var en = document.getElementById('er-now');
+  if (en && S.erLog.length) en.textContent = S.erLog[S.erLog.length-1].label;
   drawERGraph();
+  updateForecast();
 }
 
 function drawERGraph() {
-  const svg = document.getElementById('er-svg'); if (!svg) return;
-  const pts = state.erLog; if (pts.length < 1) return;
-  if (pts.length < 2) { svg.innerHTML = '<text x="50%" y="50%" fill="#566878" font-size="10" text-anchor="middle" dominant-baseline="middle" font-family="monospace">Log more ER entries to see arc</text>'; return; }
-  const W=320, H=70, pad=10, min=0.8, max=3.0;
-  const xs = pts.map((_,i)=> pad + (i/(pts.length-1))*(W-pad*2));
-  const ys = pts.map(p=> H-pad-((p.val-min)/(max-min))*(H-pad*2));
-  let d=`M ${xs[0]} ${ys[0]}`;
-  for (let i=1;i<xs.length;i++) { const cx=(xs[i-1]+xs[i])/2; d+=` C ${cx} ${ys[i-1]}, ${cx} ${ys[i]}, ${xs[i]} ${ys[i]}`; }
-  const fill=d+` L ${xs[xs.length-1]} ${H} L ${xs[0]} ${H} Z`;
-  svg.innerHTML=`<defs><linearGradient id="erG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d4945b" stop-opacity="0.25"/><stop offset="100%" stop-color="#d4945b" stop-opacity="0"/></linearGradient></defs><path d="${fill}" fill="url(#erG)"/><path d="${d}" fill="none" stroke="#d4945b" stroke-width="1.5" stroke-linecap="round"/>${xs.map((x,i)=>`<circle cx="${x}" cy="${ys[i]}" r="3" fill="#d4945b" opacity="0.8"/>`).join('')}<line x1="${xs[xs.length-1]}" y1="${ys[ys.length-1]}" x2="${xs[xs.length-1]}" y2="${H-2}" stroke="#d4945b" stroke-width="1" stroke-dasharray="3,3" opacity="0.4"/>`;
-}
-
-// SCREENS
-function showScreen(id) {
-  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  if (id==='screen-timeline') buildTimeline();
-  if (id==='screen-log') buildLogFeed();
-}
-
-function gotoStabilize() {
-  state.selectedMode=null; state.selectedPressures=[];
-  document.querySelectorAll('.choice-btn').forEach(b=>b.classList.remove('selected'));
-  document.querySelectorAll('.pressure-btn').forEach(b=>b.classList.remove('selected'));
-  ['situation-input','changeable-input','unchangeable-input'].forEach(id=>{ const el=document.getElementById(id); if(el) el.value=''; });
-  ['opt1','opt2','opt3'].forEach(id=>{ const el=document.getElementById(id); if(el) el.value=''; });
-  showScreen('screen-s1');
-}
-
-// MODEL
-function selectModel(name, el) {
-  document.querySelectorAll('.model-btn').forEach(b=>b.classList.remove('active'));
-  el.classList.add('active');
-  state.selectedModel = name;
-  document.getElementById('rehydrate-model-name').textContent = name;
-}
-
-function toggleFramework() {
-  state.frameworkLoaded = !state.frameworkLoaded;
-  const s = document.getElementById('fw-status');
-  const l = document.getElementById('fw-toggle-label');
-  if (state.frameworkLoaded) {
-    s.className='fw-status fw-loaded'; s.textContent='Framework Loaded'; l.textContent='On';
-  } else {
-    s.className='fw-status fw-unloaded'; s.textContent='Framework Off'; l.textContent='Off';
+  var svg = document.getElementById('er-svg');
+  if (!svg) return;
+  var pts = S.erLog;
+  if (pts.length < 2) {
+    svg.innerHTML = '<text x="50%" y="50%" fill="#566878" font-size="10" text-anchor="middle" dominant-baseline="middle">Log ER entries to see arc</text>';
+    return;
   }
-}
-
-function openRehydrate() {
-  document.getElementById('rh-model-display').textContent = `→ ${state.selectedModel}`;
-  const now = new Date();
-  const h=now.getHours()%12||12, m=String(now.getMinutes()).padStart(2,'0'), ap=now.getHours()>=12?'PM':'AM';
-  const currentMoment = state.logEntries.find(e=>e.type==='Moment Open'&&e.status==='Loop Open');
-  const openSubLoops = state.logEntries.filter(e=>e.type==='Sub-Loop Open'&&e.status==='Loop Open').length;
-  const carryItems = state.logEntries.filter(e=>e.status&&e.status.includes('Carryover'));
-  const carryStr = carryItems.length > 0 ? carryItems.length + ' (' + carryItems.map(e=>e.name).join(', ') + ')' : 'none';
-  const eventsLog = [...state.logEntries].reverse().map(e => {
-    const s = e.status ? ' — ' + e.status : '';
-    return `  ${e.time}  ${e.type}: ${e.name}${s}`;
-  }).join('\n');
-  const lines = [
-    `Timestamp: ${h}:${m} ${ap} — ${document.getElementById('home-date').textContent}`,
-    `Day Status: Open`,
-    `Current Moment: ${currentMoment ? currentMoment.name : 'Early Morning Sequence'}`,
-    `ER: ${state.er}`,
-    `Open Sub-Loops: ${openSubLoops}`,
-    `Carryover: ${carryStr}`,
-    `Framework: ${state.frameworkLoaded ? 'Loaded' : 'Not loaded'}`,
-    `Model Target: ${state.selectedModel}`,
-    state.frameworkLoaded ? '\n[LUX Layer Stack loaded]\n[OET/PFFC active]\n[TRS syntax active]\n[ERI scale active]\n[SSR mode: on]' : '',
-    `\n— Events Log —\n${eventsLog}`
-  ];
-  const preview = lines.filter(Boolean).join('\n');
-  document.getElementById('rh-preview').textContent = preview;
-  document.getElementById('rehydrate-modal').classList.add('open');
-}
-
-function closeRehydrate() {
-  document.getElementById('rehydrate-modal').classList.remove('open');
-}
-
-function copyRehydration() {
-  const text = document.getElementById('rh-preview').textContent;
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(text).then(() => {
-      closeRehydrate();
-      showToast(`Rehydration packet copied → ${state.selectedModel}`);
-    }).catch(() => {
-      // fallback
-      const ta = document.createElement('textarea');
-      ta.value = text;
-      ta.style.position = 'fixed';
-      ta.style.opacity = '0';
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand('copy');
-      document.body.removeChild(ta);
-      closeRehydrate();
-      showToast(`Rehydration packet copied → ${state.selectedModel}`);
-    });
-  } else {
-    const ta = document.createElement('textarea');
-    ta.value = text;
-    ta.style.position = 'fixed';
-    ta.style.opacity = '0';
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand('copy');
-    document.body.removeChild(ta);
-    closeRehydrate();
-    showToast(`Rehydration packet copied → ${state.selectedModel}`);
+  var W=320, H=70, pad=10, mn=0.8, mx=3.0;
+  var xs=[], ys=[];
+  for (var i=0;i<pts.length;i++) {
+    xs.push(pad + (i/(pts.length-1))*(W-pad*2));
+    ys.push(H-pad-((pts[i].val-mn)/(mx-mn))*(H-pad*2));
   }
+  var d = 'M '+xs[0]+' '+ys[0];
+  for (var j=1;j<xs.length;j++) {
+    var cx=(xs[j-1]+xs[j])/2;
+    d += ' C '+cx+' '+ys[j-1]+', '+cx+' '+ys[j]+', '+xs[j]+' '+ys[j];
+  }
+  var fill = d+' L '+xs[xs.length-1]+' '+H+' L '+xs[0]+' '+H+' Z';
+  var dots = '';
+  for (var k=0;k<xs.length;k++) dots += '<circle cx="'+xs[k]+'" cy="'+ys[k]+'" r="3" fill="#d4945b" opacity="0.8"/>';
+  svg.innerHTML = '<defs><linearGradient id="erg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d4945b" stop-opacity="0.25"/><stop offset="100%" stop-color="#d4945b" stop-opacity="0"/></linearGradient></defs>'
+    + '<path d="'+fill+'" fill="url(#erg)"/>'
+    + '<path d="'+d+'" fill="none" stroke="#d4945b" stroke-width="1.5" stroke-linecap="round"/>'
+    + dots;
+}
+
+// POSITION
+function updatePosition() {
+  var openMoment = null;
+  var subCount = 0;
+  var carries = [];
+  for (var i=0;i<S.entries.length;i++) {
+    var e = S.entries[i];
+    if (e.type === 'Moment Open' && e.status === 'Loop Open' && !openMoment) openMoment = e.name;
+    if (e.type === 'Sub-Loop Open' && e.status === 'Loop Open') subCount++;
+    if (e.status && e.status.indexOf('Carryover') !== -1) carries.push(e.name);
+  }
+  var pm = document.getElementById('pos-moment');
+  if (pm) pm.textContent = openMoment || '--';
+  var ps = document.getElementById('pos-sub');
+  if (ps) ps.textContent = subCount;
+  var pc = document.getElementById('pos-carry');
+  if (pc) pc.textContent = carries.length ? carries.length+' ('+carries[0]+')' : 'none';
+  updateLoops(openMoment, carries);
+}
+
+function updateLoops(openMoment, carries) {
+  var list = document.getElementById('loops-list');
+  var cnt = document.getElementById('loops-count');
+  if (!list) return;
+  var total = (openMoment ? 1 : 0) + carries.length;
+  if (cnt) cnt.textContent = total;
+  var html = '';
+  if (openMoment) {
+    html += '<div class="loop-item"><div class="loop-dot" style="background:var(--blue)"></div><span class="loop-text">'+openMoment+'</span><span class="loop-tag tag-moment">Moment</span><button class="loop-close" onclick="closeLoopNamed(\''+openMoment+'\')">close</button></div>';
+  }
+  for (var i=0;i<carries.length;i++) {
+    html += '<div class="loop-item"><div class="loop-dot" style="background:var(--violet)"></div><span class="loop-text">'+carries[i]+'</span><span class="loop-tag tag-carry">Carryover</span><button class="loop-close" onclick="closeLoopNamed(\''+carries[i]+'\')">done</button></div>';
+  }
+  list.innerHTML = html;
+}
+
+function closeLoopNamed(name) {
+  S.entries.unshift({type:'Moment Close',name:name,status:'Loop Collapsed',time:nowTime()});
+  refresh(); save();
+}
+function closeTopLoop() {
+  for (var i=0;i<S.entries.length;i++) {
+    if (S.entries[i].status && S.entries[i].status.indexOf('Open') !== -1) {
+      closeLoopNamed(S.entries[i].name);
+      return;
+    }
+  }
+  toast('No open loops');
 }
 
 // PRIORITY
-function editPriority(field) {
-  state.editingPriorityField = field;
-  const labels = { today:'Today', priority:'Priority', loop:'Open Loop', risk:'Risk' };
-  document.getElementById('priority-field-label').textContent = labels[field];
-  document.getElementById('priority-sheet-title').textContent = `Update ${labels[field]}`;
-  document.getElementById('priority-input').value = state.priority[field];
-  document.getElementById('priority-overlay').classList.add('open');
-  setTimeout(()=>document.getElementById('priority-input').focus(), 300);
+var priField = null;
+function editPri(f) {
+  priField = f;
+  var labels = {today:'Today',priority:'Priority',loop:'Open Loop',risk:'Risk'};
+  var el = document.getElementById('pri-type'); if (el) el.textContent = labels[f];
+  var et = document.getElementById('pri-title'); if (et) et.textContent = 'Update '+labels[f];
+  var ei = document.getElementById('pri-input'); if (ei) ei.value = S.priority[f];
+  openOv('pri-overlay');
+  setTimeout(function(){ var i=document.getElementById('pri-input'); if(i) i.focus(); }, 300);
 }
-function closePriority() { document.getElementById('priority-overlay').classList.remove('open'); }
-function confirmPriority() {
-  const val = document.getElementById('priority-input').value.trim();
-  if (!val) { closePriority(); return; }
-  state.priority[state.editingPriorityField] = val;
-  const ids = { today:'pr-today', priority:'pr-priority', loop:'pr-loop', risk:'pr-risk' };
-  document.getElementById(ids[state.editingPriorityField]).textContent = val;
-  closePriority();
-}
-
-// PAINTING MODE
-function togglePaintingMode() {
-  state.paintingActive = !state.paintingActive;
-  const overlay = document.getElementById('painting-overlay');
-  const btn = document.getElementById('painting-btn');
-  if (state.paintingActive) {
-    overlay.classList.add('active');
-    btn.classList.add('active');
-    document.getElementById('painting-er-val').textContent = state.er;
-  } else {
-    overlay.classList.remove('active');
-    btn.classList.remove('active');
-  }
+function closePri() { closeOv('pri-overlay'); }
+function confirmPri() {
+  var val = document.getElementById('pri-input').value.trim();
+  if (!val) { closePri(); return; }
+  S.priority[priField] = val;
+  var ids = {today:'pr-today',priority:'pr-priority',loop:'pr-loop',risk:'pr-risk'};
+  var el = document.getElementById(ids[priField]);
+  if (el) el.textContent = val;
+  closePri(); save();
 }
 
-function openLogPainting() { openLog('Marker'); }
-function openERLogPainting() { openERLog(); }
-
-// LOOPS
-function toggleLoops() {
-  const list = document.getElementById('loops-list');
-  list.style.display = list.style.display==='none' ? '' : 'none';
+// MODEL
+function selModel(name, el) {
+  var btns = document.querySelectorAll('.model-btn');
+  for (var i=0;i<btns.length;i++) btns[i].classList.remove('active');
+  el.classList.add('active');
+  S.model = name;
+  var rm = document.getElementById('rh-model'); if (rm) rm.textContent = name;
 }
-
-function closeLoopItem(name) {
-  showToast(`Loop closed: ${name}`);
-  const entry = { type:'Moment Close', name, status:'Loop Collapsed', time:nowTime() };
-  state.logEntries.unshift(entry);
-  buildLogFeed(); buildTimeline();
-}
-
-function closeTopLoop() {
-  const openLoop = state.logEntries.find(e=>e.status&&e.status.includes('Open'));
-  if (openLoop) closeLoopItem(openLoop.name);
-  else showToast('No open loops found');
+function toggleFW() {
+  S.fw = !S.fw;
+  var b = document.getElementById('fw-badge');
+  var t = document.getElementById('fw-toggle');
+  if (b) { b.textContent = S.fw ? 'Framework Loaded' : 'Framework Off'; b.className = 'fw-badge '+(S.fw?'fw-on':'fw-off'); }
+  if (t) t.textContent = S.fw ? 'On' : 'Off';
+  save();
 }
 
 // LOG
-let currentLogType='';
+var curLogType = '';
 function openLog(type) {
-  currentLogType=type;
-  document.getElementById('sheet-type-label').textContent=type;
-  document.getElementById('sheet-title').textContent=labelFor(type);
-  document.getElementById('sheet-input').value='';
-  document.getElementById('sheet-input').placeholder=placeholderFor(type);
-  document.getElementById('log-overlay').classList.add('open');
-  setTimeout(()=>document.getElementById('sheet-input').focus(),300);
+  curLogType = type;
+  var labels = {Marker:'What happened?',Milestone:'Milestone name','Moment Open':'Moment name','Moment Close':'Which Moment?','Sub-Loop Open':'Sub-Loop name','Sub-Loop Close':'Which Sub-Loop?',Carryover:'What carries over?',Note:'Note'};
+  var phs = {Marker:'Fed Horses, Took Meds...',Milestone:'Wake Up, Lunch...','Moment Open':'Afternoon Sequence...','Sub-Loop Open':'Get Meds, Clean...',Carryover:'Pick Up Frames...',Note:'Anything to note...'};
+  var st = document.getElementById('sh-type'); if (st) st.textContent = type;
+  var tl = document.getElementById('sh-title'); if (tl) tl.textContent = labels[type] || type;
+  var si = document.getElementById('sh-input'); if (si) { si.value=''; si.placeholder = phs[type]||''; }
+  openOv('log-overlay');
+  setTimeout(function(){ var i=document.getElementById('sh-input'); if(i) i.focus(); }, 300);
 }
-function closeLog() { document.getElementById('log-overlay').classList.remove('open'); }
+function closeLog() { closeOv('log-overlay'); }
 function confirmLog() {
-  const val=document.getElementById('sheet-input').value.trim();
+  var val = document.getElementById('sh-input').value.trim();
   if (!val) { closeLog(); return; }
-  state.logEntries.unshift({ type:currentLogType, name:val, status:statusFor(currentLogType), time:nowTime() });
-  closeLog(); buildLogFeed(); buildTimeline();
-  showToast(`${currentLogType}: ${val}`);
-  saveState(); updateForecast();
+  var statusMap = {Milestone:'Met','Moment Open':'Loop Open','Moment Close':'Loop Collapsed','Sub-Loop Open':'Loop Open','Sub-Loop Close':'Closed',Carryover:'Carryover (Loop Open)'};
+  S.entries.unshift({type:curLogType,name:val,status:statusMap[curLogType]||'',time:nowTime()});
+  closeLog(); refresh(); save();
+  toast(curLogType+': '+val);
 }
 function openERLog() {
-  document.getElementById('er-input').value='';
-  document.getElementById('er-overlay').classList.add('open');
-  setTimeout(()=>document.getElementById('er-input').focus(),300);
+  var ei = document.getElementById('er-input'); if (ei) ei.value='';
+  openOv('er-overlay');
+  setTimeout(function(){ var i=document.getElementById('er-input'); if(i) i.focus(); }, 300);
 }
-function closeERLog() { document.getElementById('er-overlay').classList.remove('open'); }
+function closeERLog() { closeOv('er-overlay'); }
 function confirmER() {
-  const val=document.getElementById('er-input').value.trim();
+  var val = document.getElementById('er-input').value.trim();
   if (!val) { closeERLog(); return; }
-  state.er=val;
-  const numVal=parseFloat(val);
-  if (!isNaN(numVal)) state.erLog.push({ time:nowTime(), val:numVal, label:val, note:'' });
-  closeERLog(); updateERDisplay();
-  showToast(`ER updated: ${val}`);
-  saveState(); updateForecast();
-}
-
-function labelFor(t) { return {'Marker':'What happened?','Milestone':'Milestone name','Moment Open':'Moment name','Moment Close':'Which Moment?','Sub-Loop Open':'Sub-Loop name','Sub-Loop Close':'Which Sub-Loop?','Carryover':'What carries over?','Note':'Note'}[t]||t; }
-function placeholderFor(t) { return {'Marker':'Fed Horses, Took Meds...','Milestone':'Wake Up, Lunch...','Moment Open':'Afternoon Sequence...','Sub-Loop Open':'Get Meds, Clean...','Carryover':'Pick Up Frames...','Note':'Anything to note...'}[t]||''; }
-function statusFor(t) {
-  if (t==='Milestone') return 'Met';
-  if (t==='Moment Open'||t==='Sub-Loop Open') return 'Loop Open';
-  if (t==='Moment Close') return 'Loop Collapsed';
-  if (t==='Sub-Loop Close') return 'Closed';
-  if (t==='Carryover') return 'Carryover (Loop Open)';
-  return '';
-}
-
-// STABILIZE
-function selectMode(mode, el) {
-  document.querySelectorAll('.choice-btn').forEach(b=>b.classList.remove('selected'));
-  el.classList.add('selected'); state.selectedMode=mode;
-  setTimeout(()=>showScreen('screen-s3'),300);
-}
-function togglePressure(p, el) {
-  if (p==='None') {
-    state.selectedPressures=state.selectedPressures.includes('None')?[]:['None'];
-    document.querySelectorAll('.pressure-btn').forEach(b=>b.classList.remove('selected'));
-    if (state.selectedPressures.includes('None')) el.classList.add('selected');
-  } else {
-    state.selectedPressures=state.selectedPressures.filter(x=>x!=='None');
-    document.querySelectorAll('.pressure-btn').forEach(b=>{ if (b.querySelector('.pressure-name')?.textContent==='No pressure detected') b.classList.remove('selected'); });
-    el.classList.toggle('selected');
-    if (el.classList.contains('selected')) state.selectedPressures.push(p);
-    else state.selectedPressures=state.selectedPressures.filter(x=>x!==p);
-  }
-}
-function updateCharCount(el,id) { document.getElementById(id).textContent=el.value.length; }
-function buildOutcome() {
-  const situation=document.getElementById('situation-input').value||'—';
-  const changeable=document.getElementById('changeable-input').value||'—';
-  const unchangeable=document.getElementById('unchangeable-input').value||'—';
-  const opt2=document.getElementById('opt2').value||'—';
-  const pressures=state.selectedPressures.join(' + ')||'none detected';
-  const mode=state.selectedMode||'—';
-  const mc=mode==='Clarity'?'good':mode==='Compressed'?'risk':'warn';
-  document.getElementById('outcome-card').innerHTML=`
-    <div class="outcome-row"><span class="outcome-key">Mode</span><span class="outcome-val ${mc}">${mode}</span></div>
-    <div class="outcome-row"><span class="outcome-key">Pressure</span><span class="outcome-val">${pressures}</span></div>
-    <div class="outcome-row"><span class="outcome-key">Situation</span><span class="outcome-val">${situation.substring(0,60)}${situation.length>60?'…':''}</span></div>
-    <div class="outcome-row"><span class="outcome-key">Changeable</span><span class="outcome-val">${changeable.substring(0,50)}${changeable.length>50?'…':''}</span></div>
-    <div class="outcome-row"><span class="outcome-key">Fixed</span><span class="outcome-val">${unchangeable.substring(0,50)}${unchangeable.length>50?'…':''}</span></div>
-    <div class="outcome-row"><span class="outcome-key">Safe action</span><span class="outcome-val">${opt2.substring(0,50)}${opt2.length>50?'…':''}</span></div>
-    <div class="outcome-row"><span class="outcome-key">Optionality</span><span class="outcome-val good">preserved</span></div>`;
-  showScreen('screen-s7');
-}
-function logStabilizeSession() {
-  state.logEntries.unshift({ type:'Marker', name:`Stabilize — ${state.selectedMode||'unknown mode'}`, status:'', time:nowTime() });
-  buildLogFeed(); showToast('Logged to timeline');
-  saveState();
-  setTimeout(()=>showScreen('screen-home'),600);
-}
-function copyOutcome() {
-  const mode=state.selectedMode||'—', pressures=state.selectedPressures.join(' + ')||'none';
-  const sit=document.getElementById('situation-input').value||'—';
-  const ch=document.getElementById('changeable-input').value||'—';
-  const un=document.getElementById('unchangeable-input').value||'—';
-  const o1=document.getElementById('opt1').value||'—', o2=document.getElementById('opt2').value||'—', o3=document.getElementById('opt3').value||'—';
-  const text=`LUX Stabilize — ${nowTime()}\nMode: ${mode}\nPressure: ${pressures}\nSituation: ${sit}\nChangeable: ${ch}\nFixed: ${un}\nNot deciding: ${o1}\nSafe action: ${o2}\nDelaying: ${o3}`;
-  navigator.clipboard?.writeText(text).catch(()=>{});
-  showToast('Copied to clipboard');
+  S.er = val;
+  var num = parseFloat(val);
+  if (!isNaN(num)) S.erLog.push({time:nowTime(),val:num,label:val});
+  closeERLog(); updateER(); save();
+  toast('ER: '+val);
 }
 
 // FEEDS
-const typeMap={'Milestone':'milestone','Moment Open':'moment','Moment Close':'moment','Sub-Loop Open':'subloop','Sub-Loop Close':'subloop','Marker':'marker','Carryover':'carry','Note':'er','ER':'er'};
-function entryHTML(e, idx, fromTimeline) {
-  const cls=typeMap[e.type]||'marker';
-  const sc=e.status==='Met'?'met':e.status&&e.status.includes('Open')?'open':e.status&&e.status.includes('Carry')?'carryover':'closed';
-  const sh=e.status?`<span class="tl-status status-${sc}">${e.status}</span>`:'';
-  const editBtn = fromTimeline ? `<button onclick="editEntry(${idx})" style="font-family:var(--font-mono);font-size:9px;color:var(--text3);background:transparent;border:1px solid var(--border);border-radius:3px;padding:2px 6px;cursor:pointer;margin-left:6px;">edit</button>` : '';
-  const delBtn = fromTimeline ? `<button onclick="deleteEntry(${idx})" style="font-family:var(--font-mono);font-size:9px;color:var(--red);background:transparent;border:1px solid rgba(212,91,91,0.2);border-radius:3px;padding:2px 6px;cursor:pointer;margin-left:4px;">×</button>` : '';
-  return `<div class="timeline-item"><div class="tl-dot ${cls}"></div><div class="tl-body"><div class="tl-type ${cls}">${e.type}</div><div class="tl-name">${e.name}${sh}${editBtn}${delBtn}</div><div class="tl-meta">${e.time}</div></div></div>`;
+var typeClass = {Milestone:'tl-milestone','Moment Open':'tl-moment','Moment Close':'tl-moment','Sub-Loop Open':'tl-subloop','Sub-Loop Close':'tl-subloop',Marker:'tl-marker',Carryover:'tl-carry',ER:'tl-er',Note:'tl-er'};
+var typeCol = {Milestone:'type-milestone','Moment Open':'type-moment','Moment Close':'type-moment','Sub-Loop Open':'type-subloop','Sub-Loop Close':'type-subloop',Marker:'type-marker',Carryover:'type-carry',ER:'type-er',Note:'type-er'};
+
+function entryHTML(e, idx, editable) {
+  var dc = typeClass[e.type]||'tl-marker';
+  var tc = typeCol[e.type]||'type-marker';
+  var sc = '';
+  if (e.status === 'Met') sc = 's-met';
+  else if (e.status && e.status.indexOf('Open') !== -1) sc = 's-open';
+  else if (e.status && e.status.indexOf('Carry') !== -1) sc = 's-carry';
+  else if (e.status) sc = 's-closed';
+  var sh = e.status ? '<span class="tl-status '+sc+'">'+e.status+'</span>' : '';
+  var eb = editable ? '<button class="tl-edit" onclick="editEntry('+idx+')">edit</button><button class="tl-del" onclick="delEntry('+idx+')">x</button>' : '';
+  return '<div class="tl-item"><div class="tl-dot '+dc+'"></div><div class="tl-body"><div class="tl-type '+tc+'">'+e.type+'</div><div class="tl-name">'+e.name+sh+eb+'</div><div class="tl-meta">'+e.time+'</div></div></div>';
+}
+
+function buildLogFeed() {
+  var f = document.getElementById('log-feed');
+  if (!f) return;
+  var html = '';
+  for (var i=0;i<Math.min(S.entries.length,20);i++) html += entryHTML(S.entries[i],i,false);
+  f.innerHTML = html;
+}
+
+function buildTimeline() {
+  var f = document.getElementById('tl-feed');
+  if (!f) return;
+  var html = '';
+  var rev = S.entries.slice().reverse();
+  for (var i=0;i<rev.length;i++) html += entryHTML(rev[i],S.entries.length-1-i,true);
+  f.innerHTML = html;
 }
 
 function editEntry(idx) {
-  const reversed = [...state.logEntries].reverse();
-  const e = reversed[idx];
-  const realIdx = state.logEntries.indexOf(e);
-  const newName = prompt('Edit designation:', e.name);
-  if (newName && newName.trim()) {
-    state.logEntries[realIdx].name = newName.trim();
-    buildTimeline(); buildLogFeed();
-    showToast('Entry updated');
-  }
+  var e = S.entries[idx];
+  var n = prompt('Edit:', e.name);
+  if (n && n.trim()) { S.entries[idx].name = n.trim(); buildTimeline(); buildLogFeed(); save(); toast('Updated'); }
+}
+function delEntry(idx) {
+  if (confirm('Delete: '+S.entries[idx].name+'?')) { S.entries.splice(idx,1); buildTimeline(); buildLogFeed(); save(); toast('Deleted'); }
 }
 
-function deleteEntry(idx) {
-  const reversed = [...state.logEntries].reverse();
-  const e = reversed[idx];
-  const realIdx = state.logEntries.indexOf(e);
-  if (confirm('Delete: ' + e.name + '?')) {
-    state.logEntries.splice(realIdx, 1);
-    buildTimeline(); buildLogFeed();
-    showToast('Entry deleted');
-  }
+// REHYDRATE
+function openRehydrate() {
+  var now = new Date();
+  var h = now.getHours()%12||12, m = ('0'+now.getMinutes()).slice(-2), ap = now.getHours()>=12?'PM':'AM';
+  var openMoment = '';
+  for (var i=0;i<S.entries.length;i++) { if (S.entries[i].type==='Moment Open'&&S.entries[i].status==='Loop Open') { openMoment=S.entries[i].name; break; } }
+  var carries = [];
+  for (var j=0;j<S.entries.length;j++) { if (S.entries[j].status&&S.entries[j].status.indexOf('Carryover')!==-1) carries.push(S.entries[j].name); }
+  var evLog = '';
+  var rev = S.entries.slice().reverse();
+  for (var k=0;k<rev.length;k++) { var e=rev[k]; evLog += '  '+e.time+'  '+e.type+': '+e.name+(e.status?' -- '+e.status:'')+'\n'; }
+  var lines = [
+    'Timestamp: '+h+':'+m+' '+ap+' -- '+document.getElementById('home-date').textContent,
+    'Day Status: Open',
+    'Current Moment: '+(openMoment||'--'),
+    'ER: '+S.er,
+    'Carryover: '+(carries.length ? carries.length+' ('+carries.join(', ')+')' : 'none'),
+    'Framework: '+(S.fw?'Loaded':'Off'),
+    'Model Target: '+S.model
+  ];
+  if (S.fw) lines.push('\n[LUX Layer Stack loaded]\n[OET/PFFC active]\n[TRS syntax active]\n[ERI scale active]\n[SSR mode: on]');
+  if (evLog) lines.push('\n-- Events Log --\n'+evLog);
+  var txt = lines.join('\n');
+  var rt = document.getElementById('rh-target'); if (rt) rt.textContent = '-> '+S.model;
+  var rp = document.getElementById('rh-preview'); if (rp) rp.textContent = txt;
+  openOv('rh-overlay');
 }
-function buildLogFeed() { const f=document.getElementById('log-feed'); if(f) f.innerHTML=state.logEntries.slice(0,20).map(entryHTML).join(''); }
-function buildTimeline() { const f=document.getElementById('timeline-feed'); if(f) f.innerHTML=[...state.logEntries].reverse().map((e,i)=>entryHTML(e,i,true)).join(''); }
-
-function nowTime() { const n=new Date(); const h=n.getHours()%12||12, m=String(n.getMinutes()).padStart(2,'0'), ap=n.getHours()>=12?'pm':'am'; return `${h}:${m}${ap}`; }
-function showToast(msg) { const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2200); }
-
-// INIT
-loadState();
-updateERDisplay(); buildLogFeed(); buildTimeline(); buildArchive(); updateForecast();
-
-
-// ── VOICE ──
-const voiceState = { recognition:null, listening:false, parsed:null, selectedType:null };
-
-function toggleVoice() {
-  if (voiceState.listening) { stopListening(); return; }
-  voiceState.selectedType = null;
-  document.querySelectorAll('.voice-type-btn').forEach(b=>b.style.outline='');
-  document.getElementById('voice-type-select').style.display='flex';
-  document.getElementById('voice-listen-panel').style.display='none';
-  document.getElementById('voice-result').style.display='none';
-  document.getElementById('voice-actions').style.display='none';
-  document.getElementById('voice-close-actions').style.display='flex';
-  document.getElementById('voice-overlay').classList.add('open');
+function closeRH() { closeOv('rh-overlay'); }
+function copyRH() {
+  var txt = document.getElementById('rh-preview').textContent;
+  function fallback() { var ta=document.createElement('textarea'); ta.value=txt; ta.style.cssText='position:fixed;opacity:0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); }
+  if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(txt).then(function(){ closeRH(); toast('Copied -> '+S.model); }).catch(fallback); } else { fallback(); closeRH(); toast('Copied -> '+S.model); }
 }
 
-function setVoiceType(type, el) {
-  voiceState.selectedType = type;
-  document.querySelectorAll('.voice-type-btn').forEach(b=>b.style.outline='');
-  el.style.outline = '2px solid var(--accent)';
-  document.getElementById('voice-type-select').style.display='none';
-  document.getElementById('voice-listen-panel').style.display='flex';
-  document.getElementById('voice-result').style.display='none';
-  document.getElementById('voice-actions').style.display='none';
-  document.getElementById('voice-transcript').textContent='';
-  document.getElementById('voice-status').textContent='Listening…';
-  startListening();
+// DAY CLOSE
+function openDayClose() { var n=document.getElementById('day-note'); if(n) n.value=''; openOv('day-overlay'); }
+function closeDayOv() { closeOv('day-overlay'); }
+function confirmDay() {
+  var note = document.getElementById('day-note').value.trim();
+  var now = new Date();
+  var ds = now.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+  var evLog = '';
+  var rev = S.entries.slice().reverse();
+  for (var i=0;i<rev.length;i++) { var e=rev[i]; evLog += e.time+'  '+e.type+': '+e.name+(e.status?' -- '+e.status:'')+'\n'; }
+  var arc = S.erLog.map(function(x){return x.label;}).join(' > ');
+  S.nightlies.unshift({date:ds,dateKey:now.toDateString(),er:S.er,note:note||'(no note)',events:evLog,erArc:arc,timestamp:now.toISOString()});
+  S.entries = [];
+  S.erLog = [{time:'Wake',val:parseFloat(S.er)||1.5,label:S.er}];
+  S.dayOpen = false;
+  var dp = document.getElementById('day-pill'); if(dp) { dp.textContent='Day Closed'; dp.className='pill pill-closed'; }
+  var cp = document.getElementById('close-pill'); if(cp) cp.style.display='none';
+  closeDayOv(); refresh(); save();
+  toast('Day closed and archived');
 }
 
-function closeVoice() {
-  stopListening();
-  document.getElementById('voice-overlay').classList.remove('open');
-  resetVoiceUI();
-}
-
-function startListening() {
-  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-  if (!SpeechRecognition) {
-    document.getElementById('voice-status').textContent = 'Not supported on this browser';
-    return;
-  }
-  const r = new SpeechRecognition();
-  r.continuous = false;
-  r.interimResults = true;
-  r.lang = 'en-US';
-  voiceState.recognition = r;
-  voiceState.listening = true;
-
-  document.getElementById('voice-ring').classList.add('active');
-  document.getElementById('voice-status').textContent = 'Listening…';
-  document.getElementById('voice-btn').classList.add('listening');
-  document.getElementById('voice-result').style.display = 'none';
-  document.getElementById('voice-actions').style.display = 'none';
-  document.getElementById('voice-close-actions').style.display = 'flex';
-  document.getElementById('voice-hint').style.display = 'block';
-
-  r.onresult = (e) => {
-    let interim = '';
-    let final = '';
-    for (let i = e.resultIndex; i < e.results.length; i++) {
-      if (e.results[i].isFinal) final += e.results[i][0].transcript;
-      else interim += e.results[i][0].transcript;
-    }
-    document.getElementById('voice-transcript').textContent = final || interim;
-    if (final) {
-      stopListening();
-      parseVoiceInput(final.trim());
-    }
-  };
-
-  r.onerror = (e) => {
-    stopListening();
-    document.getElementById('voice-status').textContent = e.error === 'not-allowed' ? 'Mic access denied' : 'Try again';
-  };
-
-  r.onend = () => { if (voiceState.listening) stopListening(); };
-  r.start();
-}
-
-function stopListening() {
-  voiceState.listening = false;
-  document.getElementById('voice-ring').classList.remove('active');
-  document.getElementById('voice-btn').classList.remove('listening');
-  document.getElementById('voice-status').textContent = 'Processing…';
-  if (voiceState.recognition) { try { voiceState.recognition.stop(); } catch(e){} voiceState.recognition = null; }
-}
-
-function parseVoiceInput(text) {
-  const type = voiceState.selectedType || 'Marker';
-  let name = text.trim();
-  let status = statusFor(type);
-
-  // For ER, extract numeric value
-  if (type === 'ER') {
-    const m = text.match(/([0-9]+[.,][0-9]*\s*[ABCabc]?)/);
-    if (m) name = m[1].replace(/,/,'.').replace(/\s+/g,'').toUpperCase();
-    else name = text.trim().toUpperCase();
-  }
-
-  voiceState.parsed = { type, name, status };
-  document.getElementById('voice-listen-panel').style.display='none';
-  document.getElementById('voice-result').style.display = 'block';
-  document.getElementById('voice-result-type').textContent = type;
-  document.getElementById('voice-result-text').textContent = name + (status ? '  ·  ' + status : '');
-  document.getElementById('voice-actions').style.display = 'flex';
-  document.getElementById('voice-close-actions').style.display = 'none';
-}
-
-function confirmVoiceLog() {
-  const p = voiceState.parsed; if (!p) return;
-  if (p.type === 'ER') {
-    state.er = p.name;
-    const numVal = parseFloat(p.name);
-    if (!isNaN(numVal)) state.erLog.push({ time:nowTime(), val:numVal, label:p.name, note:'voice' });
-    updateERDisplay();
-    showToast(`ER: ${p.name}`);
-  } else {
-    state.logEntries.unshift({ type:p.type, name:p.name, status:p.status, time:nowTime() });
-    buildLogFeed(); buildTimeline();
-    showToast(`${p.type}: ${p.name}`);
-  }
-  closeVoice();
-}
-
-function cancelVoiceLog() {
-  voiceState.parsed = null;
-  voiceState.selectedType = null;
-  document.querySelectorAll('.voice-type-btn').forEach(b=>b.style.outline='');
-  document.getElementById('voice-type-select').style.display='flex';
-  document.getElementById('voice-listen-panel').style.display='none';
-  document.getElementById('voice-result').style.display='none';
-  document.getElementById('voice-actions').style.display='none';
-  document.getElementById('voice-close-actions').style.display='flex';
-  document.getElementById('voice-transcript').textContent='';
-}
-
-function resetVoiceUI() {
-  voiceState.parsed = null;
-  document.getElementById('voice-transcript').textContent = '';
-  document.getElementById('voice-result').style.display = 'none';
-  document.getElementById('voice-actions').style.display = 'none';
-  document.getElementById('voice-close-actions').style.display = 'flex';
-  document.getElementById('voice-hint').style.display = 'block';
-  document.getElementById('voice-status').textContent = 'Tap to speak';
-  document.getElementById('voice-ring').classList.remove('active');
-}
-
-
-// ── DAY CLOSE ──
-function openDayClose() {
-  document.getElementById('nightly-note').value = '';
-  document.getElementById('day-modal').classList.add('open');
-}
-function closeDayModal() {
-  document.getElementById('day-modal').classList.remove('open');
-}
-function confirmDayClose() {
-  const note = document.getElementById('nightly-note').value.trim();
-  const now = new Date();
-  const dateStr = now.toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' });
-  const events = [...state.logEntries].reverse().map(e => {
-    const s = e.status ? ' — ' + e.status : '';
-    return `  ${e.time}  ${e.type}: ${e.name}${s}`;
-  }).join('\n');
-  const nightly = {
-    date: dateStr,
-    dateKey: now.toDateString(),
-    er: state.er,
-    note: note || 'No closing note.',
-    events: events,
-    erArc: state.erLog.map(e=>e.label).join(' → '),
-    timestamp: now.toISOString()
-  };
-  state.nightlies.unshift(nightly);
-  // Clear today's log
-  state.logEntries = [];
-  state.erLog = [{ time: 'Wake', val: parseFloat(state.er)||1.5, label: state.er, note:'Carry-in' }];
-  state.dayOpen = false;
-  // Update UI
-  document.getElementById('day-status-pill').textContent = 'Day Closed';
-  document.getElementById('day-status-pill').className = 'status-pill status-closed';
-  document.getElementById('day-close-btn').style.display = 'none';
-  closeDayModal();
-  buildLogFeed(); buildTimeline(); buildArchive();
-  saveState();
-  showToast('Day closed and archived');
-}
-
+// ARCHIVE
 function buildArchive() {
-  const feed = document.getElementById('archive-feed');
-  const empty = document.getElementById('archive-empty');
+  var feed = document.getElementById('archive-feed');
+  var empty = document.getElementById('archive-empty');
   if (!feed) return;
-  if (!state.nightlies || state.nightlies.length === 0) {
+  if (!S.nightlies || S.nightlies.length === 0) {
     if (empty) empty.style.display = 'block';
     feed.innerHTML = '';
     return;
   }
   if (empty) empty.style.display = 'none';
-  feed.innerHTML = state.nightlies.map(n => `
-    <div class="nightly-item">
-      <div class="nightly-date">${n.date}</div>
-      <div style="display:flex;gap:8px;margin-bottom:6px;flex-wrap:wrap;">
-        <span style="font-family:var(--font-mono);font-size:9px;color:var(--amber);background:rgba(212,148,91,0.08);border:1px solid rgba(212,148,91,0.15);padding:2px 7px;border-radius:3px;">ER Close: ${n.er}</span>
-        ${n.erArc ? `<span style="font-family:var(--font-mono);font-size:9px;color:var(--text3);padding:2px 7px;">Arc: ${n.erArc}</span>` : ''}
-      </div>
-      <div class="nightly-text" style="margin-bottom:8px;">${n.note}</div>
-      <details style="cursor:pointer;">
-        <summary style="font-family:var(--font-mono);font-size:9px;color:var(--text3);letter-spacing:0.08em;text-transform:uppercase;list-style:none;">▸ Event Log</summary>
-        <pre style="font-family:var(--font-mono);font-size:9px;color:var(--text3);margin-top:8px;white-space:pre-wrap;line-height:1.8;">${n.events}</pre>
+  var html = '';
+  for (var i=0;i<S.nightlies.length;i++) {
+    var n = S.nightlies[i];
+    html += '<div class="nightly-item">';
+    html += '<div class="nightly-date">'+(n.date||'')+'</div>';
+    html += '<div style="display:flex;gap:8px;margin-bottom:6px;flex-wrap:wrap">';
+    html += '<span style="font-family:var(--mono);font-size:9px;color:var(--amber);background:rgba(212,148,91,0.08);border:1px solid rgba(212,148,91,0.15);padding:2px 7px;border-radius:3px">ER: '+(n.er||'--')+'</span>';
+    if (n.erArc) html += '<span style="font-family:var(--mono);font-size:9px;color:var(--text3);padding:2px 7px">Arc: '+n.erArc+'</span>';
+    html += '</div>';
+    html += '<div class="nightly-note" style="margin-bottom:8px">'+(n.note||'')+'</div>';
+    html += '<details style="cursor:pointer"><summary style="font-family:var(--mono);font-size:9px;color:var(--text3);letter-spacing:0.08em;text-transform:uppercase;list-style:none">+ Event Log</summary>';
+    html += '<pre style="font-family:var(--mono);font-size:9px;color:var(--text3);margin-top:8px;white-space:pre-wrap;line-height:1.8">'+(n.events||'')+'</pre>';
 
 ```
-  </details>
-</div>
+html += '</details></div>';
 ```
 
-`).join(’’);
+}
+feed.innerHTML = html;
 }
 
-// ── FORECAST ENGINE v1.1 ──
-function computeForecast() {
-const log = state.erLog;
-if (!log || log.length < 1) return { state:‘Stable Band’, cls:‘fc-stable’, conf:‘Low’, basis:‘No ER data yet’ };
-if (log.length < 2) return { state:‘Stable Band’, cls:‘fc-stable’, conf:‘Low’, basis:‘Log more ER entries for trend’ };
-
-const recent = log.slice(-5);
-const vals = recent.map(e=>e.val);
-const current = vals[vals.length-1];
-const prev = vals[vals.length-2];
-const trend = current - prev;
-
-// Rate of change (speed)
-const rateRapid = Math.abs(trend) > 0.25;
-const rateModerate = Math.abs(trend) > 0.1;
-
-// Time context
-const hour = new Date().getHours();
-const isEarlyMorning = hour >= 2 && hour <= 8;
-const isMorning = hour >= 6 && hour <= 12;
-const isEvening = hour >= 18;
-const isNight = hour >= 21 || hour < 3;
-
-// Open loops as drift signal
-const openLoops = state.logEntries.filter(e => e.status && e.status.includes(‘Open’)).length;
-const manyLoops = openLoops >= 4;
-
-// Recent event pattern (last 60 min worth = last 15 entries approx)
-const recentEvents = state.logEntries.slice(0, 15);
-const buildTypes = [‘Milestone’,‘Moment Open’,‘Sub-Loop Open’,‘Marker’];
-const buildSignals = recentEvents.filter(e => buildTypes.includes(e.type)).length;
-
-// Grounding signals (meals, meds, coffee, chores, horses)
-const groundingKeywords = [‘coffee’,‘meds’,‘breakfast’,‘lunch’,‘dinner’,‘food’,‘eat’,‘horse’,‘chore’,‘walk’,‘rest’,‘nap’,‘water’];
-const groundingMarkers = recentEvents.filter(e => e.name && groundingKeywords.some(k => e.name.toLowerCase().includes(k))).length;
-
-// Friction signals
-const frictionKeywords = [‘frustrat’,‘conflict’,‘stuck’,‘block’,‘tired’,‘exhaust’,‘overwhelm’,‘angry’,‘hurt’,‘anxious’,‘worry’];
-const frictionMarkers = recentEvents.filter(e => e.name && frictionKeywords.some(k => e.name.toLowerCase().includes(k))).length;
-
-// Event pace (task switching proxy)
-const veryActiveLogging = recentEvents.length >= 10;
-
-let fc, cls, conf, basis;
-
-// ── GROUNDING RECOMMENDED ──
-if (frictionMarkers >= 2 || (manyLoops && frictionMarkers >= 1) || (current > 2.0 && frictionMarkers >= 1)) {
-fc = ‘Grounding Recommended’; cls = ‘fc-drift’; conf = ‘Moderate’;
-basis = ‘Friction markers + loop accumulation’;
-}
-// ── DRIFT RISK ──
-else if (current > 2.3 || (current > 2.0 && trend > 0.15) || (manyLoops && trend > 0.1 && current > 1.9)) {
-fc = ‘Drift Risk’; cls = ‘fc-drift’; conf = current > 2.5 ? ‘High’ : ‘Moderate’;
-basis = manyLoops ? ‘ER elevated + open loop accumulation’ : ‘ER elevated + rising trend’;
-}
-// ── DESCENT LIKELY ──
-else if ((isEvening || isNight) && current < 1.5 && trend <= 0) {
-fc = ‘Descent Likely’; cls = ‘fc-descent’; conf = ‘High’;
-basis = ‘Evening pattern + falling ER’;
-}
-else if (trend < -0.2 && current < 1.6 && groundingMarkers === 0) {
-fc = ‘Descent Likely’; cls = ‘fc-descent’; conf = ‘Moderate’;
-basis = ‘ER declining, no grounding signals’;
-}
-// ── ACTIVATION RISING ──
-else if (rateRapid && trend > 0 && current < 2.3) {
-fc = ‘Activation Rising’; cls = ‘fc-rising’; conf = ‘Moderate’;
-basis = ‘Rapid ER rise — stay selective’;
-}
-// ── BUILD MODE LIKELY ──
-else if (current >= 1.55 && current <= 2.1 && trend >= -0.05 && buildSignals >= 3 && (isEarlyMorning || isMorning)) {
-fc = ‘Build Mode Likely’; cls = ‘fc-build’; conf = buildSignals >= 6 ? ‘High’ : ‘Moderate’;
-basis = (isEarlyMorning ? ‘Early-morning window’ : ‘Morning build pattern’) + ’ + active structured logging’;
-}
-else if (current >= 1.6 && current <= 2.0 && trend >= 0 && groundingMarkers >= 1) {
-fc = ‘Build Mode Likely’; cls = ‘fc-build’; conf = ‘Moderate’;
-basis = ‘Stable ER + grounding signals active’;
-}
-// ── STABLE BAND ──
-else {
-fc = ‘Stable Band’; cls = ‘fc-stable’; conf = rateModerate ? ‘Moderate’ : ‘High’;
-basis = ‘Steady ER in usable range’;
-}
-
-return { state: fc, cls, conf, basis };
-}
-
-function updateForecast() {
-const f = computeForecast();
-const stateEl = document.getElementById(‘forecast-state’);
-const confEl = document.getElementById(‘forecast-confidence’);
-const basisEl = document.getElementById(‘forecast-basis’);
-if (!stateEl) return;
-stateEl.textContent = f.state;
-stateEl.className = ’forecast-state ’ + f.cls;
-confEl.textContent = f.conf;
-confEl.className = ’forecast-confidence ’ + f.cls;
-basisEl.textContent = ’Based on: ’ + f.basis;
-}
-
-// ── IMPORT ──
-let importType = ‘nightly’;
-let importParsed = null;
-
-function setImportType(type, el) {
-importType = type;
-document.querySelectorAll(’.import-type-btn’).forEach(b => b.classList.remove(‘active’));
+// IMPORT
+function openImport() { var i=document.getElementById(‘imp-input’); if(i) i.value=’’; var p=document.getElementById(‘imp-preview’); if(p) p.style.display=‘none’; openOv(‘import-overlay’); }
+function closeImport() { closeOv(‘import-overlay’); }
+function setImpType(t, el) {
+S.impType = t;
+var btns = document.querySelectorAll(’.import-type-btn’);
+for (var i=0;i<btns.length;i++) btns[i].classList.remove(‘active’);
 el.classList.add(‘active’);
 previewImport();
 }
-
-function openImport() {
-importParsed = null;
-document.getElementById(‘import-input’).value = ‘’;
-document.getElementById(‘import-preview-block’).style.display = ‘none’;
-document.getElementById(‘import-confirm-btn’).disabled = true;
-document.getElementById(‘import-confirm-btn’).style.opacity = ‘0.4’;
-document.getElementById(‘import-modal’).classList.add(‘open’);
-}
-
-function closeImport() {
-document.getElementById(‘import-modal’).classList.remove(‘open’);
-}
-
-function parseNightly(text) {
-const result = { type:‘nightly’, raw:text };
-
-// Date — look for day patterns
-const dateMatch = text.match(/(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)[,\s]+([A-Z][a-z]+.?\s+\d{1,2},?\s*\d{4})/i)
-|| text.match(/(March|April|May|June|July|August|September|October|November|December|January|February)\s+\d{1,2},?\s*\d{4}/i)
-|| text.match(/(\d{1,2}/\d{1,2}/\d{2,4})/);
-result.date = dateMatch ? dateMatch[0].trim() : ‘Unknown Date’;
-
-// ER — look for ER values
-const erMatches = text.match(/\d+.\d+[ABC]/g) || text.match(/ER[:\s]+([\d.]+[ABC]?)/gi);
-if (erMatches) {
-result.erClose = erMatches[erMatches.length-1];
-result.erArc = erMatches.slice(0,5).join(’ → ’);
-}
-
-// Carryover
-const carryMatch = text.match(/Carryover[:\s]+([^\n]+)/gi);
-result.carryover = carryMatch ? carryMatch.map(m => m.replace(/^Carryover[:\s]+/i,’’)).join(’, ’) : ‘’;
-
-// Markers — extract bullet/dash lines with Marker keyword
-const markerLines = text.match(/Marker[:\s]+([^\n]+)/gi) || [];
-result.markers = markerLines.map(m => m.replace(/^Marker[:\s]+/i,’’).trim()).slice(0,20).join(’\n  ’);
-
-// Key phrase / summary (last paragraph or final line)
-const lines = text.split(’\n’).filter(l => l.trim().length > 20);
-result.note = lines[lines.length-1] || ‘’;
-
-// Build events log from markers
-result.events = markerLines.map(m => ’  —  Marker: ’ + m.replace(/^Marker[:\s]+/i,’’).trim()).join(’\n’);
-
-return result;
-}
-
-function parseDeca(text) {
-const result = { type:‘deca’, raw:text };
-
-// Date range
-const rangeMatch = text.match(/(?:March|April|May|June|July|August|September|October|November|December|January|February)\s+\d{1,2}[–-—]+\d{1,2},?\s*\d{4}/i)
-|| text.match(/Deca\s+(?:Form|Report)?\s*(?:0?[12])?[:\s]+([^\n]+)/i);
-result.date = rangeMatch ? rangeMatch[0].trim() : ‘Deca Period’;
-
-// Classification
-const classMatch = text.match(/(?:classification|type|arc)[:\s]+([^\n]+)/i);
-result.note = classMatch ? classMatch[1].trim() : ‘’;
-
-// Pattern signals
-const patternLines = text.match(/Pattern\s+\d+[^\n]*/gi) || [];
-result.markers = patternLines.slice(0,5).join(’\n  ’);
-
-result.erArc = ‘’;
-result.erClose = ‘’;
-result.carryover = ‘’;
-
-const lines = text.split(’\n’).filter(l => l.trim().length > 30);
-if (!result.note) result.note = lines[lines.length-1] || ‘’;
-
-result.events = patternLines.map(p => ’  —  ’ + p.trim()).join(’\n’);
-
-return result;
-}
-
 function previewImport() {
-const text = document.getElementById(‘import-input’).value.trim();
-const preview = document.getElementById(‘import-preview’);
-const block = document.getElementById(‘import-preview-block’);
-const btn = document.getElementById(‘import-confirm-btn’);
-
-if (text.length < 50) {
-block.style.display = ‘none’;
-btn.disabled = true;
-btn.style.opacity = ‘0.4’;
-importParsed = null;
-return;
+var txt = document.getElementById(‘imp-input’).value.trim();
+var prev = document.getElementById(‘imp-preview’);
+if (txt.length < 30) { if (prev) prev.style.display=‘none’; S.impParsed=null; return; }
+var r = {date:‘Unknown’,er:’–’,note:’’,events:’’};
+var dm = txt.match(/(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)[,\s]+([A-Z][a-z]+.?\s+\d{1,2},?\s*\d{4})/i) || txt.match(/(March|April|May|June|July|August|September|October|November|December|January|February)\s+\d{1,2},?\s*\d{4}/i);
+if (dm) r.date = dm[0].trim();
+var ems = txt.match(/\d+.\d+[ABC]/g);
+if (ems) { r.er = ems[ems.length-1]; r.erArc = ems.slice(0,5).join(’ > ‘); }
+var ml = txt.match(/Marker[:\s]+([^\n]+)/gi) || [];
+r.events = ml.map(function(m){return ’  – Marker: ‘+m.replace(/^Marker[:\s]+/i,’’).trim();}).join(’\n’);
+var lines = txt.split(’\n’).filter(function(l){return l.trim().length>20;});
+r.note = lines[lines.length-1]||’’;
+S.impParsed = r;
+if (prev) {
+prev.innerHTML = ‘<div class="imp-row"><span class="imp-key">Date</span><span class="imp-val">’+r.date+’</span></div>’
++’<div class="imp-row"><span class="imp-key">ER Close</span><span class="imp-val">’+r.er+’</span></div>’
++’<div class="imp-row"><span class="imp-key">Note</span><span class="imp-val">’+r.note.substring(0,60)+’</span></div>’;
+prev.style.display = ‘block’;
 }
-
-importParsed = importType === ‘nightly’ ? parseNightly(text) : parseDeca(text);
-
-const rows = [
-{ k:‘Type’, v: importType === ‘nightly’ ? ‘Nightly Report’ : ‘Deca Form’ },
-{ k:‘Date’, v: importParsed.date },
-{ k:‘ER Close’, v: importParsed.erClose || ‘—’ },
-{ k:‘ER Arc’, v: importParsed.erArc || ‘—’ },
-{ k:‘Carryover’, v: importParsed.carryover || ‘—’ },
-{ k:‘Note’, v: importParsed.note ? importParsed.note.substring(0,80) + (importParsed.note.length > 80 ? ‘…’:’’) : ‘—’ },
-];
-
-preview.innerHTML = rows.map(r => ` <div class="import-preview-row"> <span class="import-preview-key">${r.k}</span> <span class="import-preview-val">${r.v}</span> </div>`).join(’’);
-
-block.style.display = ‘block’;
-btn.disabled = false;
-btn.style.opacity = ‘1’;
 }
-
 function confirmImport() {
-if (!importParsed) return;
-
-const nightly = {
-date: importParsed.date,
-dateKey: importParsed.date,
-er: importParsed.erClose || ‘—’,
-note: importParsed.note || ‘(imported)’,
-events: importParsed.events || importParsed.raw.substring(0, 800),
-erArc: importParsed.erArc || ‘’,
-timestamp: new Date().toISOString(),
-imported: true,
-importType: importParsed.type
-};
-
-state.nightlies.push(nightly);
-// Sort by timestamp descending
-state.nightlies.sort((a,b) => new Date(b.timestamp) - new Date(a.timestamp));
-
-closeImport();
-buildArchive();
-saveState();
-showToast(`${importParsed.type === 'deca' ? 'Deca' : 'Nightly'} imported: ${importParsed.date}`);
+if (!S.impParsed) { closeImport(); return; }
+var n = S.impParsed;
+S.nightlies.push({date:n.date,dateKey:n.date,er:n.er,note:n.note||’(imported)’,events:n.events,erArc:n.erArc||’’,timestamp:new Date().toISOString()});
+S.nightlies.sort(function(a,b){return new Date(b.timestamp)-new Date(a.timestamp);});
+closeImport(); buildArchive(); save();
+toast(’Imported: ’+n.date);
 }
 
+// STABILIZE
+function gotoStab() {
+S.selMode=null; S.selPress=[];
+var cbs = document.querySelectorAll(’.choice-btn’); for (var i=0;i<cbs.length;i++) cbs[i].classList.remove(‘sel’);
+var pbs = document.querySelectorAll(’.press-btn’); for (var i=0;i<pbs.length;i++) pbs[i].classList.remove(‘sel’);
+var ids = [‘sit-input’,‘change-input’,‘unchange-input’,‘opt1’,‘opt2’,‘opt3’];
+for (var i=0;i<ids.length;i++) { var el=document.getElementById(ids[i]); if(el) el.value=’’; }
+buildPressList();
+goTo(‘scr-s1’);
+}
+var pressItems = [
+{name:‘Urgency’,desc:‘Feels like it has to happen now’},
+{name:‘Guilt’,desc:‘Someone will be hurt or disappointed’},
+{name:‘Fear’,desc:‘Something bad will happen if I don't act’},
+{name:‘Anger’,desc:‘I want to react to something done to me’},
+{name:‘Obligation’,desc:‘I should do this because it's expected’},
+{name:‘Excitement’,desc:‘I want this so badly I can't think straight’},
+{name:‘Shame’,desc:‘I feel exposed or wrong’},
+{name:‘No pressure’,desc:‘I feel clear’}
+];
+function buildPressList() {
+var pl = document.getElementById(‘press-list’);
+if (!pl) return;
+var html = ‘’;
+for (var i=0;i<pressItems.length;i++) {
+var p = pressItems[i];
+html += ‘<div class="press-btn" onclick="togglePress(\''+p.name+'\',this)">’
++’<div class="press-check"><span class="check-mark">v</span></div>’
++’<div><div class="press-name">’+p.name+’</div><div class="press-desc">’+p.desc+’</div></div></div>’;
+}
+pl.innerHTML = html;
+}
+function selMode(m, el) {
+var cbs = document.querySelectorAll(’.choice-btn’); for (var i=0;i<cbs.length;i++) cbs[i].classList.remove(‘sel’);
+el.classList.add(‘sel’); S.selMode = m;
+setTimeout(function(){goTo(‘scr-s3’);},300);
+}
+function togglePress(p, el) {
+el.classList.toggle(‘sel’);
+if (el.classList.contains(‘sel’)) S.selPress.push(p);
+else { var i=S.selPress.indexOf(p); if(i>-1) S.selPress.splice(i,1); }
+}
+function buildOutcome() {
+var sit = document.getElementById(‘sit-input’).value||’–’;
+var ch = document.getElementById(‘change-input’).value||’–’;
+var un = document.getElementById(‘unchange-input’).value||’–’;
+var sa = document.getElementById(‘opt2’).value||’–’;
+var ps = S.selPress.join(’ + ‘)||‘none’;
+var m = S.selMode||’–’;
+var mc = m===‘Clarity’?‘out-good’:m===‘Compressed’?‘out-warn’:‘out-warn’;
+var oc = document.getElementById(‘outcome-card’);
+if (!oc) return;
+oc.innerHTML = ‘<div class="out-row"><span class="out-key">Mode</span><span class="out-val '+mc+'">’+m+’</span></div>’
++’<div class="out-row"><span class="out-key">Pressure</span><span class="out-val">’+ps+’</span></div>’
++’<div class="out-row"><span class="out-key">Situation</span><span class="out-val">’+sit.substring(0,60)+’</span></div>’
++’<div class="out-row"><span class="out-key">Changeable</span><span class="out-val">’+ch.substring(0,50)+’</span></div>’
++’<div class="out-row"><span class="out-key">Fixed</span><span class="out-val">’+un.substring(0,50)+’</span></div>’
++’<div class="out-row"><span class="out-key">Safe action</span><span class="out-val">’+sa.substring(0,50)+’</span></div>’
++’<div class="out-row"><span class="out-key">Optionality</span><span class="out-val out-good">preserved</span></div>’;
+goTo(‘scr-s7’);
+}
+function logStab() {
+S.entries.unshift({type:‘Marker’,name:‘Stabilize – ‘+( S.selMode||‘unknown’),status:’’,time:nowTime()});
+buildLogFeed(); save(); toast(‘Logged’);
+setTimeout(function(){goTo(‘scr-home’);},600);
+}
+
+// FORECAST
+function updateForecast() {
+var log = S.erLog;
+var fs, fc, fb;
+if (!log || log.length < 2) { fs=‘Stable Band’; fc=‘fc-stable’; fb=‘Log ER entries to activate’; }
+else {
+var vals = log.slice(-5).map(function(e){return e.val;});
+var cur = vals[vals.length-1];
+var trend = cur - vals[vals.length-2];
+var h = new Date().getHours();
+var early = h>=2&&h<=8, eve = h>=18;
+var bl = S.entries.slice(0,15);
+var bsig = bl.filter(function(e){return [‘Milestone’,‘Moment Open’,‘Sub-Loop Open’].indexOf(e.type)!==-1;}).length;
+var fric = bl.filter(function(e){return e.name&&/frustrat|conflict|stuck|tired|overwhelm/i.test(e.name);}).length;
+var gnd = bl.filter(function(e){return e.name&&/coffee|meds|breakfast|lunch|dinner|horse|chore|walk/i.test(e.name);}).length;
+var opens = S.entries.filter(function(e){return e.status&&e.status.indexOf(‘Open’)!==-1;}).length;
+if (fric>=2||(opens>=4&&fric>=1)) { fs=‘Grounding Recommended’; fc=‘fc-drift’; fb=‘Friction markers + loop accumulation’; }
+else if (cur>2.3||(cur>2.0&&trend>0.15)) { fs=‘Drift Risk’; fc=‘fc-drift’; fb=opens>=4?‘ER elevated + open loops’:‘ER elevated + rising trend’; }
+else if ((eve&&cur<1.5&&trend<=0)||(trend<-0.2&&cur<1.6&&!gnd)) { fs=‘Descent Likely’; fc=‘fc-descent’; fb=eve?‘Evening pattern + falling ER’:‘ER declining, no grounding’; }
+else if (trend>0.2&&cur<2.3) { fs=‘Activation Rising’; fc=‘fc-rising’; fb=‘Rapid ER rise – stay selective’; }
+else if (cur>=1.55&&cur<=2.1&&trend>=-0.05&&bsig>=3&&(early||h<=12)) { fs=‘Build Mode Likely’; fc=‘fc-build’; fb=(early?‘Early-morning window’:‘Morning pattern’)+’ + active logging’; }
+else if (cur>=1.6&&cur<=2.0&&gnd>=1) { fs=‘Build Mode Likely’; fc=‘fc-build’; fb=‘Stable ER + grounding active’; }
+else { fs=‘Stable Band’; fc=‘fc-stable’; fb=‘Steady ER in usable range’; }
+}
+var fse=document.getElementById(‘fc-state’); if(fse){fse.textContent=fs;fse.className=’forecast-state ’+fc;}
+var fce=document.getElementById(‘fc-conf’); if(fce){fce.textContent=‘Moderate’;fce.className=’fw-badge ’+fc;}
+var fbe=document.getElementById(‘fc-basis’); if(fbe) fbe.textContent=’Based on: ’+fb;
+}
+
+// LOOPS TOGGLE
+function toggleLoops() {
+var list = document.getElementById(‘loops-list’);
+if (list) list.style.display = list.style.display === ‘none’ ? ‘’ : list.style.display;
+}
+
+// PAINTING
+function togglePaint() {
+var ov = document.getElementById(‘paint-overlay’);
+var btn = document.getElementById(‘paint-btn’);
+if (!ov) return;
+if (ov.classList.contains(‘active’)) { ov.classList.remove(‘active’); if(btn) btn.classList.remove(‘active’); }
+else { ov.classList.add(‘active’); if(btn) btn.classList.add(‘active’); var pe=document.getElementById(‘paint-er’); if(pe) pe.textContent=S.er; }
+}
+
+// VOICE
+function toggleVoice() {
+var ov = document.getElementById(‘voice-overlay’);
+if (!ov) return;
+if (ov.classList.contains(‘open’)) { closeVoice(); return; }
+S.voiceType = null;
+var tp = document.getElementById(‘voice-type-panel’); if(tp) tp.style.display=‘flex’;
+var lp = document.getElementById(‘voice-listen-panel’); if(lp) lp.style.display=‘none’;
+var vr = document.getElementById(‘voice-result’); if(vr) vr.style.display=‘none’;
+var va = document.getElementById(‘voice-actions’); if(va) va.style.display=‘none’;
+var vts = document.querySelectorAll(’.vt-btn’); for(var i=0;i<vts.length;i++) vts[i].classList.remove(‘sel’);
+ov.classList.add(‘open’);
+}
+function closeVoice() {
+var ov = document.getElementById(‘voice-overlay’); if(ov) ov.classList.remove(‘open’);
+if (S.voiceRec) { try { S.voiceRec.stop(); } catch(e) {} S.voiceRec=null; }
+var fab = document.getElementById(‘voice-fab’); if(fab) fab.classList.remove(‘listening’);
+}
+function setVT(type, el) {
+S.voiceType = type;
+var vts = document.querySelectorAll(’.vt-btn’); for(var i=0;i<vts.length;i++) vts[i].classList.remove(‘sel’);
+el.classList.add(‘sel’);
+var tp = document.getElementById(‘voice-type-panel’); if(tp) tp.style.display=‘none’;
+var lp = document.getElementById(‘voice-listen-panel’); if(lp) lp.style.display=‘flex’;
+var vr = document.getElementById(‘voice-result’); if(vr) vr.style.display=‘none’;
+var va = document.getElementById(‘voice-actions’); if(va) va.style.display=‘none’;
+var vt = document.getElementById(‘voice-transcript’); if(vt) vt.textContent=’’;
+var vs = document.getElementById(‘voice-status’); if(vs) vs.textContent=‘Listening…’;
+startListening();
+}
+function startListening() {
+var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+if (!SR) { var vs=document.getElementById(‘voice-status’); if(vs) vs.textContent=‘Not supported’; return; }
+S.voiceRec = new SR();
+S.voiceRec.continuous = false;
+S.voiceRec.interimResults = true;
+S.voiceRec.lang = ‘en-US’;
+var fab = document.getElementById(‘voice-fab’); if(fab) fab.classList.add(‘listening’);
+var vring = document.getElementById(‘voice-ring’); if(vring) vring.classList.add(‘active’);
+S.voiceRec.onresult = function(e) {
+var fin=’’, intr=’’;
+for (var i=e.resultIndex;i<e.results.length;i++) {
+if (e.results[i].isFinal) fin+=e.results[i][0].transcript;
+else intr+=e.results[i][0].transcript;
+}
+var vt=document.getElementById(‘voice-transcript’); if(vt) vt.textContent=fin||intr;
+if (fin) { if(S.voiceRec) try{S.voiceRec.stop();}catch(x){}; parseVoice(fin.trim()); }
+};
+S.voiceRec.onerror = function(e) {
+var vs=document.getElementById(‘voice-status’); if(vs) vs.textContent=e.error===‘not-allowed’?‘Mic denied’:‘Try again’;
+var fab=document.getElementById(‘voice-fab’); if(fab) fab.classList.remove(‘listening’);
+};
+S.voiceRec.onend = function() { var fab=document.getElementById(‘voice-fab’); if(fab) fab.classList.remove(‘listening’); };
+S.voiceRec.start();
+}
+function parseVoice(txt) {
+var type = S.voiceType || ‘Marker’;
+var name = txt.trim();
+var statusMap = {Milestone:‘Met’,‘Moment Open’:‘Loop Open’,‘Moment Close’:‘Loop Collapsed’,‘Sub-Loop Open’:‘Loop Open’,‘Sub-Loop Close’:‘Closed’,Carryover:‘Carryover (Loop Open)’,ER:’’};
+var status = statusMap[type]||’’;
+if (type===‘ER’) { var m=txt.match(/(\d+[.,]\d*\s*[ABCabc]?)/); if(m) name=m[1].replace(’,’,’.’).replace(/\s/,’’).toUpperCase(); }
+S.voiceParsed = {type:type,name:name,status:status};
+var vr=document.getElementById(‘voice-result’); if(vr) vr.style.display=‘block’;
+var vrt=document.getElementById(‘vr-type’); if(vrt) vrt.textContent=type;
+var vrx=document.getElementById(‘vr-text’); if(vrx) vrx.textContent=name+(status?’ – ‘+status:’’);
+var lp=document.getElementById(‘voice-listen-panel’); if(lp) lp.style.display=‘none’;
+var va=document.getElementById(‘voice-actions’); if(va) va.style.display=‘flex’;
+var vc=document.getElementById(‘voice-close’); if(vc) vc.style.display=‘none’;
+}
+function retryVoice() {
+S.voiceParsed=null;
+var tp=document.getElementById(‘voice-type-panel’); if(tp) tp.style.display=‘flex’;
+var lp=document.getElementById(‘voice-listen-panel’); if(lp) lp.style.display=‘none’;
+var vr=document.getElementById(‘voice-result’); if(vr) vr.style.display=‘none’;
+var va=document.getElementById(‘voice-actions’); if(va) va.style.display=‘none’;
+var vc=document.getElementById(‘voice-close’); if(vc) vc.style.display=‘flex’;
+}
+function confirmVoice() {
+var p = S.voiceParsed; if (!p) return;
+if (p.type===‘ER’) {
+S.er=p.name; var num=parseFloat(p.name); if(!isNaN(num)) S.erLog.push({time:nowTime(),val:num,label:p.name});
+updateER();
+} else {
+S.entries.unshift({type:p.type,name:p.name,status:p.status,time:nowTime()});
+buildLogFeed(); buildTimeline();
+}
+save(); closeVoice();
+toast(p.type+’: ’+p.name);
+}
+
+// OVERLAYS
+function openOv(id) { var el=document.getElementById(id); if(el) el.classList.add(‘open’); }
+function closeOv(id) { var el=document.getElementById(id); if(el) el.classList.remove(‘open’); }
+
+// UTILS
+function nowTime() {
+var n=new Date(); var h=n.getHours()%12||12; var m=(‘0’+n.getMinutes()).slice(-2); var ap=n.getHours()>=12?‘pm’:‘am’;
+return h+’:’+m+ap;
+}
+function toast(msg) {
+var t=document.getElementById(‘toast’); if(!t) return;
+t.textContent=msg; t.classList.add(‘show’);
+setTimeout(function(){t.classList.remove(‘show’);},2200);
+}
+
+// REFRESH ALL UI
+function refresh() {
+updateER(); updatePosition(); buildLogFeed(); buildTimeline(); updateForecast();
+}
+
+// SYNC UI FROM STATE
+function syncUI() {
+var dp=document.getElementById(‘day-pill’); var cp=document.getElementById(‘close-pill’);
+if (!S.dayOpen) {
+if(dp){dp.textContent=‘Day Closed’;dp.className=‘pill pill-closed’;}
+if(cp) cp.style.display=‘none’;
+}
+var fb=document.getElementById(‘fw-badge’); var ft=document.getElementById(‘fw-toggle’);
+if(fb){fb.textContent=S.fw?‘Framework Loaded’:‘Framework Off’;fb.className=‘fw-badge ‘+(S.fw?‘fw-on’:‘fw-off’);}
+if(ft) ft.textContent=S.fw?‘On’:‘Off’;
+var rm=document.getElementById(‘rh-model’); if(rm) rm.textContent=S.model;
+var mgrid=document.getElementById(‘model-grid’);
+if(mgrid){
+var mbtns=mgrid.querySelectorAll(’.model-btn’);
+for(var i=0;i<mbtns.length;i++){
+var mn=mbtns[i].querySelector(’.model-name’);
+mbtns[i].classList.toggle(‘active’, mn&&mn.textContent===S.model);
+}
+}
+var pri_ids={today:‘pr-today’,priority:‘pr-priority’,loop:‘pr-loop’,risk:‘pr-risk’};
+for(var k in pri_ids){var el=document.getElementById(pri_ids[k]);if(el) el.textContent=S.priority[k]||’’;}
+}
+
+// INIT
+load();
+syncUI();
+refresh();
+buildArchive();
+buildPressList();
 </script>
+
 </body>
 </html>
