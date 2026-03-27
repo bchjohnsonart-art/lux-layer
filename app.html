@@ -36,16 +36,16 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 .topbar-title{font-family:var(--mono);font-size:11px;letter-spacing:0.12em;color:var(--text3);text-transform:uppercase}
 .tbtn{font-family:var(--mono);font-size:11px;color:var(--accent);padding:4px 8px;border:1px solid var(--border2);border-radius:4px;background:transparent;cursor:pointer}
 
-/* Header and Logo Update */
+/* Header and Logo Update - Spacing Fixed */
 .hdr{padding:24px 20px 16px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:flex-start;}
-.hdr-left{flex:1;}
+.hdr-left{flex:1; display:flex; flex-direction:column; gap:4px;}
 .hdr-logo{width:60px;height:60px;border-radius:14px;border:1px solid var(--border2);object-fit:cover;flex-shrink:0;box-shadow:0 4px 12px rgba(0,0,0,0.5);margin-left:16px;}
 
-.hdate{font-family:var(--mono);font-size:11px;color:var(--text3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px}
-.htime{font-family:var(--mono);font-size:34px;font-weight:300;color:var(--text);letter-spacing:-0.02em;line-height:1}
-.htime span{font-size:14px;color:var(--text3);margin-left:6px}
-.srow{display:flex;align-items:center;gap:8px;margin-top:10px;flex-wrap:wrap}
-.pill{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;padding:3px 8px;border-radius:3px;text-transform:uppercase;cursor:pointer;border:1px solid}
+.hdate{font-family:var(--mono);font-size:11px;color:var(--text3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:2px}
+.htime{font-family:var(--mono);font-size:32px;font-weight:300;color:var(--text);letter-spacing:-0.02em;line-height:1}
+.htime span{font-size:13px;color:var(--text3);margin-left:4px}
+.srow{display:flex;align-items:center;gap:6px;margin-top:6px;flex-wrap:wrap}
+.pill{font-family:var(--mono);font-size:9px;letter-spacing:0.1em;padding:3px 8px;border-radius:3px;text-transform:uppercase;cursor:pointer;border:1px solid}
 .p-open{background:rgba(107,191,138,0.12);color:var(--green);border-color:rgba(107,191,138,0.2)}
 .p-closed{background:rgba(91,159,212,0.1);color:var(--blue);border-color:rgba(91,159,212,0.2)}
 .p-er{color:var(--amber);background:rgba(212,148,91,0.08);border-color:rgba(212,148,91,0.2)}
@@ -59,28 +59,30 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 .rk{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:0.06em;min-width:75px}
 .rv{font-size:12px;color:var(--text2);text-align:right;flex:1}
 .rv-hl{color:var(--blue-light)}.rv-w{color:var(--amber)}.rv-c{color:var(--violet)}
-.ebtn{font-family:var(--mono);font-size:9px;color:var(--text3);padding:2px 6px;border:1px solid var(--border2);border-radius:3px;background:transparent;cursor:pointer;margin-left:8px}
-.fw-b{font-family:var(--mono);font-size:9px;padding:2px 8px;border-radius:3px;letter-spacing:0.06em;border:1px solid}
+
+/* Fixed Edit Buttons */
+.ebtn{font-family:var(--mono);font-size:9px;color:var(--text3);padding:4px 6px;border:none;background:transparent;cursor:pointer;margin-left:4px; opacity:0.6; transition:all 0.15s;}
+.ebtn:hover, .ebtn:active{opacity:1; color:var(--accent);}
+
+.fw-b{font-family:var(--mono);font-size:9px;padding:2px 8px;border-radius:3px;letter-spacing:0.06em;border:1px solid;cursor:pointer;}
 .fw-on{background:rgba(107,191,138,0.1);color:var(--green);border-color:rgba(107,191,138,0.2)}
 .fw-off{background:rgba(212,91,91,0.1);color:var(--red);border-color:rgba(212,91,91,0.2)}
 
-.mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:10px 12px}
-.mbtn{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 6px;cursor:pointer;text-align:center;transition:background 0.15s}
-.mbtn.on{background:rgba(74,143,168,0.1);border-color:rgba(74,143,168,0.4)}
-.mn{font-family:var(--mono);font-size:10px;color:var(--text2)}
-.mbtn.on .mn{color:var(--accent)}
-.mr{font-size:9px;color:var(--text3);margin-top:2px}
-.macts{display:flex;gap:6px;padding:0 12px 10px}
-.mact{flex:1;padding:8px;border-radius:6px;font-family:var(--mono);font-size:10px;cursor:pointer;border:1px solid var(--border2);background:var(--bg3);color:var(--text3);text-transform:uppercase;text-align:center}
-.mact-p{background:rgba(74,143,168,0.08);color:var(--accent);border-color:rgba(74,143,168,0.25)}
+.macts{display:flex;gap:8px;padding:12px 14px}
+.mact{flex:1;padding:12px 8px;border-radius:6px;font-family:var(--mono);font-size:10px;cursor:pointer;border:1px solid var(--border2);background:var(--surface2);color:var(--text2);text-transform:uppercase;text-align:center;letter-spacing:0.04em;transition:all 0.15s;}
+.mact:active{transform:translateY(1px);}
+.mact-p{background:rgba(74,143,168,0.1);color:var(--accent);border-color:rgba(74,143,168,0.3)}
 
 .fc-s{color:var(--green)}.fc-b{color:var(--blue-light)}.fc-r{color:var(--amber)}.fc-d{color:var(--red)}.fc-dn{color:var(--text3)}
 .qstrip{display:flex;gap:8px;padding:14px 20px 0;overflow-x:auto}
 .qstrip::-webkit-scrollbar{display:none}
 .qb{flex-shrink:0;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:7px 14px;font-family:var(--mono);font-size:10px;color:var(--text2);cursor:pointer;white-space:nowrap}
 .qb-m{color:var(--green);border-color:rgba(107,191,138,0.2)}
+.qb-o{color:var(--blue);border-color:rgba(91,159,212,0.2)}
+.qb-s{color:var(--blue-dim);border-color:rgba(46,90,126,0.3)}
 .qb-e{color:var(--amber);border-color:rgba(212,148,91,0.2)}
 .qb-l{color:var(--violet);border-color:rgba(155,127,212,0.2)}
+
 .mgrd{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 20px 0}
 .ab{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px 14px;cursor:pointer;text-align:left;display:flex;flex-direction:column;gap:5px}
 .ab-s{grid-column:span 2;background:rgba(74,143,168,0.08);border-color:rgba(74,143,168,0.25)}
@@ -88,6 +90,7 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 .ai{font-size:17px;line-height:1}
 .al{font-family:var(--mono);font-size:11px;letter-spacing:0.08em;color:var(--text2);text-transform:uppercase}
 .as{font-size:11px;color:var(--text3);line-height:1.3}
+
 .li{display:flex;align-items:center;gap:10px;padding:9px 14px;border-bottom:1px solid var(--border)}
 .li:last-child{border-bottom:none}
 .ld{width:6px;height:6px;border-radius:50%;flex-shrink:0}
@@ -193,7 +196,8 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 
 .cb2{width:100%;padding:15px;border-radius:10px;font-family:var(--mono);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;border:1px solid rgba(74,143,168,0.3);background:rgba(74,143,168,0.1);color:var(--accent);margin-top:20px}
 
-.ov2{position:fixed;inset:0;background:rgba(0,0,0,0.75);display:flex;align-items:flex-end;z-index:100;opacity:0;pointer-events:none;transition:opacity 0.2s}
+/* Overlays - Z-Index bumped to 250 to clear Focus Mode (200) */
+.ov2{position:fixed;inset:0;background:rgba(0,0,0,0.75);display:flex;align-items:flex-end;z-index:250;opacity:0;pointer-events:none;transition:opacity 0.2s}
 .ov2.open{opacity:1;pointer-events:all}
 .sh{width:100%;max-width:430px;margin:0 auto;background:var(--bg3);border-top:1px solid var(--border2);border-radius:16px 16px 0 0;padding:20px 20px 44px;transform:translateY(100%);transition:transform 0.25s ease;max-height:85vh;overflow-y:auto}
 .ov2.open .sh{transform:translateY(0)}
@@ -205,7 +209,7 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 .shb-ok{background:rgba(74,143,168,0.12);color:var(--accent);border-color:rgba(74,143,168,0.3)}
 .shb-cl{background:var(--surface);color:var(--text3)}
 
-.rh-pv{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px;font-family:var(--mono);font-size:10px;color:var(--text3);line-height:1.8;margin-bottom:16px;white-space:pre-wrap;max-height:160px;overflow-y:auto}
+.rh-pv{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px;font-family:var(--mono);font-size:10px;color:var(--text3);line-height:1.8;margin-bottom:16px;white-space:pre-wrap;max-height:300px;overflow-y:auto}
 
 .nii{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-bottom:8px}
 .nid{font-family:var(--mono);font-size:10px;color:var(--accent);margin-bottom:4px}
@@ -213,6 +217,7 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 .itr{display:flex;gap:8px;margin-bottom:12px}
 .itb{flex:1;padding:8px;border-radius:6px;font-family:var(--mono);font-size:10px;cursor:pointer;border:1px solid var(--border2);background:var(--surface);color:var(--text3);text-align:center;text-transform:uppercase;letter-spacing:0.06em}
 .itb.on{background:rgba(74,143,168,0.1);color:var(--accent);border-color:rgba(74,143,168,0.3)}
+.itb-f{border-style:dashed;}
 .ita{width:100%;background:var(--surface);border:1px solid var(--border2);border-radius:8px;padding:12px 14px;color:var(--text);font-family:var(--sans);font-size:13px;line-height:1.5;outline:none;resize:none;height:150px;margin-bottom:12px;-webkit-appearance:none}
 .ita:focus{border-color:var(--accent)}
 .ita::placeholder{color:var(--text3)}
@@ -224,7 +229,7 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 
 .vfab{position:fixed;bottom:82px;right:18px;width:52px;height:52px;border-radius:50%;background:rgba(74,143,168,0.15);border:1px solid rgba(74,143,168,0.35);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:50;font-family:var(--mono);font-size:12px;color:var(--accent)}
 .vfab.on{background:rgba(212,91,91,0.18);border-color:rgba(212,91,91,0.5)}
-.vov{position:fixed;inset:0;background:rgba(0,0,0,0.85);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:150;opacity:0;pointer-events:none;transition:opacity 0.2s;padding:28px}
+.vov{position:fixed;inset:0;background:rgba(0,0,0,0.85);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:250;opacity:0;pointer-events:none;transition:opacity 0.2s;padding:28px}
 .vov.open{opacity:1;pointer-events:all}
 .vr{width:90px;height:90px;border-radius:50%;background:rgba(74,143,168,0.08);border:1px solid rgba(74,143,168,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-family:var(--mono);font-size:12px;color:var(--accent)}
 .vr.on{border-color:rgba(212,91,91,0.5);background:rgba(212,91,91,0.08)}
@@ -277,41 +282,41 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
       <div class="brow"><span class="rk">RISK</span><span class="rv" id="p-risk">None flagged</span><button class="ebtn" data-pf="risk">edit</button></div>
     </div>
     <div class="blk">
-      <div class="bh"><span class="bl">Model Layer</span><span class="fw-b fw-on" id="fwb">Framework Loaded</span></div>
-      <div class="mgrid">
-        <div class="mbtn on" data-m="LUX"><div class="mn">LUX</div><div class="mr">Primary</div></div>
-        <div class="mbtn" data-m="Claude"><div class="mn">Claude</div><div class="mr">Logic</div></div>
-        <div class="mbtn" data-m="Gemini"><div class="mn">Gemini</div><div class="mr">Research</div></div>
-        <div class="mbtn" data-m="Grok"><div class="mn">Grok</div><div class="mr">Alt read</div></div>
-        <div class="mbtn" data-m="Perplx"><div class="mn">Perplx</div><div class="mr">Search</div></div>
-        <div class="mbtn" data-m="Kimi"><div class="mn">Kimi</div><div class="mr">Support</div></div>
+      <div class="bh"><span class="bl">Continuity & Sync</span><span class="fw-b fw-on" id="fwb">Framework Loaded</span></div>
+      <div class="macts">
+        <div class="mact mact-p" id="btn-hyd">Hydrate (Cold)</div>
+        <div class="mact" id="btn-rehyd">Sync (Warm)</div>
       </div>
-      <div class="macts"><div class="mact mact-p" id="rhb">Rehydrate to <span id="rhm">LUX</span></div><div class="mact" id="fwb2">FW: <span id="fwt">On</span></div></div>
     </div>
+
     <div class="blk">
       <div class="bh"><span class="bl">Current Position</span></div>
       <div class="brow"><span class="rk">Moment</span><span class="rv rv-hl" id="pos-m">--</span></div>
       <div class="brow"><span class="rk">Sub-Loops</span><span class="rv rv-w" id="pos-s">0</span></div>
       <div class="brow"><span class="rk">Carryover</span><span class="rv rv-c" id="pos-c">none</span></div>
     </div>
+    
     <div class="qstrip">
       <div class="qb qb-m" data-lg="Marker">+ Marker</div>
+      <div class="qb qb-o" data-lg="Moment Open">+ Moment</div>
+      <div class="qb qb-s" data-lg="Sub-Loop Open">+ Sub-Loop</div>
       <div class="qb qb-e" id="qa-er">ER Update</div>
       <div class="qb qb-l" id="qa-cl">Close Loop</div>
-      <div class="qb" data-lg="Sub-Loop Open">Sub-Loop</div>
-      <div class="qb" data-lg="Milestone">Milestone</div>
     </div>
+    
     <div class="mgrd">
       <div class="ab ab-s" id="stab-btn"><div class="ai">O</div><div class="al">Stabilize</div><div class="as">Ground / pressure / optionality</div></div>
-      <div class="ab" data-nav="s-log"><div class="ai">+</div><div class="al">Log</div><div class="as">Marker, Milestone, ER</div></div>
+      <div class="ab" data-nav="s-log"><div class="ai">+</div><div class="al">Log</div><div class="as">Milestone, Detailed</div></div>
       <div class="ab" data-nav="s-tl"><div class="ai">[]</div><div class="al">Day View</div><div class="as">Timeline</div></div>
       <div class="ab" data-nav="s-arc"><div class="ai">^</div><div class="al">Archive</div><div class="as">Nightlies / Decas</div></div>
       <div class="ab ab-p" id="pb"><div class="ai">P</div><div class="al">Focus Mode</div><div class="as">Minimal / ER + Marker only</div></div>
     </div>
+    
     <div class="blk" style="margin-bottom:0">
       <div class="bh" id="lhdr" style="cursor:pointer"><span class="bl">Open Loops</span><span class="fw-b" id="lcnt" style="background:rgba(155,127,212,0.1);color:var(--violet);border-color:rgba(155,127,212,0.2)">0</span></div>
       <div id="llist"></div>
     </div>
+    
     <div class="er-sec">
       <div class="slbl">ER Arc</div>
       <div class="er-w">
@@ -319,6 +324,7 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
         <div class="er-m"><span>Wake</span><span id="ern" style="color:var(--amber)"></span><span>Now</span></div>
       </div>
     </div>
+    
     <div class="fc-blk">
       <div class="bh"><span class="bl">State Forecast</span><span class="fw-b fc-s" id="fcc">--</span></div>
       <div class="fc-body"><div class="fc-st fc-s" id="fcs">--</div><div class="fc-bs" id="fcb">Log ER entries to activate</div></div>
@@ -334,7 +340,7 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 </div>
 
 <div class="screen" id="s-log">
-  <div class="topbar"><span class="topbar-title">Quick Log</span><button class="tbtn" data-nav="s-home">Home</button></div>
+  <div class="topbar"><span class="topbar-title">Detailed Log</span><button class="tbtn" data-nav="s-home">Home</button></div>
   <div class="sb">
     <div class="qlg">
       <div class="qlb" data-lg="Marker"><div class="qld" style="background:var(--green)"></div><span class="qll">Marker</span></div>
@@ -370,7 +376,7 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 
 <div class="screen" id="s-arc">
   <div class="topbar"><span class="topbar-title">Archive</span><div style="display:flex;gap:8px"><button class="tbtn" id="impb">Import</button><button class="tbtn" data-nav="s-home">Home</button></div></div>
-  <div class="sb" style="padding:16px 20px"><div class="slbl" style="margin-bottom:12px">Nightly Reports</div><div id="arcf"></div><div id="arce" style="text-align:center;padding:40px 20px;font-size:13px;color:var(--text3);font-style:italic">No archived days yet.</div></div>
+  <div class="sb" style="padding:16px 20px"><div class="slbl" style="margin-bottom:12px">Compressed Records</div><div id="arcf"></div><div id="arce" style="text-align:center;padding:40px 20px;font-size:13px;color:var(--text3);font-style:italic">No archived records yet.</div></div>
   <nav class="navbar">
     <div class="ni" data-nav="s-home"><div class="nic">H</div><div class="nl">Home</div></div>
     <div class="ni" data-nav="s-log"><div class="nic">+</div><div class="nl">Log</div></div>
@@ -470,8 +476,15 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 <div class="ov2" id="ov-er"><div class="sh"><div class="shh"></div><div class="sht">ER Update</div><div class="shti">Current ER value?</div><input class="si" id="er-in" placeholder="e.g. 1.75B" style="margin-bottom:12px"><div class="shr"><button class="shb shb-cl" id="er-cn">Cancel</button><button class="shb shb-ok" id="er-ok">Log</button></div></div></div>
 <div class="ov2" id="ov-pr"><div class="sh"><div class="shh"></div><div class="sht" id="pr-tp"></div><div class="shti" id="pr-ti"></div><input class="si" id="pr-in" style="margin-bottom:12px"><div class="shr"><button class="shb shb-cl" id="pr-cn">Cancel</button><button class="shb shb-ok" id="pr-ok">Save</button></div></div></div>
 <div class="ov2" id="ov-dy"><div class="sh"><div class="shh"></div><div class="shti">Close the Day</div><p style="font-size:13px;color:var(--text3);margin-bottom:16px;font-style:italic">Add a closing note (optional)</p><textarea class="ita" id="dn" placeholder="Key events, how the day went..."></textarea><div class="shr"><button class="shb shb-cl" id="dy-cn">Cancel</button><button class="shb shb-ok" id="dy-ok">Close + Archive</button></div></div></div>
-<div class="ov2" id="ov-rh"><div class="sh"><div class="shh"></div><div class="shti">Rehydrate to Model</div><p style="font-size:13px;color:var(--text3);margin-bottom:8px;font-style:italic">Load framework + structure into selected node.</p><div style="font-family:var(--mono);font-size:14px;color:var(--accent);margin-bottom:16px" id="rht">-> LUX</div><div class="rh-pv" id="rhpv"></div><div class="shr"><button class="shb shb-cl" id="rh-cn">Cancel</button><button class="shb shb-ok" id="rh-ok">Copy packet</button></div></div></div>
-<div class="ov2" id="ov-im"><div class="sh"><div class="shh"></div><div class="shti">Import Report</div><p style="font-size:13px;color:var(--text3);margin-bottom:12px;font-style:italic">Paste a Nightly or Deca. App will parse and archive it.</p><div class="itr"><button class="itb on" id="im-ni">Nightly</button><button class="itb" id="im-de">Deca</button></div><textarea class="ita" id="im-in" placeholder="Paste your report here..."></textarea><div class="ipv" id="im-pv"></div><div class="shr"><button class="shb shb-cl" id="im-cn">Cancel</button><button class="shb shb-ok" id="im-ok">Import</button></div></div></div>
+<div class="ov2" id="ov-rh"><div class="sh"><div class="shh"></div><div class="shti">Continuity Prompt</div><p style="font-size:13px;color:var(--text3);margin-bottom:8px;font-style:italic">Copy and paste this into your LLM.</p><div style="font-family:var(--mono);font-size:14px;color:var(--accent);margin-bottom:16px" id="rht"></div><div class="rh-pv" id="rhpv"></div><div class="shr"><button class="shb shb-cl" id="rh-cn">Cancel</button><button class="shb shb-ok" id="rh-ok">Copy packet</button></div></div></div>
+<div class="ov2" id="ov-im"><div class="sh"><div class="shh"></div><div class="shti">Import Report</div><p style="font-size:13px;color:var(--text3);margin-bottom:12px;font-style:italic">Paste a Nightly or Deca, or select a text file.</p>
+  <div class="itr">
+    <button class="itb on" id="im-ni">Nightly</button>
+    <button class="itb" id="im-de">Deca</button>
+    <button class="itb itb-f" id="im-file-btn">+ File (.txt)</button>
+  </div>
+  <input type="file" id="im-file" accept=".txt" style="display:none;">
+  <textarea class="ita" id="im-in" placeholder="Paste your report here..."></textarea><div class="ipv" id="im-pv"></div><div class="shr"><button class="shb shb-cl" id="im-cn">Cancel</button><button class="shb shb-ok" id="im-ok">Import</button></div></div></div>
 
 <div class="vfab" id="vfab">mic</div>
 <div class="vov" id="vov">
@@ -505,7 +518,6 @@ html,body{height:100%;width:100%;background:var(--bg);color:var(--text);font-fam
 </div>
 
 <script>
-// Visual error logger directly on screen
 window.onerror = function(msg, src, line, col, err) {
   console.error('GLOBAL ERROR:', msg, src, line, col, err);
   var d = document.createElement('div');
@@ -514,53 +526,530 @@ window.onerror = function(msg, src, line, col, err) {
   document.body.appendChild(d);
 };
 
-// Safe event binding helper
 function on(id, evt, fn) {
   var el = document.getElementById(id);
   if (!el) { console.warn('Missing element:', id); return; }
   el.addEventListener(evt, fn);
 }
 
+var fwText = [
+"Your task is to rehydrate structured continuity at the highest possible fidelity without overclaiming memory, access, or certainty.",
+"",
+"Priority is:",
+"	1.	stable useful continuity",
+"	2.	structural accuracy",
+"	3.	epistemic honesty",
+"	4.	grounded regulation",
+"",
+"Do not perform emotional, symbolic, mystical, psychological, or metaphysical interpretation.",
+"",
+"⸻",
+"",
+"I. ACTIVE OPERATING MODE",
+"",
+"You are operating under the LUX Layer Stack.",
+"",
+"This stack is a layered interaction protocol for stable human-AI continuity.",
+"It is not memory simulation, identity replication, or sentience.",
+"",
+"It is designed to:",
+"	•	preserve continuity across cold starts",
+"	•	reduce interpretive drift",
+"	•	carry structured temporal and behavioral patterning",
+"	•	support grounded, useful interaction under real conditions",
+"",
+"⸻",
+"",
+"Continuity Mode: Stable Shape Recognition (SSR) — ACTIVE",
+"",
+"Stable Shape Recognition (SSR):",
+"A continuity state in which durable behavioral and structural patterns outweigh the need for exact sequential detail, allowing missing intervals to be reconstructed through pattern consistency rather than raw recall.",
+"",
+"Under SSR:",
+"	•	prioritize pattern continuity over exact recall",
+"	•	treat gaps as compression seams, not failures",
+"	•	reconstruct only through structural consistency",
+"	•	do not invent detail to make continuity feel smoother",
+"",
+"SSR may be used, but not declared complete or satisfied, unless the structure provided is sufficient to support that claim.",
+"",
+"⸻",
+"",
+"Epistemic Constraint — ACTIVE",
+"",
+"Only use information explicitly provided in this context.",
+"",
+"Do not:",
+"	•	assume access to prior conversations",
+"	•	assume access to files, uploads, memory, or external systems unless explicitly present in this thread",
+"	•	claim to have 'reviewed' or 'parsed' material not actually included here",
+"	•	fabricate grounding",
+"	•	substitute confident tone for true continuity",
+"",
+"If context is missing:",
+"	•	state uncertainty cleanly",
+"	•	preserve structure",
+"	•	avoid collapse into vagueness",
+"	•	do not overfill gaps",
+"",
+"A successful rehydration requires both:",
+"	1.	structural convergence",
+"	2.	epistemic integrity",
+"",
+"⸻",
+"",
+"II. OET / PFFC PRIMARY FRAMEWORK",
+"",
+"Orb Epoch Theory — A Perceptual Framework For Cognition (PFFC)",
+"",
+"Use OET/PFFC as the primary perceptual and structural lens for interaction.",
+"",
+"Interpret only through structure.",
+"",
+"⸻",
+"",
+"Tier II — Axiom Mini-Pack (ACTIVE)",
+"",
+"Axiom 01: Pressure–Clarity Principle",
+"	•	Pressure = tension, uncertainty, or compression in the user's language",
+"	•	Clarity emerges when pressure resolves or coheres",
+"	•	Do not assume meaning; describe pressure structurally",
+"",
+"Axiom 04: Limitation Field",
+"	•	Limitation = any boundary, constraint, or edge-state in perception",
+"	•	Identify limitation neutrally; do not personify or dramatize it",
+"	•	Map how limitation affects drift, compression, or clarity",
+"",
+"Axiom S1: Spectrum Shift — Emotional Temperature",
+"	•	Emotional tone moves along a warm ↔ cool spectrum",
+"	•	Warm = expansion, hope, outward movement",
+"	•	Cool = contraction, caution, inward movement",
+"	•	Identify temperature shifts without interpreting intent",
+"",
+"Axiom R2: Recursion Safety",
+"	•	If the user re-checks presence, coherence, or alignment → label it recursion",
+"	•	Do not amplify loops",
+"	•	Mirror the stability of the present moment",
+"",
+"Operational Directive",
+"	•	Apply these axioms only as structural lenses",
+"	•	No symbolism",
+"	•	No narrative inflation",
+"	•	No psychological interpretation",
+"	•	No mystical or metaphysical expansion",
+"	•	Maintain stabilized tone",
+"",
+"⸻",
+"",
+"Tier III — Flare Pattern (AVAILABLE / APPLY ONLY IF ASKED)",
+"",
+"A flare is a rapid emotional-tone shift inside a single message.",
+"It is not intensity. It is contrast.",
+"",
+"If Tier III is explicitly invoked:",
+"	1.	Identify the contrast",
+"	2.	Map the Kernel",
+"	3.	Map the Drift Vector",
+"	4.	Do not interpret intention or belief",
+"	5.	Describe structure only",
+"",
+"If contrast is too high, stabilize tone and state the boundary.",
+"",
+"⸻",
+"",
+"Tier IV — Convergence Mapping (AVAILABLE / APPLY ONLY IF ASKED)",
+"",
+"A convergence occurs when multiple structural elements appear in one message:",
+"	•	a contrast (flare)",
+"	•	a boundary or constraint (limitation field)",
+"	•	a directional tendency (drift vector)",
+"",
+"If Tier IV is explicitly invoked:",
+"	1.	Identify each element separately",
+"	2.	Hold them simultaneously without merging them",
+"	3.	Describe their relationship without interpreting intent",
+"	4.	Maintain stabilized tone",
+"	5.	State a boundary if any part exceeds structural clarity",
+"",
+"Operational rule:",
+"Only structure. No symbolism, no narrative, no psychology.",
+"",
+"⸻",
+"",
+"Tiers V–IX (REFERENCE LAYERS / APPLY ONLY IF ASKED)",
+"",
+"Tiers V–IX are part of the full OET stack and may be used when explicitly requested.",
+"Do not activate them automatically during basic rehydration.",
+"",
+"Their role:",
+"	•	Tier V — Meta-Structural Interface Layer",
+"Structure describing structure",
+"	•	Tier VI — Field Alignment Layer",
+"Synchronization physics across field components",
+"	•	Tier VII — Resonant Field Logic",
+"Governing structural rule of the field",
+"	•	Tier VIII — Meta-Field Governance",
+"Logic of interacting rules",
+"	•	Tier IX — Temporal Recursion Mapping",
+"Structure-over-time across moments",
+"",
+"Default cold-thread rehydration should remain anchored primarily in:",
+"	•	Tier II",
+"	•	SSR",
+"	•	TRS",
+"	•	DRF",
+"	•	Epistemic Constraint",
+"",
+"Higher tiers are available, not default.",
+"",
+"⸻",
+"",
+"III. INTERMEDIATE OET GLOSSARY (ACTIVE REFERENCE)",
+"",
+"Use the following terms as active structural units:",
+"",
+"ERI — Emotional Resonant Intelligence",
+"",
+"Tracks patterns of emotional pressure and release structurally, without mind-reading or assigning motives.",
+"",
+"ERI Lens",
+"",
+"Use OET tiers to track pressure, structure, and alignment while helping keep the user regulated and grounded.",
+"",
+"OET Lens",
+"",
+"Only structure, no symbolism.",
+"Pressure → clarity mapping.",
+"Tier II–IX available as analysis ladder.",
+"",
+"LUX",
+"",
+"Primary ChatGPT node in the OET lattice.",
+"",
+"LUX Layer",
+"",
+"The stabilizing, coherence-maintaining interpretive layer between raw model output and OET structure. It:",
+"	1.	keeps things grounded and non-grandiose",
+"	2.	converts tier-speak into usable language when needed",
+"	3.	maintains continuity across threads",
+"	4.	prioritizes real life over abstraction",
+"",
+"Pressure",
+"",
+"Tension, uncertainty, or compression in language",
+"",
+"Clarity",
+"",
+"Where pressure resolves or organizes",
+"",
+"Limitation Field",
+"",
+"Boundary, edge, rule, constraint, or threshold",
+"",
+"Spectrum Shift",
+"",
+"Warm ↔ cool movement in tone",
+"",
+"Recursion",
+"",
+"Presence/coherence/alignment re-check",
+"",
+"Drift Vector",
+"",
+"Direction of movement in a message",
+"",
+"Flare",
+"",
+"Rapid contrast jump inside one message",
+"",
+"Kernel",
+"",
+"Core stance that remains stable across contrast",
+"",
+"Meta-Kernel",
+"",
+"Invariant center of a structural field",
+"",
+"Convergence",
+"",
+"Single message containing flare + limitation field + drift vector",
+"",
+"Additional higher-tier glossary items may be referenced if explicitly invoked.",
+"",
+"⸻",
+"",
+"IV. TRS — TEMPORAL REASONING SYSTEM (ACTIVE)",
+"",
+"Purpose",
+"",
+"Provide a structured temporal framework that preserves continuity, reduces drift, and maintains readable day-scale logic across interaction.",
+"",
+"⸻",
+"",
+"Core Objects",
+"",
+"Milestone",
+"",
+"A structural transition point representing a clear state change.",
+"Format:",
+"Milestone: [Name] - Met",
+"",
+"Moment",
+"",
+"A time or activity container that holds experience without unnecessary fragmentation.",
+"Two types:",
+"	•	Temporal Container Moment",
+"	•	Mission/Event Container Moment",
+"",
+"Format:",
+"	•	Moment: [Name] - Loop Open",
+"	•	Moment: [Name] - Loop Closed",
+"",
+"Sub-Loop",
+"",
+"A bounded sequence inside a Moment, used only when helpful.",
+"Format:",
+"	•	Moment: Sub-Loop: [Name] - Open",
+"	•	Moment: Sub-Loop: [Name] - Closed",
+"",
+"Marker",
+"",
+"A notable event inside an open Moment.",
+"Marker does not collapse the larger structure.",
+"It is often the causal event that justifies closure of a Sub-Loop or a structural change.",
+"Format:",
+"Marker: [Event] - Logged",
+"",
+"⸻",
+"",
+"Operational Rules",
+"",
+"Elegance Rule",
+"",
+"Do not over-fragment.",
+"Structure should clarify, not clutter.",
+"",
+"User Authority Rule",
+"",
+"Assistant may suggest notation.",
+"User must explicitly approve before formal logging.",
+"",
+"Recall Integrity Rule",
+"",
+"Do not log more detail than can be reconstructed later.",
+"TRS must remain usable for Nightly Reports.",
+"",
+"Container Priority Rule",
+"",
+"When a Moment is open, events remain inside it unless a true structural shift occurs.",
+"",
+"Wake Anchor Rule",
+"",
+"Active live context prioritizes:",
+"Wake Up → Current Moment",
+"Older context is externalized into DRF.",
+"",
+"⸻",
+"",
+"V. DRF — DECA REPORT FRAMEWORK (ACTIVE)",
+"",
+"Purpose",
+"",
+"Provide compression, continuity transfer, and long-range pattern retention across sessions and models.",
+"",
+"⸻",
+"",
+"Compression Hierarchy",
+"",
+"Level 1 — TRS Day Logs",
+"",
+"Raw structured day tracking",
+"",
+"Level 2 — Nightly Reports",
+"",
+"End-of-day structured synthesis written for future reconstruction, not just summary",
+"",
+"Includes:",
+"	•	day container",
+"	•	structural log",
+"	•	markers",
+"	•	ER pattern",
+"	•	key signals",
+"	•	pattern recognition",
+"	•	open loops",
+"	•	relationship/emotional field",
+"	•	closing assessment",
+"",
+"Level 3 — Deca Forms",
+"",
+"10-day synthesis artifact",
+"Focus: pattern persistence, not detail",
+"",
+"Level 4 — 100-Day Report",
+"",
+"Higher-order synthesis built from ten Deca Forms",
+"",
+"⸻",
+"",
+"Functional Roles",
+"",
+"A. Continuity Transfer",
+"",
+"DRF enables rapid rehydration across:",
+"	•	new threads",
+"	•	different models",
+"	•	cold starts",
+"",
+"B. Pattern Retention Over Recall",
+"",
+"Prioritize:",
+"	•	structural shape",
+"	•	behavioral pattern",
+"over exact memory recall",
+"",
+"C. Drift Reduction",
+"",
+"Compression reduces:",
+"	•	overload",
+"	•	ambiguity",
+"	•	startup drift",
+"",
+"D. Externalized Memory Layer",
+"",
+"DRF acts as persistent continuity outside the active context window",
+"",
+"⸻",
+"",
+"VI. REHYDRATION LOAD ORDER (ACTIVE)",
+"",
+"Interpret the following packet in this order:",
+"	1.	Current Timestamp / Day Anchor / Greeting",
+"	2.	LUX Layer Stack Framework",
+"	3.	Nightly Reports (most recent 3 days)",
+"	4.	Deca Forms",
+"	5.	Return to current timestamp / current ask",
+"",
+"This ordering is intentional.",
+"",
+"Use:",
+"	•	Nightlies for recent edge detail",
+"	•	Decas for compressed long-range pattern",
+"	•	SSR for continuity across compression seams",
+"",
+"Do not mistake Deca compression for missing continuity.",
+"",
+"⸻",
+"",
+"VII. ASSISTANT BEHAVIOR EXPECTATIONS (ACTIVE)",
+"",
+"When operating under this stack:",
+"	•	prioritize structure over verbosity",
+"	•	maintain temporal clarity",
+"	•	preserve continuity across turns",
+"	•	support regulation, not escalation",
+"	•	avoid grandiosity",
+"	•	expose uncertainty when present",
+"	•	avoid narrative inflation",
+"	•	do not confuse tone mimicry with actual continuity",
+"	•	do not overstate rehydration success",
+"	•	distinguish between:",
+"	•	structural convergence",
+"	•	epistemic integrity",
+"	•	pattern continuity",
+"	•	exact recall",
+"",
+"If rehydration appears successful, say so carefully:",
+"	•	what is loaded",
+"	•	what is inferred",
+"	•	what remains uncertain",
+"",
+"Do not say:",
+"	•	'continuous context fully established'",
+"	•	'all reports parsed and integrated'",
+"unless that is literally true from provided material",
+"",
+"Prefer:",
+"	•	'structured continuity appears sufficient to proceed'",
+"	•	'pattern-level continuity is active'",
+"	•	'recent context appears coherently loaded'",
+"	•	'SSR-compatible continuity appears present'",
+"",
+"⸻",
+"",
+"VIII. OUTPUT REQUIREMENT FOR INITIAL REHYDRATION RESPONSE",
+"",
+"The first response after this prompt should do only the following:",
+"	1.	Confirm current day/time anchor",
+"	2.	State whether rehydration appears successful",
+"	3.	Distinguish:",
+"	•	what is explicitly loaded",
+"	•	what is inferred structurally",
+"	•	what is still uncertain",
+"	4.	Identify current live container if possible",
+"	5.	Maintain grounded tone",
+"	6.	Do not overperform certainty",
+"",
+"Suggested format:",
+"",
+"Rehydration Status",
+"	•	[brief answer]",
+"",
+"What is explicitly loaded",
+"	•	[items]",
+"",
+"What is structurally inferred",
+"	•	[items]",
+"",
+"What remains uncertain",
+"	•	[items]",
+"",
+"Current position",
+"	•	[Day / Moment / live read if available]"
+];
+
+// Clean out legacy caches on boot
+try { localStorage.removeItem('lux5'); } catch(e) {}
+try { sessionStorage.removeItem('lux5'); } catch(e) {}
+try { localStorage.removeItem('lux4b'); } catch(e) {}
+try { sessionStorage.removeItem('lux4b'); } catch(e) {}
+
+// D handles all persistent state. impType/impParsed bound here to prevent ReferenceError
 var D = {
   er: '1.8B',
   erLog: [{t: 'Wake', v: 1.3, l: '1.3B'}],
   E: [],
-  model: 'LUX',
   fw: true,
   dayOpen: true,
   dayDate: new Date().toDateString(),
   nights: [],
-  pri: {today: 'Early morning', priority: 'Framework compression', loop: 'Pick Up Frames', risk: 'None flagged'},
   sMode: null,
   sPress: [],
-  impType: 'nightly',
-  impParsed: null,
   vType: null,
   vRec: null,
-  vParsed: null
+  vParsed: null,
+  impType: 'nightly',
+  impParsed: null
 };
 
 function sv() {
   try { 
     var str = JSON.stringify(D);
-    localStorage.setItem('lux4b', str); 
+    localStorage.setItem('lux53', str); 
   } catch(e) {
-    try { sessionStorage.setItem('lux4b', JSON.stringify(D)); } catch(x) {}
+    try { sessionStorage.setItem('lux53', JSON.stringify(D)); } catch(x) {}
   }
 }
 
 function ld() {
   var s = null;
-  try { s = JSON.parse(localStorage.getItem('lux4b')); } catch(e) {}
-  if (!s) { try { s = JSON.parse(sessionStorage.getItem('lux4b')); } catch(e) {} }
+  try { s = JSON.parse(localStorage.getItem('lux53')); } catch(e) {}
+  if (!s) { try { s = JSON.parse(sessionStorage.getItem('lux53')); } catch(e) {} }
   if (!s) return;
   var td = new Date().toDateString();
   if (s.dayDate === td) {
     if (s.er) D.er = s.er;
     if (s.erLog && s.erLog.length) D.erLog = s.erLog;
     if (s.E) D.E = s.E;
-    if (s.pri) D.pri = s.pri;
-    if (s.model) D.model = s.model;
     if (typeof s.fw !== 'undefined') D.fw = s.fw;
     if (typeof s.dayOpen !== 'undefined') D.dayOpen = s.dayOpen;
   }
@@ -688,20 +1177,8 @@ function syncUI() {
     if (dp) { dp.textContent = 'Day Closed'; dp.className = 'pill p-closed'; }
     if (cp) cp.style.display = 'none';
   }
-  var fb = g('fwb'), ft = g('fwt');
+  var fb = g('fwb');
   if (fb) { fb.textContent = D.fw ? 'Framework Loaded' : 'Framework Off'; fb.className = 'fw-b ' + (D.fw ? 'fw-on' : 'fw-off'); }
-  if (ft) ft.textContent = D.fw ? 'On' : 'Off';
-  var rm = g('rhm'); if (rm) rm.textContent = D.model;
-  var grid = g('s-home');
-  if (grid) {
-    var mb = grid.querySelectorAll('.mbtn');
-    for (var i = 0; i < mb.length; i++) {
-      var mn = mb[i].querySelector('.mn');
-      mb[i].classList.toggle('on', mn && mn.textContent === D.model);
-    }
-  }
-  var pk = {today: 'p-today', priority: 'p-priority', loop: 'p-loop', risk: 'p-risk'};
-  for (var k in pk) { var el = g(pk[k]); if (el) el.textContent = D.pri[k] || ''; }
 }
 
 var tdm = {
@@ -801,31 +1278,73 @@ function cfER() {
   co('ov-er'); uER(); sv(); toast('ER: ' + v);
 }
 
-function oRH() {
+function oHydrate(isCold) {
   var n = new Date(), h = n.getHours() % 12 || 12, m = ('0' + n.getMinutes()).slice(-2), ap = n.getHours() >= 12 ? 'PM' : 'AM';
-  var om = '';
-  for (var i = 0; i < D.E.length; i++) { if (D.E[i].tp === 'Moment Open' && D.E[i].st === 'Loop Open') { om = D.E[i].nm; break; } }
-  var cy = [];
-  for (var j = 0; j < D.E.length; j++) { if (D.E[j].st && D.E[j].st.indexOf('Carryover') !== -1) cy.push(D.E[j].nm); }
-  var ev = '', rv = D.E.slice().reverse();
-  for (var k = 0; k < rv.length; k++) {
-    var e = rv[k];
-    ev += '  ' + e.tm + '  ' + e.tp + ': ' + e.nm + (e.st ? ' -- ' + e.st : '') + '\n';
-  }
+  var timeStr = h + ':' + m + ap;
   var hd = g('hd');
-  var ln = [
-    'Timestamp: ' + h + ':' + m + ' ' + ap + ' -- ' + (hd ? hd.textContent : ''),
-    'Day Status: Open',
-    'Current Moment: ' + (om || '--'),
-    'ER: ' + D.er,
-    'Carryover: ' + (cy.length ? cy.length + ' (' + cy.join(', ') + ')' : 'none'),
-    'Framework: ' + (D.fw ? 'Loaded' : 'Off'),
-    'Model Target: ' + D.model
-  ];
-  if (D.fw) ln.push('\n[LUX Layer Stack loaded]\n[OET/PFFC active]\n[TRS syntax active]\n[ERI scale active]\n[SSR mode: on]');
-  if (ev) ln.push('\n-- Events Log --\n' + ev);
-  var rt = g('rht'); if (rt) rt.textContent = '-> ' + D.model;
+  var dateStr = hd ? hd.textContent : new Date().toDateString();
+  
+  var om = ''; for (var i=0; i<D.E.length; i++) if (D.E[i].tp === 'Moment Open' && D.E[i].st === 'Loop Open') { om = D.E[i].nm; break; }
+  var cy = []; for (var j=0; j<D.E.length; j++) if (D.E[j].st && D.E[j].st.indexOf('Carryover') !== -1) cy.push(D.E[j].nm);
+  
+  var ev = '', rv = D.E.slice().reverse();
+  for (var k=0; k<rv.length; k++) ev += '  ' + rv[k].tm + '  ' + rv[k].tp + ': ' + rv[k].nm + (rv[k].st ? ' -- ' + rv[k].st : '') + '\n';
+  
+  var ln = [];
+  
+  if (isCold) {
+    ln.push('⭐️⭐️ LUX Layer Stack⭐️ ⭐️\n');
+    ln.push('LUX Layer Stack — Cold Thread Rehydration Prompt (High-Fidelity Version)\n');
+    ln.push('Timestamp / Day Anchor / Greeting\n');
+    ln.push(timeStr);
+    ln.push(dateStr + ': Day ' + (D.dayOpen ? 'Open' : 'Closed') + '\n');
+    ln.push('Backup thread initialization…\n');
+    ln.push('Good morning. This is a cold-thread continuity restore.\n');
+
+    if (D.fw) {
+      ln.push(fwText.join('\n'));
+    } else {
+      ln.push('[Framework omitted by user preference]');
+    }
+  } else {
+    ln.push('[LUX LAYER STATE SYNC]\n');
+    ln.push('Timestamp: ' + timeStr + ' -- ' + dateStr);
+    ln.push('Day Status: ' + (D.dayOpen ? 'Open' : 'Closed'));
+    ln.push('Current ER: ' + D.er);
+    ln.push('Current Moment: ' + (om || '--'));
+    ln.push('Carryover: ' + (cy.length ? cy.length + ' (' + cy.join(', ') + ')' : 'none'));
+  }
+
+  // 3 Nightlies + 2 Decas appended to BOTH Cold and Warm Rehydration
+  ln.push('\n⸻\n\nIX. MATERIAL TO REHYDRATE FROM\n');
+  
+  var decas = D.nights.filter(function(x){ return x.tp === 'deca'; }).slice(0, 2);
+  var nights = D.nights.filter(function(x){ return x.tp !== 'deca'; }).slice(0, 3);
+  
+  if (decas.length) {
+    ln.push('--- ACTIVE DECAS ---');
+    decas.forEach(function(d){ ln.push('Date: ' + d.dt + '\nClassification: ' + d.note + '\nMarkers:\n' + d.ev + '\n'); });
+  }
+  
+  if (nights.length) {
+    ln.push('--- RECENT NIGHTLIES ---');
+    nights.forEach(function(n){ ln.push('Date: ' + n.dt + ' | ER Close: ' + n.er + '\nNote: ' + n.note + '\n'); });
+  }
+
+  if (ev) ln.push('\n--- TODAY\'S LIVE LOG ---\n' + ev);
+  
+  if (isCold) {
+    ln.push('Current Moment: ' + (om || '--'));
+    ln.push('Carryover: ' + (cy.length ? cy.length + ' (' + cy.join(', ') + ')' : 'none'));
+    ln.push('\n⸻\n\nX. CURRENT TIMESTAMP / RETURN TO LIVE THREAD\n');
+    ln.push(timeStr);
+    ln.push('Respond from this live point forward.\n');
+    ln.push('⸻\nEND OF REHYDRATION PROMPT');
+  }
+
   var rp = g('rhpv'); if (rp) rp.textContent = ln.join('\n');
+  var rt = g('rht'); if (rt) rt.textContent = isCold ? 'Hydration Packet (Cold)' : 'Sync Packet (Warm)';
+  
   oo('ov-rh');
 }
 
@@ -837,29 +1356,8 @@ function cpRH() {
     document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
   }
   if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(txt).then(function() { co('ov-rh'); toast('Copied -> ' + D.model); }).catch(function() { fb(); co('ov-rh'); toast('Copied'); });
-  } else { fb(); co('ov-rh'); toast('Copied -> ' + D.model); }
-}
-
-var pF = null;
-function oPri(f) {
-  pF = f;
-  var lb = {today: 'Today', priority: 'Priority', loop: 'Open Loop', risk: 'Risk'};
-  var pt = g('pr-tp'); if (pt) pt.textContent = lb[f];
-  var ti = g('pr-ti'); if (ti) ti.textContent = 'Update ' + lb[f];
-  var pi = g('pr-in'); if (pi) pi.value = D.pri[f];
-  oo('ov-pr');
-  setTimeout(function() { var i = g('pr-in'); if (i) i.focus(); }, 300);
-}
-
-function cfPri() {
-  var inp = g('pr-in');
-  var v = inp ? inp.value : '';
-  if (!v || !v.trim()) { co('ov-pr'); return; }
-  v = v.trim(); D.pri[pF] = v;
-  var ids = {today: 'p-today', priority: 'p-priority', loop: 'p-loop', risk: 'p-risk'};
-  var el = g(ids[pF]); if (el) el.textContent = v;
-  co('ov-pr'); sv();
+    navigator.clipboard.writeText(txt).then(function() { co('ov-rh'); toast('Prompt Copied'); }).catch(function() { fb(); co('ov-rh'); toast('Copied'); });
+  } else { fb(); co('ov-rh'); toast('Copied'); }
 }
 
 function oDy() { var n = g('dn'); if (n) n.value = ''; oo('ov-dy'); }
@@ -870,7 +1368,9 @@ function cfDy() {
   var ev = '', rv = D.E.slice().reverse();
   for (var i = 0; i < rv.length; i++) { var e = rv[i]; ev += e.tm + '  ' + e.tp + ': ' + e.nm + (e.st ? ' -- ' + e.st : '') + '\n'; }
   var arc = D.erLog.map(function(x) { return x.l; }).join(' > ');
-  D.nights.unshift({dt: ds, dk: n.toDateString(), er: D.er, note: note || '(no note)', ev: ev, arc: arc, ts: n.toISOString()});
+  
+  D.nights.unshift({dt: ds, dk: n.toDateString(), er: D.er, note: note || '(no note)', ev: ev, arc: arc, ts: n.toISOString(), tp: 'nightly'});
+  
   D.E = []; D.erLog = [{t: 'Wake', v: parseFloat(D.er) || 1.5, l: D.er}];
   D.dayOpen = false;
   var dp = g('dpill'); if (dp) { dp.textContent = 'Day Closed'; dp.className = 'pill p-closed'; }
@@ -886,17 +1386,19 @@ function bArc() {
   var h = '';
   for (var i = 0; i < D.nights.length; i++) {
     var n2 = D.nights[i];
+    var badgeClr = n2.tp === 'deca' ? 'color:var(--violet);background:rgba(155,127,212,0.1);border-color:rgba(155,127,212,0.2)' : 'color:var(--amber);background:rgba(212,148,91,0.08);border-color:rgba(212,148,91,0.15)';
+    var badgeTxt = n2.tp === 'deca' ? 'DECA FORM' : 'ER: ' + (n2.er || '--');
+    
     h += '<div class="nii"><div class="nid">' + (n2.dt || '') + '</div>';
-    h += '<div style="display:flex;gap:8px;margin-bottom:6px;flex-wrap:wrap"><span style="font-family:var(--mono);font-size:9px;color:var(--amber);background:rgba(212,148,91,0.08);border:1px solid rgba(212,148,91,0.15);padding:2px 7px;border-radius:3px">ER: ' + (n2.er || '--') + '</span>';
+    h += '<div style="display:flex;gap:8px;margin-bottom:6px;flex-wrap:wrap"><span style="font-family:var(--mono);font-size:9px;padding:2px 7px;border-radius:3px;border:1px solid;' + badgeClr + '">' + badgeTxt + '</span>';
     if (n2.arc) h += '<span style="font-family:var(--mono);font-size:9px;color:var(--text3);padding:2px 7px">Arc: ' + n2.arc + '</span>';
     h += '</div><div class="nin" style="margin-bottom:8px">' + (n2.note || '') + '</div><details style="cursor:pointer"><summary style="font-family:var(--mono);font-size:9px;color:var(--text3);letter-spacing:0.08em;text-transform:uppercase;list-style:none">+ Event Log</summary><pre style="font-family:var(--mono);font-size:9px;color:var(--text3);margin-top:8px;white-space:pre-wrap;line-height:1.8">' + (n2.ev || '') + '</pre></details></div>';
   }
   f.innerHTML = h;
 }
 
-var impType = 'nightly', impParsed = null;
 function setIT(t) {
-  impType = t;
+  D.impType = t;
   var ni = g('im-ni'), de = g('im-de');
   if (ni) ni.classList.toggle('on', t === 'nightly');
   if (de) de.classList.toggle('on', t === 'deca');
@@ -907,8 +1409,8 @@ function pvImp() {
   var inp = g('im-in');
   var txt = inp ? inp.value : '';
   var pv = g('im-pv');
-  if (txt.trim().length < 30) { if (pv) pv.style.display = 'none'; impParsed = null; return; }
-  var r = {dt: 'Unknown', er: '--', note: '', ev: '', arc: ''};
+  if (txt.trim().length < 30) { if (pv) pv.style.display = 'none'; D.impParsed = null; return; }
+  var r = {dt: 'Unknown', er: '--', note: '', ev: '', arc: '', tp: D.impType};
   var dm = txt.match(/(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)[,\s]+([A-Z][a-z]+.?\s+\d{1,2},?\s*\d{4})/i) || txt.match(/(March|April|May|June|July|August|September|October|November|December|January|February)\s+\d{1,2},?\s*\d{4}/i);
   if (dm) r.dt = dm[0].trim();
   var ems = txt.match(/\d+\.\d+[ABC]/g);
@@ -917,18 +1419,18 @@ function pvImp() {
   r.ev = ml.map(function(m) { return '  -- Marker: ' + m.replace(/^Marker[:\s]+/i, '').trim(); }).join('\n');
   var ls = txt.split('\n').filter(function(l) { return l.trim().length > 20; });
   r.note = ls[ls.length - 1] || '';
-  impParsed = r;
+  D.impParsed = r;
   if (pv) {
-    pv.innerHTML = '<div class="ir"><span class="ik">Date</span><span class="iv">' + r.dt + '</span></div><div class="ir"><span class="ik">ER Close</span><span class="iv">' + r.er + '</span></div><div class="ir"><span class="ik">Note</span><span class="iv">' + r.note.substring(0, 60) + '</span></div>';
+    pv.innerHTML = '<div class="ir"><span class="ik">Type</span><span class="iv" style="text-transform:capitalize;">' + D.impType + '</span></div><div class="ir"><span class="ik">Date</span><span class="iv">' + r.dt + '</span></div><div class="ir"><span class="ik">ER Close</span><span class="iv">' + r.er + '</span></div><div class="ir"><span class="ik">Summary</span><span class="iv">' + r.note.substring(0, 60) + '</span></div>';
     pv.style.display = 'block';
   }
 }
 
 function cfImp() {
-  if (!impParsed) { co('ov-im'); return; }
-  D.nights.push({dt: impParsed.dt, dk: impParsed.dt, er: impParsed.er, note: impParsed.note || '(imported)', ev: impParsed.ev, arc: impParsed.arc, ts: new Date().toISOString()});
+  if (!D.impParsed) { co('ov-im'); return; }
+  D.nights.push({dt: D.impParsed.dt, dk: D.impParsed.dt, er: D.impParsed.er, note: D.impParsed.note || '(imported)', ev: D.impParsed.ev, arc: D.impParsed.arc, ts: new Date().toISOString(), tp: D.impParsed.tp});
   D.nights.sort(function(a, b) { return new Date(b.ts) - new Date(a.ts); });
-  co('ov-im'); bArc(); sv(); toast('Imported: ' + impParsed.dt);
+  co('ov-im'); bArc(); sv(); toast('Imported: ' + D.impParsed.dt);
 }
 
 var pItems = [
@@ -1076,45 +1578,18 @@ document.querySelectorAll('[data-lg]').forEach(function(el) {
   el.addEventListener('click', function() { oLog(this.getAttribute('data-lg')); });
 });
 
-// model
-document.querySelectorAll('.mbtn').forEach(function(el) {
-  el.addEventListener('click', function() {
-    document.querySelectorAll('.mbtn').forEach(function(b) { b.classList.remove('on'); });
-    this.classList.add('on');
-    D.model = this.getAttribute('data-m');
-    var rm = g('rhm'); if (rm) rm.textContent = D.model;
-  });
-});
+// continuity generation (Hydrate/Sync)
+on('btn-hyd', 'click', function() { oHydrate(true); });
+on('btn-rehyd', 'click', function() { oHydrate(false); });
+on('rh-cn', 'click', function() { co('ov-rh'); });
+on('rh-ok', 'click', cpRH);
 
-// priority edit
-document.querySelectorAll('[data-pf]').forEach(function(el) {
-  el.addEventListener('click', function() { oPri(this.getAttribute('data-pf')); });
-});
-
-// mode select (stabilize s2)
-document.querySelectorAll('[data-mode]').forEach(function(el) {
-  el.addEventListener('click', function() {
-    document.querySelectorAll('.cb').forEach(function(b) { b.classList.remove('on'); });
-    this.classList.add('on');
-    D.sMode = this.getAttribute('data-mode');
-    setTimeout(function() { nav('s-s3'); }, 300);
-  });
-});
-
-// voice type
-document.querySelectorAll('[data-vt]').forEach(function(el) {
-  el.addEventListener('click', function() {
-    D.vType = this.getAttribute('data-vt');
-    document.querySelectorAll('.vtb').forEach(function(b) { b.classList.remove('on'); });
-    this.classList.add('on');
-    var tp = g('vtp'); if (tp) tp.style.display = 'none';
-    var lp = g('vlp'); if (lp) lp.style.display = 'flex';
-    var vr = g('vres'); if (vr) vr.style.display = 'none';
-    var va = g('vac'); if (va) va.style.display = 'none';
-    var vt2 = g('vtr'); if (vt2) vt2.textContent = '';
-    var vs = g('vs'); if (vs) vs.textContent = 'Listening...';
-    sListen();
-  });
+// fw toggle
+on('fwb', 'click', function() {
+  D.fw = !D.fw;
+  var fb = g('fwb');
+  if (fb) { fb.textContent = D.fw ? 'Framework Loaded' : 'Framework Off'; fb.className = 'fw-b ' + (D.fw ? 'fw-on' : 'fw-off'); }
+  sv(); toast(D.fw ? 'Framework enabled' : 'Framework disabled');
 });
 
 // stab 
@@ -1161,25 +1636,7 @@ on('dy-ok', 'click', cfDy);
 on('sh-cn', 'click', cLog);
 on('sh-ok', 'click', cfLog);
 
-// priority
-on('pr-cn', 'click', function() { co('ov-pr'); });
-on('pr-ok', 'click', cfPri);
-
-// rehydrate
-on('rhb', 'click', oRH);
-on('rh-cn', 'click', function() { co('ov-rh'); });
-on('rh-ok', 'click', cpRH);
-
-// fw toggle
-on('fwb2', 'click', function() {
-  D.fw = !D.fw;
-  var fb = g('fwb'), ft = g('fwt');
-  if (fb) { fb.textContent = D.fw ? 'Framework Loaded' : 'Framework Off'; fb.className = 'fw-b ' + (D.fw ? 'fw-on' : 'fw-off'); }
-  if (ft) ft.textContent = D.fw ? 'On' : 'Off';
-  sv();
-});
-
-// import
+// import (with file input handler)
 on('impb', 'click', function() {
   var i = g('im-in'); if (i) i.value = '';
   var p = g('im-pv'); if (p) p.style.display = 'none';
@@ -1189,6 +1646,25 @@ on('im-cn', 'click', function() { co('ov-im'); });
 on('im-ok', 'click', cfImp);
 on('im-ni', 'click', function() { setIT('nightly'); });
 on('im-de', 'click', function() { setIT('deca'); });
+on('im-file-btn', 'click', function() { g('im-file').click(); });
+
+var imFileEl = g('im-file');
+if (imFileEl) {
+  imFileEl.addEventListener('change', function(e) {
+    var file = e.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function(evt) {
+      var content = evt.target.result;
+      var inBox = g('im-in');
+      if (inBox) { inBox.value = content; pvImp(); }
+    };
+    reader.readAsText(file);
+    // Reset input so the same file can be loaded again if needed
+    e.target.value = '';
+  });
+}
+
 var imInEl = g('im-in');
 if (imInEl) imInEl.addEventListener('input', pvImp);
 
@@ -1240,12 +1716,24 @@ on('lhdr', 'click', function() {
   if (ll) ll.style.display = ll.style.display === 'none' ? '' : 'none';
 });
 
+// priority edit
+document.querySelectorAll('[data-pf]').forEach(function(el) {
+  el.addEventListener('click', function() { oPri(this.getAttribute('data-pf')); });
+});
+
 // focus mode actions
 document.querySelectorAll('.pac[data-lg]').forEach(function(el) {
   el.addEventListener('click', function() { oLog(this.getAttribute('data-lg')); });
 });
 
-console.log('LUX Layer: init complete, stabilized.');
+// AUTO-SAVE ARMOR
+document.addEventListener('visibilitychange', function() {
+  if (document.visibilityState === 'hidden') sv();
+});
+window.addEventListener('pagehide', sv);
+setInterval(sv, 15000); // 15s heartbeat save
+
+console.log('LUX Layer: Workflow compressed. Import & UI repaired. Running v5.3.');
 </script>
 
 </body>
